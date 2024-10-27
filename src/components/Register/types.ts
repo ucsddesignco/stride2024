@@ -57,8 +57,14 @@ export type FormFieldProps = {
 );
 
 export const RegistrationSchema: ZodType<TFormData> = z.object({
-  name: z.string().min(2, { message: 'Name is too short' }),
-  pronouns: z.string().min(2, { message: 'Pronouns is too short' }),
+  name: z
+    .string()
+    .min(2, { message: 'Name is too short' })
+    .max(50, { message: 'Name needs to be under 70 characters' }),
+  pronouns: z
+    .string()
+    .min(2, { message: 'Pronouns is too short' })
+    .max(50, { message: 'Pronouns needs to be under 50 characters.' }),
   year: z
     .string()
     .length(4, { message: 'Year must be valid' })
@@ -73,12 +79,13 @@ export const RegistrationSchema: ZodType<TFormData> = z.object({
   interest_other: z
     .string()
     .min(2, { message: 'Interest is too short' })
+    .max(50, { message: 'Interest needs to be under 30 characters.' })
     .optional(),
   link: z
     .string()
     .includes('linkedin.com', { message: 'Invalid LinkedIn URL' }),
   email: z
     .string()
-    .email()
+    .email({ message: 'Invalid UCSD email' })
     .includes('ucsd.edu', { message: 'Invalid UCSD email' })
 });
