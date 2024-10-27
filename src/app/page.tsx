@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import classNames from 'classnames';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
+import './styles/styles.scss';
 
 interface AccordionTriggerProps
   extends React.ComponentPropsWithoutRef<typeof Accordion.Trigger> {
@@ -52,63 +53,69 @@ export default function Home() {
   return (
     <main>
       <h1>Stride 2024</h1>
-      <Accordion.Root
-        className="AccordionRoot"
-        type="single"
-        defaultValue="item-1"
-        collapsible
-      >
-        <Accordion.Item className="AccordionItem" value="item-1">
-          <AccordionTrigger>When is Stride?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
-          </AccordionContent>
-        </Accordion.Item>
+      <div className="about-page-container">
+        <div className="faq-accordion">
+          <Accordion.Root
+            className="AccordionRoot"
+            type="single"
+            defaultValue="item-1"
+            collapsible
+          >
+            <Accordion.Item className="AccordionItem" value="item-1">
+              <AccordionTrigger>When is Stride?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It adheres to the WAI-ARIA design pattern.
+              </AccordionContent>
+            </Accordion.Item>
 
-        <Accordion.Item className="AccordionItem" value="item-2">
-          <AccordionTrigger>Who can attend Stride?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It&apos;s unstyled by default, giving you freedom over the look
-            and feel.
-          </AccordionContent>
-        </Accordion.Item>
+            <Accordion.Item className="AccordionItem" value="item-2">
+              <AccordionTrigger>Who can attend Stride?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It&apos;s unstyled by default, giving you freedom over the
+                look and feel.
+              </AccordionContent>
+            </Accordion.Item>
 
-        <Accordion.Item className="AccordionItem" value="item-3">
-          <AccordionTrigger>How should I dress for Stride?</AccordionTrigger>
-          <AccordionContent>
-            <div className="AccordionContentText">
-              Yes! You can animate the Accordion with CSS or JavaScript.
-            </div>
-          </AccordionContent>
-        </Accordion.Item>
+            <Accordion.Item className="AccordionItem" value="item-3">
+              <AccordionTrigger>
+                How should I dress for Stride?
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="AccordionContentText">
+                  Yes! You can animate the Accordion with CSS or JavaScript.
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
 
-        <Accordion.Item className="AccordionItem" value="item-3">
-          <AccordionTrigger>How can I prepare for Stride?</AccordionTrigger>
-          <AccordionContent>
-            <div className="AccordionContentText">
-              Yes! You can animate the Accordion with CSS or JavaScript.
-            </div>
-          </AccordionContent>
-        </Accordion.Item>
+            <Accordion.Item className="AccordionItem" value="item-4">
+              <AccordionTrigger>How can I prepare for Stride?</AccordionTrigger>
+              <AccordionContent>
+                <div className="AccordionContentText">
+                  Yes! You can animate the Accordion with CSS or JavaScript.
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
 
-        <Accordion.Item className="AccordionItem" value="item-3">
-          <AccordionTrigger>Do I need a portfolio?</AccordionTrigger>
-          <AccordionContent>
-            <div className="AccordionContentText">
-              Yes! You can animate the Accordion with CSS or JavaScript.
-            </div>
-          </AccordionContent>
-        </Accordion.Item>
+            <Accordion.Item className="AccordionItem" value="item-5">
+              <AccordionTrigger>Do I need a portfolio?</AccordionTrigger>
+              <AccordionContent>
+                <div className="AccordionContentText">
+                  Yes! You can animate the Accordion with CSS or JavaScript.
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
 
-        <Accordion.Item className="AccordionItem" value="item-3">
-          <AccordionTrigger>Is there a registration fee?</AccordionTrigger>
-          <AccordionContent>
-            <div className="AccordionContentText">
-              Yes! You can animate the Accordion with CSS or JavaScript.
-            </div>
-          </AccordionContent>
-        </Accordion.Item>
-      </Accordion.Root>
+            <Accordion.Item className="AccordionItem" value="item-6">
+              <AccordionTrigger>Is there a registration fee?</AccordionTrigger>
+              <AccordionContent>
+                <div className="AccordionContentText">
+                  Yes! You can animate the Accordion with CSS or JavaScript.
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
+          </Accordion.Root>
+        </div>
+      </div>
     </main>
   );
 }
