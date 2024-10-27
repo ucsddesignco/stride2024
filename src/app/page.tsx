@@ -17,10 +17,9 @@ const AccordionTrigger = React.forwardRef<
     <Accordion.Trigger
       className={classNames('AccordionTrigger', className)}
       ref={forwardedRef}
-      id={props.id} // Apply individual props directly
+      id={props.id}
       aria-expanded={props['aria-expanded']}
       onClick={props.onClick}
-      // Repeat for other props as needed
     >
       {children}
       <ChevronDownIcon className="AccordionChevron" aria-hidden />
@@ -42,8 +41,7 @@ const AccordionContent = React.forwardRef<
   <Accordion.Content
     className={classNames('AccordionContent', className)}
     ref={forwardedRef}
-    id={props.id} // Apply individual props directly
-    // Repeat for other props as needed
+    id={props.id}
   >
     <div className="AccordionContentText">{children}</div>
   </Accordion.Content>
