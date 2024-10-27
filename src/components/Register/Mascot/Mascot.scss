@@ -1,0 +1,14 @@
+.mascot-container {
+  position: relative;
+  display: grid;
+  width: fit-content;
+  height: fit-content;
+
+  svg {
+    overflow: visible;
+  }
+
+  .mascot-hat {
+    position: absolute;
+  }
+}

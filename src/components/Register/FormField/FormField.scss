@@ -1,0 +1,64 @@
+.registration-textfield {
+  --temp-fontsize: 1.2rem;
+  display: grid;
+  gap: 0.5rem;
+  font-size: var(--temp-fontsize);
+
+  .error-message {
+    height: var(--temp-fontsize);
+    color: rgb(240, 88, 88);
+    font-size: 14px;
+  }
+
+  label {
+    margin-bottom: 0.2rem;
+  }
+
+  input {
+    font-family: inherit;
+    font-size: var(--temp-fontsize);
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline-color: white;
+    color: inherit;
+    border-bottom: 1px solid white;
+    padding-block: 0.25rem;
+  }
+
+  .select-container {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+
+    select {
+      font-size: 1.2rem;
+      appearance: none;
+      padding: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 5rem;
+      border-radius: 22px;
+      font-family: inherit;
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      right: 1rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(-45deg) translateY(-50%);
+    }
+
+    .other-input {
+      display: block;
+    }
+  }
+}

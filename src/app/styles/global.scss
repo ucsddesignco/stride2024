@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'var' as *;
 
 //Modfied version of https://piccalil.li/blog/a-more-modern-css-reset/
 *,
@@ -26,6 +26,8 @@ ol[role='list'] {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: black;
+  color: white;
 }
 
 h1,
@@ -78,11 +80,4 @@ canvas,
 svg {
   max-width: 100%;
   display: block;
-}
-
-input,
-button,
-textarea,
-select {
-  font-family: $mono-font;
 }

@@ -1,0 +1,104 @@
+@use '../var.scss' as *;
+
+.folder-tabs-container {
+  display: flex;
+
+  .folder-tab {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: -10px;
+      .active-line3 {
+        display: none;
+      }
+    }
+
+    span {
+      position: relative;
+      z-index: 2;
+      font-size: 1.2rem;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: black;
+      border: $border-width solid #fff;
+      transform-origin: bottom;
+      z-index: 1;
+    }
+
+    &::before {
+      border-radius: 10px 0 0 0;
+      border-right: 0;
+      left: 0;
+      transform-origin: bottom;
+      transform: skew(-20deg);
+    }
+
+    &::after {
+      border-radius: 0 10px 0 0;
+      border-left: 0;
+      right: 0;
+      transform-origin: bottom;
+      transform: skew(20deg);
+    }
+  }
+
+  .active-line1 {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: transparent;
+      border: $border-width solid rgb(255, 255, 255);
+      border-top: none;
+      border-bottom: none;
+      z-index: 3;
+      overflow: hidden;
+    }
+
+    &::before {
+      border-radius: 10px 0 0 0;
+      border-right: 0;
+      left: 0;
+      transform-origin: bottom;
+      transform: skew(-20deg);
+    }
+
+    &::after {
+      border-radius: 0 10px 0 0;
+      border-left: 0;
+      right: 0;
+      transform-origin: bottom;
+      transform: skew(20deg);
+    }
+  }
+
+  // This is the line beneath the tab to hide the white border bottom
+  .active-line2 {
+    position: absolute;
+    bottom: -1px;
+    background-color: rgb(0, 0, 0);
+    margin-inline: auto;
+    width: calc(100% - 2 * $border-width);
+    height: 5px;
+    left: 0px;
+    right: 0;
+    z-index: 2;
+  }
+}
