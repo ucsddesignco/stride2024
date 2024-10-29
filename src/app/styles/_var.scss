@@ -2,6 +2,8 @@ $p-font: var(--font-nbinternational);
 $heading-font: var(--font-neueplak);
 $mono-font: var(--font-nbinternational-mono);
 
+$light-green: #68dea3;
+
 $mobile-breakpoint: 768px;
 $tablet-breakpoint: 1366px;
 
@@ -12,7 +14,7 @@ $main-padding-mobile: 24px;
 $main-padding-desktop: clamp(24px, 5px + 5vw, 6rem);
 
 //Font Sizes
-$h1-size: clamp(2rem, calc(24px + 1.5vw), 40px);
-$h2-size: clamp(1.2rem, calc(18px + 0.8vw), 32px);
-$h3-size: clamp(1rem, calc(12px + 0.5vw), 24px);
-$p-size: clamp(1rem, calc(16px + 0.3vw), 24px);
+$h1-size: clamp(2rem, calc(1.5rem + 1.5vw), 2.5rem);
+$h2-size: clamp(1.2rem, calc(1.125rem + 0.8vw), 2rem);
+$h3-size: clamp(1rem, calc(0.75rem + 0.5vw), 1.5rem);
+$p-size: clamp(1rem, calc(1rem + 0.3vw), 1.5rem);

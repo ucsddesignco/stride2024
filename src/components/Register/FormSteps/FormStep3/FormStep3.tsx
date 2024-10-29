@@ -4,7 +4,7 @@ import { useState } from 'react';
 import BlockIcon from '@/components/Icons/BlockIcon';
 import { COLOR_THEMES } from '../../constants';
 import { MascotBreeds, MascotHats } from '../../types';
-import FolderTabs from '../FolderTabs/FolderTabs';
+import FolderTabs from '../../FolderTabs/FolderTabs';
 import TestHat from '../../Mascot/Hats/TestHat';
 
 export default function FormStep3() {

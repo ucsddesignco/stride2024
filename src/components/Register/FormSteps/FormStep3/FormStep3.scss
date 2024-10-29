@@ -1,5 +1,5 @@
 // Rounded Trapezoid credit: https://stackoverflow.com/questions/63472926/how-to-make-a-rounded-trapezoid-shape-with-a-white-stroke
-@use '../var.scss' as *;
+@use '../form_var' as *;
 
 .form-step3 {
   display: grid;
@@ -8,7 +8,7 @@
   &-mascot {
     display: grid;
     place-items: center;
-    width: 12rem;
+    width: 5rem;
     margin-inline: auto;
   }
 

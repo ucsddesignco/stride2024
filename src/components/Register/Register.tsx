@@ -20,6 +20,7 @@ export default function Register() {
   const [currentFormStep, setCurrentFormStep] = useState(1);
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors },
     trigger,
@@ -85,7 +86,7 @@ export default function Register() {
         <Dialog>
           <form
             onSubmit={handleSubmit(onSubmit, validationError => {
-              console.log('Validation errors:', validationError);
+              console.error('Validation errors:', validationError);
             })}
             className="modal-form"
           >
@@ -103,10 +104,18 @@ export default function Register() {
             </div>
             <div className="form-body">
               {currentFormStep === 1 && (
-                <FormStep1 register={register} errors={errors} />
+                <FormStep1
+                  register={register}
+                  control={control}
+                  errors={errors}
+                />
               )}
               {currentFormStep === 2 && (
-                <FormStep2 register={register} errors={errors} />
+                <FormStep2
+                  register={register}
+                  control={control}
+                  errors={errors}
+                />
               )}
               {currentFormStep === 3 && <FormStep3 />}
               {currentFormStep === 4 && <FormStep4 formData={getValues()} />}

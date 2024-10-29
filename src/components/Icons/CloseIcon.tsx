@@ -1,6 +1,6 @@
-import React from 'react';
+import { SVGProps } from 'react';
 
-export function CloseIcon(props: React.SVGProps<SVGSVGElement>) {
+export function CloseIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

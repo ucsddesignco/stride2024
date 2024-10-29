@@ -1,4 +1,4 @@
-@use '../var.scss' as *;
+@use '../FormSteps/form_var' as *;
 
 .folder-tabs-container {
   display: flex;
@@ -34,7 +34,7 @@
       bottom: 0;
       width: 50%;
       background: black;
-      border: $border-width solid #fff;
+      border: $border-width solid #ffffff;
       transform-origin: bottom;
       z-index: 1;
     }
