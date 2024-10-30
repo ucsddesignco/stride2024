@@ -1,0 +1,92 @@
+// Rounded Trapezoid credit: https://stackoverflow.com/questions/63472926/how-to-make-a-rounded-trapezoid-shape-with-a-white-stroke
+@use '../form_var' as *;
+
+.form-step3 {
+  display: grid;
+  gap: 1rem;
+
+  &-mascot {
+    display: grid;
+    place-items: center;
+    width: 5rem;
+    margin-inline: auto;
+  }
+
+  .customization-container {
+    position: relative;
+
+    // This is to account for the overflow from the above element
+    .active-line3 {
+      position: absolute;
+      left: 0;
+      top: calc(0.5rem + 1.2rem + (2 * $border-width) + 0.45rem);
+      height: 50px;
+      left: 0px;
+      border-left: $border-width solid rgb(255, 255, 255);
+      border-top: 0;
+      border-radius: 20px 20px 0 0;
+      margin-top: -$border-width;
+      z-index: 3;
+    }
+
+    .customization-box {
+      width: 100%;
+      height: calc(12rem + $border-width);
+      border-radius: 3px 10px 10px 10px;
+      border: $border-width solid rgb(255, 255, 255);
+      margin-top: -$border-width;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .color-palette-container {
+    padding-left: 0;
+    padding: 1rem;
+    list-style-type: none;
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, 10rem);
+
+    .color-grouping {
+      border: none;
+      background-color: inherit;
+      transition: background-color 0.3s;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(66, 66, 66);
+      }
+
+      ul {
+        padding-left: 0;
+        list-style-type: none;
+        display: flex;
+        gap: 10px;
+
+        li {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .hat-container {
+    padding-left: 0;
+    padding: 1rem;
+    list-style-type: none;
+    display: grid;
+    max-width: 500px;
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, 6.5rem);
+    align-items: center;
+
+    > svg {
+      cursor: pointer;
+    }
+  }
+}
