@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import '@/app/Home.scss';
 import Image from 'next/image';
 import Mascot from '@/components/Register/Mascot/Mascot';
+import Flashlight from './components/flashlight/flashlight';
 
 gsap.registerPlugin(useGSAP);
 
@@ -258,6 +259,7 @@ export default function Home() {
           click to open!
         </h1>
       </div>
+      <Flashlight />
     </div>
   );
 }
