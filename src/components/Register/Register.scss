@@ -1,0 +1,35 @@
+.register-container {
+  .color-palette-container {
+    padding-left: 0;
+    list-style-type: none;
+    display: grid;
+    max-width: 500px;
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    .color-grouping {
+      border: none;
+      background-color: inherit;
+      transition: background-color 0.3s;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(243, 243, 243);
+      }
+
+      ul {
+        padding-left: 0;
+        list-style-type: none;
+        display: flex;
+        gap: 10px;
+
+        li {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
