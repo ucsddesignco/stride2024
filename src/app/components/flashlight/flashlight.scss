@@ -1,0 +1,48 @@
+.flashlight {
+  cursor: url('/Cursor.svg'), auto;
+  padding: 50px;
+  border: 1px solid #ccc;
+}
+
+.custom-cursor {
+  width: 600px;
+  height: 600px;
+  background-color: #fbfefc;
+  border: 2px solid #fbfefc;
+  border-radius: 100%;
+  position: fixed;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+  z-index: 1000;
+}
+
+.ring-inner {
+  width: 700px; /* Adjust size as needed */
+  height: 700px; /* Adjust size as needed */
+  border: 50px solid #68dea3; /* Adjust thickness and color as needed */
+  border-radius: 50%; /* Make it circular */
+  position: fixed; /* Use fixed positioning */
+  pointer-events: none; /* Ensure it doesn't interfere with cursor events */
+  transform: translate(-50%, -50%); /* Center the ring on the cursor */
+  mix-blend-mode: lighten;
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+  z-index: 1000;
+}
+
+.ring-outer {
+  width: 800px; /* Adjust size as needed */
+  height: 800px; /* Adjust size as needed */
+  border: 100px solid #16643d; /* Adjust thickness and color as needed */
+  border-radius: 50%; /* Make it circular */
+  position: fixed; /* Use fixed positioning */
+  pointer-events: none; /* Ensure it doesn't interfere with cursor events */
+  transform: translate(-50%, -50%); /* Center the ring on the cursor */
+  mix-blend-mode: lighten;
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+  z-index: 1000;
+}

@@ -1,0 +1,62 @@
+@use '../form_var' as *;
+
+.form-step4 {
+  height: 100%;
+  $padding: 2rem;
+
+  .badge {
+    width: 90%;
+    max-width: 300px;
+    height: 100%;
+    border: $border-width solid white;
+    border-radius: 24px;
+    margin-inline: auto;
+
+    .badge-top {
+      display: flex;
+      justify-content: space-between;
+      margin-inline: auto;
+      padding: 1rem;
+      padding-inline: $padding;
+      border-bottom: 3px solid white;
+
+      .long-hole {
+        width: 2.5rem;
+        height: 1rem;
+        border-radius: 24px;
+        border: $border-width solid white;
+      }
+
+      .short-hole {
+        width: 1rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: $border-width solid white;
+      }
+    }
+
+    .badge-center {
+      padding: $padding;
+
+      &-top {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .badge-code {
+        svg {
+          width: 5rem;
+          height: auto;
+        }
+      }
+
+      .badge-mascot {
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5rem;
+        border: $border-width solid white;
+        border-radius: 24px;
+      }
+    }
+  }
+}

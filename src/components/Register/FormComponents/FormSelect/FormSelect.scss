@@ -1,0 +1,68 @@
+@use '@/app/styles/_var' as *;
+
+.registration-textfield {
+  .other-field {
+    margin-top: 1rem;
+  }
+}
+.register-select {
+  button {
+    font-family: $p-font;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 22px;
+    color: white;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+    gap: 2rem;
+    cursor: pointer;
+  }
+}
+
+.react-aria-Popover {
+  height: 13rem;
+  overflow: hidden;
+  border: 2px solid #68dea3;
+  border-radius: 22px;
+  font-family: $p-font;
+  font-size: 1.2rem;
+  overflow-y: auto;
+  background-color: black;
+  padding: 0 1rem;
+
+  &::-webkit-scrollbar-track {
+    background-color: #24242400;
+    border-radius: 1rem;
+    margin-block: 0.5rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #fbfefc;
+    border-radius: 1rem;
+    border: 6px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+  }
+
+  .register-list-box-item {
+    padding: 1rem 0;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid white;
+    }
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
