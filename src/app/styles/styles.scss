@@ -8,10 +8,19 @@ h3 {
   all: unset;
 }
 
-.faq-accordion {
+* {
+  background-color: black;
+  color: white;
+}
+
+.faq-section {
   max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
+
+  .faq-title {
+    margin-bottom: 2rem;
+  }
 }
 
 /* Accordion Styling */
@@ -60,13 +69,9 @@ h3 {
   justify-content: space-between;
   font-size: 15px;
   line-height: 1;
-  color: var(--violet-11);
+  color: var(--mauve-2);
   box-shadow: 0 1px 0 var(--mauve-6);
-  background-color: white;
-}
-
-.AccordionTrigger:hover {
-  background-color: var(--mauve-2);
+  background-color: black;
 }
 
 .AccordionContent {
@@ -109,5 +114,12 @@ h3 {
   }
   to {
     height: 0;
+  }
+}
+
+.register-section {
+  button {
+    border: 3px solid white;
+    padding: 0.5rem 1rem;
   }
 }

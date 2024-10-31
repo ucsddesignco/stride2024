@@ -1,0 +1,12 @@
+<svg width="307" height="513" viewBox="0 0 307 513" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M71.2095 176.898C66.6359 167.023 67.3707 146.465 73.3147 137.35" stroke="#FBFEFC" stroke-width="4.8" stroke-linecap="round"/>
+<path d="M77.7886 196.938C76.3285 194.872 74.6595 191.122 74.409 189.208" stroke="#FBFEFC" stroke-width="4.8" stroke-linecap="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M153.194 261.927C213.247 261.927 261.929 213.244 261.929 153.191C261.929 93.138 213.247 44.4554 153.194 44.4554C93.1407 44.4554 44.4581 93.138 44.4582 153.191C44.4582 213.244 93.1408 261.927 153.194 261.927ZM153.421 251.314C207.696 251.314 251.694 207.315 251.694 153.041C251.694 98.7662 207.696 54.7679 153.421 54.7679C99.1468 54.7679 55.1486 98.7662 55.1486 153.041C55.1486 207.315 99.1469 251.314 153.421 251.314Z" fill="black"/>
+<ellipse cx="153.206" cy="153.259" rx="108.736" ry="108.736" stroke="#FBFEFC" stroke-width="4.8"/>
+<ellipse cx="153.433" cy="153.109" rx="98.2729" ry="98.2729" stroke="#FBFEFC" stroke-width="2.4"/>
+<path d="M135.991 262.492H170.658L173.991 299.092H131.991L135.991 262.492Z" fill="black" stroke="#FBFEFC" stroke-width="2.4"/>
+<path d="M134.669 279.891H171.402L172.292 289.938H133.778L134.669 279.891Z" fill="#FBFEFC" stroke="#FBFEFC" stroke-width="2.4"/>
+<path d="M132.104 299.426H173.966L173.966 503.34C173.966 507.555 170.549 510.973 166.333 510.973H139.737C135.521 510.973 132.104 507.555 132.104 503.34L132.104 299.426Z" fill="black" stroke="#FBFEFC" stroke-width="2.4"/>
+<rect x="126.521" y="297.754" width="53.0263" height="6.13989" rx="3.06994" fill="#FBFEFC" stroke="#FBFEFC" stroke-width="2.4"/>
+<rect x="125.404" y="502.477" width="55.259" height="8.93074" rx="4.46537" fill="#FBFEFC" stroke="#FBFEFC" stroke-width="2.4"/>
+</svg>
