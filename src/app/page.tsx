@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import '@/app/home.scss';
+import '@/app/Home.scss';
 import Image from 'next/image';
 import Flashlight from '@/components/Flashlight/Flashlight';
 
@@ -241,6 +241,7 @@ export default function Page() {
 
         <div
           id="folder"
+          aria-label="Folder"
           onMouseEnter={() => setIsHoveringFolder(true)}
           onMouseLeave={() => setIsHoveringFolder(false)}
           onClick={openFolder}
