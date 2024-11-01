@@ -1,265 +1,279 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import '@/app/Home.scss';
+import '@/app/home.scss';
 import Image from 'next/image';
-import Mascot from '@/components/Register/Mascot/Mascot';
-import Flashlight from './components/flashlight/flashlight';
+import Flashlight from '@/components/Flashlight/Flashlight';
 
 gsap.registerPlugin(useGSAP);
 
-const width = 780;
-const height = 184.74;
-const src = '/images/folder/flat-folder-flap-front.svg';
-
-// Both our top half and bottom half share
-// a few common styles
-const sharedStyles = {
-  width,
-  height: height + 0,
-  backgroundSize: `${width}px ${height}px`,
-  backgroundImage: `url(${src})`
-};
-
-export default function Home() {
+export default function Page() {
   const [isHoveringFolder, setIsHoveringFolder] = useState(false);
-  const folderFlap = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {}, []);
 
   const openFolder = () => {
-    gsap.to(folderFlap.current, { rotateX: '180' });
+    const tl = gsap.timeline();
+    tl.to('#folder-flap', { rotateX: 120 });
+    tl.to('#click-to-open-text', { display: 'none', duration: 0 });
+    tl.to('#folder', {
+      translateY: 700,
+      translateX: -50,
+      rotate: 10,
+      duration: 1
+    });
+    tl.to(
+      '.folder-asset',
+      {
+        scale: 1.2
+      },
+      '<'
+    );
+    tl.to(
+      '#badge',
+      {
+        right: 0,
+        top: '60%',
+        rotate: 0,
+        duration: 1
+      },
+      '<'
+    );
+    tl.to(
+      '#feather',
+      {
+        left: '45%',
+        top: '0%',
+        rotate: -15,
+        duration: 1
+      },
+      '<'
+    );
+    tl.to(
+      '#polaroid',
+      {
+        left: '40%',
+        top: '-5%',
+        duration: 1
+      },
+      '<'
+    );
+    tl.to(
+      '#orgs',
+      {
+        left: '0%',
+        top: '68%',
+        rotate: 0,
+        duration: 1
+      },
+      '<'
+    );
+    tl.to(
+      '#companies',
+      {
+        right: '0%',
+        top: '20%',
+        rotate: 0,
+        duration: 1
+      },
+      '<'
+    );
+    tl.to(
+      '#cards',
+      {
+        left: '5%',
+        top: '25%',
+        rotate: 8,
+        duration: 1
+      },
+      '<'
+    );
+    tl.to(
+      '#magnifying-glass',
+      {
+        left: '-2%',
+        top: '15%',
+        rotate: 53,
+        duration: 1
+      },
+      '<'
+    );
+    tl.to(
+      '#main-content',
+      {
+        top: '50%',
+        duration: 1
+      },
+      '<'
+    );
   };
 
   useGSAP(
     () => {
       if (isHoveringFolder) {
-        gsap.to(folderFlap.current, { rotateX: '20' });
+        gsap.to('#folder-flap', { rotateX: '30' });
       } else {
-        gsap.to(folderFlap.current, { rotateX: '0' });
+        gsap.to('#folder-flap', { rotateX: '0' });
       }
     },
     { dependencies: [isHoveringFolder] }
   );
 
   return (
-    <div
-      style={{
-        backgroundColor: 'black',
-        display: 'grid',
-        justifyContent: 'center',
-        alignContent: 'center',
-        gap: '5rem',
-        height: '100vh',
-        overflow: 'hidden',
-        position: 'relative'
-      }}
-    >
-      <Image
-        src="/images/page-borders/top-left-corner.svg"
-        alt=""
-        width={160}
-        height={280}
-        style={{ position: 'absolute', top: -5, left: 0 }}
-      />
-      <Image
-        src="/images/page-borders/bottom-right-corner.svg"
-        alt=""
-        width={277}
-        height={274}
-        style={{ position: 'absolute', bottom: 0, right: 0 }}
-      />
-      <Image
-        src="/images/page-borders/top-edge.svg"
-        alt=""
-        width={330}
-        height={30}
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: '5%'
-        }}
-      />
-      <Image
-        src="/images/page-borders/bottom-edge.svg"
-        alt=""
-        width={600}
-        height={41}
-        style={{
-          position: 'absolute',
-          bottom: '-20px',
-          left: '30%'
-        }}
-      />
-
+    <div style={{ minHeight: '100vh', height: '100vh' }}>
+      <Flashlight />
       <div
-        style={{ perspective: 800, height: 550 }}
-        onClick={openFolder}
-        onMouseEnter={() => setIsHoveringFolder(true)}
-        onMouseLeave={() => setIsHoveringFolder(false)}
-        id="folder"
-        onKeyDown={e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            openFolder();
-          }
+        style={{
+          backgroundColor: 'black',
+          display: 'grid',
+          justifyContent: 'center',
+          justifyItems: 'center',
+          alignContent: 'center',
+          gap: '3rem',
+          height: '100%',
+          overflow: 'hidden',
+          position: 'relative',
+          perspective: 4000
         }}
-        role="button"
-        tabIndex={0}
-        onFocus={() => setIsHoveringFolder(true)}
-        onBlur={() => setIsHoveringFolder(false)}
-        aria-label="Open Folder"
       >
         <Image
-          src="/images/folder/flat-folder-back.svg"
+          id="paper-border-top-left"
+          src="/images/page-borders/top-left-corner.svg"
           alt=""
-          style={{ position: 'absolute' }}
-          width={width}
-          height={550}
+          width={160}
+          height={281}
+        />
+        <Image
+          id="paper-border-bottom-right"
+          src="/images/page-borders/bottom-right-corner.svg"
+          alt=""
+          width={277}
+          height={276}
+        />
+        <Image
+          id="paper-border-top-edge"
+          src="/images/page-borders/top-edge.svg"
+          alt=""
+          width={331}
+          height={29}
+        />
+        <Image
+          id="paper-border-bottom-edge"
+          src="/images/page-borders/bottom-edge.svg"
+          alt=""
+          width={602}
+          height={42}
         />
 
         <Image
           src="/images/page-assets/cards.svg"
+          className="folder-asset"
           alt=""
-          style={{
-            position: 'absolute',
-            transform: 'rotate(8deg)',
-            top: '20%',
-            left: '15%'
-          }}
-          width={262}
-          height={187}
+          id="cards"
+          width={263}
+          height={188}
         />
 
         <Image
           src="/images/page-assets/magnifying-glass.svg"
           alt=""
-          style={{ position: 'absolute', left: '2%' }}
-          width={306}
-          height={511}
+          id="magnifying-glass"
+          className="folder-asset"
+          width={307}
+          height={513}
         />
 
         <Image
+          id="companies"
+          className="folder-asset"
           src="/images/page-assets/companies.svg"
           alt=""
-          style={{
-            position: 'absolute',
-            transform: 'rotate(29deg)',
-            top: '55%',
-            right: '12%'
-          }}
-          width={263}
-          height={178}
+          width={264}
+          height={179}
         />
 
         <Image
+          id="orgs"
+          className="folder-asset"
           src="/images/page-assets/orgs.svg"
           alt=""
-          style={{
-            position: 'absolute',
-            transform: 'rotate(-46deg)',
-            top: '28%',
-            right: '16%'
-          }}
-          width={258}
+          width={259}
           height={208}
         />
 
         <Image
+          id="polaroid"
+          className="folder-asset"
           src="/images/page-assets/polaroid.svg"
           alt=""
-          style={{
-            position: 'absolute',
-            transform: 'rotate(-21deg)',
-            top: '20%',
-            right: '45%'
-          }}
-          width={130}
+          width={132}
           height={150}
         />
 
         <Image
+          id="main-content"
+          className="folder-asset"
           src="/images/page-assets/main-content.svg"
           alt=""
-          style={{
-            position: 'absolute',
-            transform: 'rotate(-5deg)',
-            top: '60%',
-            right: '32%'
-          }}
-          width={405}
-          height={205}
+          width={406}
+          height={208}
         />
 
         <Image
+          id="feather"
+          className="folder-asset"
           src="/images/page-assets/feather.svg"
           alt=""
-          style={{
-            position: 'absolute',
-            right: '30%',
-            top: '30%',
-            transform: 'rotate(-22.5deg)'
-          }}
-          width={263}
-          height={147}
+          width={266}
+          height={150}
         />
 
         <Image
+          id="badge"
+          className="folder-asset"
           src="/images/page-assets/badge.svg"
           alt=""
-          style={{
-            position: 'absolute',
-            right: '15%',
-            top: '15%',
-            transform: 'rotate(12deg)'
-          }}
-          width={193}
+          width={194}
           height={260}
         />
 
-        <Image
-          src="/images/folder/flat-folder-bottom.svg"
-          alt=""
-          style={{
-            position: 'absolute',
-            top: '95px'
-          }}
-          width={width}
-          height={550}
-        />
-
         <div
-          ref={folderFlap}
-          style={{
-            ...sharedStyles, // Apply the folding rotation:
-            transformOrigin: 'center top',
-
-            // This optional prop can improve
-            // performance, by letting the
-            // browser optimize it:
-            willChange: 'transform',
-            transformStyle: 'preserve-3d'
+          id="folder"
+          onMouseEnter={() => setIsHoveringFolder(true)}
+          onMouseLeave={() => setIsHoveringFolder(false)}
+          onClick={openFolder}
+          role="button"
+          tabIndex={0}
+          onFocus={() => setIsHoveringFolder(true)}
+          onBlur={() => setIsHoveringFolder(false)}
+          onKeyDown={e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              openFolder();
+            }
           }}
         >
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: `url('/images/folder/flat-folder-flap-back.svg')`,
-              backgroundRepeat: 'no-repeat',
-              width,
-              backgroundSize: `${width}px ${height}px`,
-              backfaceVisibility: 'hidden',
-              transform: 'rotateX(180deg)'
-            }}
+          <Image
+            id="folder-back"
+            src="/images/folder/flat-folder-back.svg"
+            alt=""
+            width={754}
+            height={535}
           />
+          <Image
+            id="folder-bottom"
+            src="/images/folder/flat-folder-bottom.svg"
+            alt=""
+            width={754}
+            height={365}
+          />
+          <div id="folder-flap">
+            <div />
+          </div>
         </div>
+        <h1 id="click-to-open-text">Click/Tap To Open</h1>
       </div>
-      <div>
-        <h1 style={{ color: 'white', fontSize: '3rem', textAlign: 'center' }}>
-          click to open!
-        </h1>
-      </div>
-      <Flashlight />
     </div>
   );
 }
