@@ -1,0 +1,46 @@
+#navbar {
+  position: absolute;
+  z-index: 1;
+  padding: 3.5rem 3.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  #nav-logo-container {
+    display: grid;
+    gap: 10px;
+  }
+
+  #nav-button-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: $p-font;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 100%;
+
+    #about-button {
+      border-radius: 20px;
+      border: 2px solid $white;
+      background: black;
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    #register-button {
+      border-radius: 30px;
+      background: $white;
+      color: black;
+      padding: 1.125rem 2rem;
+      text-transform: uppercase;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

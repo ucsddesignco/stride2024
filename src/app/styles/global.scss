@@ -34,7 +34,7 @@ h4,
 button,
 input,
 label {
-  line-height: 1.1;
+  line-height: 100%;
 }
 
 h1,
@@ -42,13 +42,13 @@ h2,
 h3,
 h4 {
   font-family: $heading-font, Arial, sans-serif;
-  font-weight: 500;
-  line-height: 1.2;
+  line-height: 100%;
   margin: 0;
 }
 
 h1 {
   font-size: $h1-size;
+  font-style: italic;
 }
 
 h2 {
