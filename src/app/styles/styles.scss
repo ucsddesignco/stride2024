@@ -118,8 +118,20 @@ h3 {
 }
 
 .register-section {
-  button {
-    border: 3px solid white;
-    padding: 0.5rem 1rem;
+  .register-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 1s ease-in-out;
+
+    &:hover {
+      transform: scale(1);
+    }
+
+    .icon {
+      transition: opacity 1s ease;
+      display: block;
+    }
   }
 }
