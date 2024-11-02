@@ -10,11 +10,11 @@
 #folder {
   position: relative;
   width: calc(var(--folder-height) * 1.411);
-  // outline: 2px solid red;
+  //   outline: 2px solid red;
+  perspective: 800px;
 
   > img {
     position: absolute;
-    bottom: 0;
   }
   &:hover {
     cursor: pointer;
@@ -23,10 +23,13 @@
 
 #folder-back {
   width: auto;
+  bottom: 0;
+  z-index: 1;
 }
 #folder-bottom {
   width: auto;
-  z-index: 2;
+  bottom: 0;
+  z-index: 3;
 }
 
 #folder,
@@ -34,7 +37,8 @@
   height: var(--folder-height);
 }
 
-#folder-bottom {
+#folder-bottom,
+#page-folder-bottom {
   height: calc(var(--folder-height) * 0.6848);
   width: auto;
 }
@@ -46,7 +50,7 @@
   transform-origin: center top;
   position: relative;
   transform-style: preserve-3d;
-  z-index: 2;
+  z-index: 3;
 
   > div {
     position: absolute;
@@ -60,45 +64,125 @@
   }
 }
 
-.folder-asset {
+.page-asset {
   position: absolute;
-  height: auto;
+  display: none;
+  width: auto;
+  //   outline: 2px solid red;
   z-index: 1;
-  top: 50%;
-  left: 50%;
 }
 
-#badge {
-  height: calc(var(--folder-height) * 0.488);
-  transform: translate(65%, -125%) rotate(12deg);
+.folder-asset {
+  position: absolute;
+  width: auto;
+  z-index: 1;
 }
-#feather {
-  height: calc(var(--folder-height) * 0.281);
-  transform: translate(-40%, -200%) rotate(-22.5deg);
+
+#badge,
+#folder-badge {
+  height: calc(var(--folder-height) * 0.524);
 }
-#main-content {
-  height: calc(var(--folder-height) * 0.39);
-  transform: translate(-58%, -60%) rotate(-5deg);
+#feather,
+#folder-feather {
+  height: calc(var(--folder-height) * 0.424);
 }
-#polaroid {
-  height: calc(var(--folder-height) * 0.281);
-  transform: translate(-90%, -200%) rotate(-21deg);
+#main-content,
+#folder-main-content {
+  height: calc(var(--folder-height) * 0.373);
 }
-#orgs {
-  height: calc(var(--folder-height) * 0.39);
-  transform: translate(20%, -140%) rotate(-46deg);
+#polaroid,
+#folder-polaroid {
+  height: calc(var(--folder-height) * 0.349);
 }
-#companies {
-  height: calc(var(--folder-height) * 0.336);
-  transform: translate(35%, -70%) rotate(29deg);
+#orgs,
+#folder-orgs {
+  height: calc(var(--folder-height) * 0.565);
 }
-#magnifying-glass {
-  height: calc(var(--folder-height) * 0.962);
-  transform: translate(-100%, -65%);
+#companies,
+#folder-companies {
+  height: calc(var(--folder-height) * 0.402);
 }
-#cards {
+#magnifying-glass,
+#folder-magnifying-glass {
+  height: calc(var(--folder-height) * 0.884);
+}
+#cards,
+#folder-cards {
   height: calc(var(--folder-height) * 0.353);
-  transform: translate(-110%, -140%) rotate(8deg);
+}
+
+// TODO: DELETE LATER
+// #badge {
+//   bottom: 15%;
+//   right: -3%;
+//   transform: rotate(-11deg);
+// }
+// #feather {
+//   top: 0;
+//   right: 40%;
+//   transform: rotate(10deg);
+// }
+// #main-content {
+//   bottom: 30%;
+//   right: 50%;
+//   transform: translateX(50%);
+// }
+// #polaroid {
+//   top: 0;
+//   right: 55%;
+// }
+// #orgs {
+//   bottom: 5%;
+//   left: 1%;
+//   transform: rotate(42deg);
+// }
+// #companies {
+//   top: 28%;
+//   right: 3%;
+//   transform: rotate(-30deg);
+// }
+// #magnifying-glass {
+//   left: 0%;
+//   bottom: 25%;
+//   transform: rotate(54deg);
+// }
+// #cards {
+//   top: 32%;
+//   left: 8%;
+// }
+
+/* folder asset positions */
+#folder-badge {
+  top: 15%;
+  right: 5%;
+}
+#folder-feather {
+  top: 18%;
+  right: 30%;
+}
+#folder-main-content {
+  bottom: 10%;
+  right: 27%;
+}
+#folder-polaroid {
+  top: 18%;
+  right: 41%;
+}
+#folder-orgs {
+  top: 15%;
+  right: 11%;
+}
+#folder-companies {
+  bottom: 2%;
+  right: 7%;
+}
+#folder-magnifying-glass {
+  left: 5%;
+  bottom: 5%;
+}
+#folder-cards {
+  top: 27%;
+  left: 14%;
 }
 
 #click-to-open-text {
@@ -137,8 +221,8 @@
   left: 30%;
 }
 
+/* Styles for landscape screens (aspect ratio greater than 1) */
 @media (max-aspect-ratio: 1/1) {
-  /* Styles for landscape screens (aspect ratio greater than 1) */
   #folder {
     height: calc(var(--folder-width) * 0.708);
   }
