@@ -1,17 +1,15 @@
 import { useState } from 'react';
+import { companies } from './companies';
 import './Companies.scss';
 
-const buttonLabels = ['Button 1', 'Button 2', 'Button 3'];
-
 export default function Companies() {
-  const [selectedButton, setSelectedButton] = useState<number | null>(null);
-
+  const [selectedButton, setSelectedButton] = useState<string | null>(null);
   return (
     <div className="companies-section info">
       <h2 className="section-title">Companies and Organizations</h2>
       <svg
-        width="820"
-        height="971"
+        width="920"
+        height="1071"
         viewBox="0 0 820 971"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -87,47 +85,55 @@ export default function Companies() {
         <text x="15%" y="10%" className="title">
           Recruiting
         </text>
-        {buttonLabels.map((label, index) => (
-          <foreignObject
-            key={label}
-            x={125 + index * 140}
-            y="12.5%" // Adjust Y position for each button
-            width="120"
-            height="50"
-            className="button-display"
-          >
-            <div>
-              <button
-                className={`svg-button ${selectedButton === index ? 'selected' : ''}`}
-                onClick={() => setSelectedButton(index)}
+        <g className="button-grid">
+          {companies
+            .filter(obj => obj.org_type === 'Recruiting')
+            .map((obj, index) => (
+              <foreignObject
+                key={obj.company}
+                x={125 + (index % 2) * 300}
+                y={120 + Math.floor(index / 2) * 55}
+                width={200 + obj.company.length * 2}
+                height="50"
+                className="button-display"
               >
-                <p>{label}</p>
-              </button>
-            </div>
-          </foreignObject>
-        ))}
-        <text x="15%" y="30%" className="title">
+                <div>
+                  <button
+                    className={`svg-button ${selectedButton === obj.company ? 'selected' : ''}`}
+                    onClick={() => setSelectedButton(obj.company)}
+                  >
+                    <p key={obj.company}>{obj.company}</p>
+                  </button>
+                </div>
+              </foreignObject>
+            ))}
+        </g>
+        <text x="15%" y="35%" className="title">
           Networking Only
         </text>
-        {buttonLabels.map((label, index) => (
-          <foreignObject
-            key={label}
-            x={125 + index * 140}
-            y="32.5%" // Adjust Y position for each button
-            width="120"
-            height="50"
-            className="button-display"
-          >
-            <div>
-              <button
-                className={`svg-button ${selectedButton === index ? 'selected' : ''}`}
-                onClick={() => setSelectedButton(index)}
+        <g className="button-grid">
+          {companies
+            .filter(obj => obj.org_type === 'Networking Only')
+            .map((obj, index) => (
+              <foreignObject
+                key={obj.company}
+                x={125 + index * 175}
+                y={375 + Math.floor(index / 2) * 65}
+                width={120 + obj.company.length * 5}
+                height="50"
+                className="button-display"
               >
-                <p>{label}</p>
-              </button>
-            </div>
-          </foreignObject>
-        ))}
+                <div>
+                  <button
+                    className={`svg-button ${selectedButton === obj.company ? 'selected' : ''}`}
+                    onClick={() => setSelectedButton(obj.company)}
+                  >
+                    <p key={obj.company}>{obj.company}</p>
+                  </button>
+                </div>
+              </foreignObject>
+            ))}
+        </g>
       </svg>
     </div>
   );
