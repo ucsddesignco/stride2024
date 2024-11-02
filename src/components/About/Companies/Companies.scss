@@ -10,7 +10,7 @@
       height: 100%;
       padding: 4px;
       color: white;
-      border: 2px solid white; // Thicker border
+      border: 2px solid white;
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
@@ -22,6 +22,16 @@
 
         p {
           color: #6ee7b7;
+        }
+      }
+
+      &.selected {
+        background-color: #6ee7b7;
+        border-color: #6ee7b7;
+
+        p {
+          background-color: inherit;
+          color: black;
         }
       }
     }

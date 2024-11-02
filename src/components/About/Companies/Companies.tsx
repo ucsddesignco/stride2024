@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import './Companies.scss';
 
 const buttonLabels = ['Button 1', 'Button 2', 'Button 3'];
 
 export default function Companies() {
+  const [selectedButton, setSelectedButton] = useState<number | null>(null);
+
   return (
     <div className="companies-section info">
       <h2 className="section-title">Companies and Organizations</h2>
@@ -94,7 +97,10 @@ export default function Companies() {
             className="button-display"
           >
             <div>
-              <button className="svg-button">
+              <button
+                className={`svg-button ${selectedButton === index ? 'selected' : ''}`}
+                onClick={() => setSelectedButton(index)}
+              >
                 <p>{label}</p>
               </button>
             </div>
@@ -113,7 +119,10 @@ export default function Companies() {
             className="button-display"
           >
             <div>
-              <button className="svg-button">
+              <button
+                className={`svg-button ${selectedButton === index ? 'selected' : ''}`}
+                onClick={() => setSelectedButton(index)}
+              >
                 <p>{label}</p>
               </button>
             </div>
