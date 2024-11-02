@@ -1,3 +1,5 @@
+import './Agenda.scss';
+
 const times = [
   '9:00 AM',
   '10:00 AM',

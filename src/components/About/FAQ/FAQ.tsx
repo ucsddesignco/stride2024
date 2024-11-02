@@ -1,119 +1,68 @@
+import React from 'react';
+import Image from 'next/image';
 import * as Accordion from '@radix-ui/react-accordion';
-import React, { ReactNode } from 'react';
-import classNames from 'classnames';
-import { ChevronDownIcon } from '@radix-ui/react-icons';
-
-interface AccordionTriggerProps
-  extends React.ComponentPropsWithoutRef<typeof Accordion.Trigger> {
-  children: ReactNode;
-  className?: string;
-}
-
-const AccordionTrigger = React.forwardRef<
-  HTMLButtonElement,
-  AccordionTriggerProps
->(({ children, className, ...props }, forwardedRef) => (
-  <Accordion.Header className="AccordionHeader">
-    <Accordion.Trigger
-      className={classNames('AccordionTrigger', className)}
-      ref={forwardedRef}
-      id={props.id}
-      aria-expanded={props['aria-expanded']}
-      onClick={props.onClick}
-    >
-      {children}
-      <ChevronDownIcon className="AccordionChevron" aria-hidden />
-    </Accordion.Trigger>
-  </Accordion.Header>
-));
-AccordionTrigger.displayName = 'AccordionTrigger';
-
-interface AccordionContentProps
-  extends React.ComponentPropsWithoutRef<typeof Accordion.Content> {
-  children: ReactNode;
-  className?: string;
-}
-
-const AccordionContent = React.forwardRef<
-  HTMLDivElement,
-  AccordionContentProps
->(({ children, className, ...props }, forwardedRef) => (
-  <Accordion.Content
-    className={classNames('AccordionContent', className)}
-    ref={forwardedRef}
-    id={props.id}
-  >
-    <div className="AccordionContentText">{children}</div>
-  </Accordion.Content>
-));
-AccordionContent.displayName = 'AccordionContent';
+import { FAQData } from './constants';
+import './FAQ.scss';
 
 export default function FAQ() {
   return (
-    <div className="faq-section info">
+    <section className="faq-section info">
+      <div className="top-paper">
+        <svg
+          viewBox="0 0 400 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M413.071 11.7459L408.404 9.4122L404.67 11.7459L399.069 9.4122L392.534 15.0132L382.733 7.54523L377.132 5.67822H371.997L363.596 1.01072L355.194 2.8777H347.726L343.526 5.67822L338.391 7.54523H329.056L320.655 4.27798L315.054 2.8777H307.119L301.518 5.67822H290.783L280.048 10.8125H274.447L271.179 14.5465H249.242L245.041 13.1462H240.374L238.04 10.8125H234.306H230.572L227.305 8.94547H223.104L216.57 10.8125L213.302 13.1462H208.635L202.567 16.8802H194.632H186.231L180.63 18.7472H175.029L170.361 16.8802L165.227 14.5465H160.56L153.558 16.8802H147.957L143.757 18.7472H138.156L132.088 16.8802H125.553L119.486 14.5465H114.351H103.149L96.1481 16.8802H92.4142L86.8131 15.9467H82.1456L76.0779 13.1462H69.0767H63.0089L58.8081 16.8802H54.6074L50.8734 15.9467L45.2724 16.8802H41.5384H37.3377L33.1369 14.5465L27.5359 13.1462L22.4017 11.7459H17.7341L14.0002 15.9467L10.7329 20.1475H6.99892L3.2649 18.7472H-0.469087L-3.73634 16.8802H-13.0713"
+            stroke="#FBFEFC"
+            stroke-width="0.575091"
+          />
+        </svg>
+      </div>
+
       <h2 className="section-title">Frequently Asked Questions</h2>
       <div className="faq-accordion">
-        <Accordion.Root
-          className="AccordionRoot"
-          type="single"
-          defaultValue="item-1"
-          collapsible
-        >
-          <Accordion.Item className="AccordionItem" value="item-1">
-            <AccordionTrigger>When is Stride?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
-            </AccordionContent>
-          </Accordion.Item>
-
-          <Accordion.Item className="AccordionItem" value="item-2">
-            <AccordionTrigger>Who can attend Stride?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It&apos;s unstyled by default, giving you freedom over the
-              look and feel.
-            </AccordionContent>
-          </Accordion.Item>
-
-          <Accordion.Item
-            aria-label="accordion"
-            className="AccordionItem"
-            value="item-3"
-          >
-            <AccordionTrigger>How should I dress for Stride?</AccordionTrigger>
-            <AccordionContent>
-              <div className="AccordionContentText">
-                Yes! You can animate the Accordion with CSS or JavaScript.
-              </div>
-            </AccordionContent>
-          </Accordion.Item>
-
-          <Accordion.Item
-            aria-label="accordion"
-            className="AccordionItem"
-            value="item-4"
-          >
-            <AccordionTrigger>How can I prepare for Stride?</AccordionTrigger>
-            <AccordionContent>
-              <div className="AccordionContentText">
-                Yes! You can animate the Accordion with CSS or JavaScript.
-              </div>
-            </AccordionContent>
-          </Accordion.Item>
+        <Accordion.Root className="AccordionRoot" type="single" collapsible>
+          {FAQData.map((item, index) => (
+            <Accordion.Item
+              key={item.title}
+              className="AccordionItem"
+              value={`item-${index + 1}`}
+            >
+              <Accordion.Trigger className="AccordionTrigger">
+                <div>
+                  <h3>{item.title}</h3>
+                  <Image
+                    className="down-arrow-icon"
+                    src="/images/icons/down-arrow-icon.svg"
+                    height={24}
+                    width={24}
+                    alt="Down arrow"
+                    aria-hidden
+                  />
+                </div>
+              </Accordion.Trigger>
+              <Accordion.Content className="AccordionContent">
+                <p>{item.content}</p>
+              </Accordion.Content>
+            </Accordion.Item>
+          ))}
         </Accordion.Root>
       </div>
-      <svg
-        width="100%"
-        height="21"
-        viewBox="0 0 320 21"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M-53.0713 9.20718L-48.4038 11.5409L-44.6698 9.20718L-39.0688 11.5409L-32.5343 5.93993L-22.7325 13.4079L-17.1316 15.2749H-11.9973L-3.59579 19.9424L4.80571 18.0754H12.2737L16.4744 15.2749L21.6087 13.4079H30.9437L39.3452 16.6751L44.9462 18.0754H52.8809L58.4819 15.2749H69.2172L79.9524 10.1406H85.5534L88.8207 6.40666H110.758L114.959 7.8069H119.626L121.96 10.1406H125.694H129.428L132.695 12.0077H136.896L143.43 10.1406L146.698 7.8069H151.365L157.433 4.07292H165.368H173.769L179.37 2.2059H184.971L189.639 4.07292L194.773 6.40666H199.44L206.442 4.07292H212.043L216.243 2.2059H221.844L227.912 4.07292H234.447L240.514 6.40666H245.649H256.851L263.852 4.07292H267.586L273.187 5.00642H277.854L283.922 7.8069H290.923H296.991L301.192 4.07292H305.393L309.127 5.00642L314.728 4.07292H318.462H322.662L326.863 6.40666L332.464 7.8069L337.598 9.20718H342.266L346 5.00642L349.267 0.805664H353.001L356.735 2.2059H360.469L363.736 4.07292H373.071"
-          stroke="#FBFEFC"
-          strokeWidth="0.575091"
-        />
-      </svg>
-    </div>
+      <div className="bottom-paper">
+        <svg
+          viewBox="0 0 400 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M413.071 11.7459L408.404 9.4122L404.67 11.7459L399.069 9.4122L392.534 15.0132L382.733 7.54523L377.132 5.67822H371.997L363.596 1.01072L355.194 2.8777H347.726L343.526 5.67822L338.391 7.54523H329.056L320.655 4.27798L315.054 2.8777H307.119L301.518 5.67822H290.783L280.048 10.8125H274.447L271.179 14.5465H249.242L245.041 13.1462H240.374L238.04 10.8125H234.306H230.572L227.305 8.94547H223.104L216.57 10.8125L213.302 13.1462H208.635L202.567 16.8802H194.632H186.231L180.63 18.7472H175.029L170.361 16.8802L165.227 14.5465H160.56L153.558 16.8802H147.957L143.757 18.7472H138.156L132.088 16.8802H125.553L119.486 14.5465H114.351H103.149L96.1481 16.8802H92.4142L86.8131 15.9467H82.1456L76.0779 13.1462H69.0767H63.0089L58.8081 16.8802H54.6074L50.8734 15.9467L45.2724 16.8802H41.5384H37.3377L33.1369 14.5465L27.5359 13.1462L22.4017 11.7459H17.7341L14.0002 15.9467L10.7329 20.1475H6.99892L3.2649 18.7472H-0.469087L-3.73634 16.8802H-13.0713"
+            stroke="#FBFEFC"
+            stroke-width="0.575091"
+          />
+        </svg>
+      </div>
+    </section>
   );
 }

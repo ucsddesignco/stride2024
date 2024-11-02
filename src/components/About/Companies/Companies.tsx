@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { companies } from './companies';
 import './Companies.scss';
+import { companies } from './constants';
 
 export default function Companies() {
   const [selectedButton, setSelectedButton] = useState<string | null>(null);

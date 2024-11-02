@@ -9,16 +9,15 @@ $white: #fbfefc;
 $nav-height: calc(60px + 10px + 12px + 2 * 3.75rem);
 
 $mobile-breakpoint: 768px;
-$tablet-breakpoint: 1366px;
+$tablet-breakpoint: 1024px;
 
 $nav-padding-mobile: 24px;
 $nav-padding-desktop: 36px;
 
-$main-padding-mobile: 24px;
 $main-padding-desktop: clamp(24px, 5px + 5vw, 6rem);
 
 //Font Sizes
 $h1-size: clamp(2rem, calc(1.5rem + 1.5vw), 2.5rem);
-$h2-size: clamp(1.2rem, calc(1.125rem + 0.8vw), 2rem);
-$h3-size: clamp(1rem, calc(0.75rem + 0.5vw), 1.5rem);
-$p-size: clamp(1rem, calc(1rem + 0.3vw), 1.5rem);
+$h2-size: clamp(1.3rem, calc(1.125rem + 0.8vw), 2rem);
+$h3-size: clamp(1.2rem, calc(0.75rem + 0.5vw), 1.5rem);
+$p-size: clamp(1.125rem, calc(1rem + 0.3vw), 1.5rem);
