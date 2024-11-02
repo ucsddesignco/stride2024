@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { gsap, Power2, Power3, Power4 } from 'gsap';
+import { gsap, Power1, Power2, Power3, Power4 } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import '@/app/home.scss';
+import '@/app/Home.scss';
 import Image from 'next/image';
 // import Flashlight from '@/components/Flashlight/Flashlight';
 
@@ -63,37 +63,37 @@ export default function Page() {
 
       if (folderBadgeRect && badge.current) {
         badge.current.style.position = 'absolute';
-        badge.current.style.top = `${folderBadgeRect.top}px`;
-        badge.current.style.left = `${folderBadgeRect.left}px`;
+        badge.current.style.bottom = `calc(100vh - ${folderBadgeRect.bottom}px)`;
+        badge.current.style.right = `calc(100vw - ${folderBadgeRect.right}px)`;
       }
       if (folderFeatherRect && feather.current) {
         feather.current.style.position = 'absolute';
         feather.current.style.top = `${folderFeatherRect.top}px`;
-        feather.current.style.left = `${folderFeatherRect.left}px`;
+        feather.current.style.right = `calc(100vw - ${folderFeatherRect.right}px)`;
       }
       if (folderMainContentRect && mainContent.current) {
         mainContent.current.style.position = 'absolute';
-        mainContent.current.style.top = `${folderMainContentRect.top}px`;
-        mainContent.current.style.left = `${folderMainContentRect.left}px`;
+        mainContent.current.style.bottom = `calc(100vh - ${folderMainContentRect.bottom}px)`;
+        mainContent.current.style.right = `calc(100vw - ${folderMainContentRect.right}px)`;
       }
       if (folderPolaroidRect && polaroid.current) {
         polaroid.current.style.position = 'absolute';
         polaroid.current.style.top = `${folderPolaroidRect.top}px`;
-        polaroid.current.style.left = `${folderPolaroidRect.left}px`;
+        polaroid.current.style.right = `calc(100vw - ${folderPolaroidRect.right}px)`;
       }
       if (folderOrgsRect && orgs.current) {
         orgs.current.style.position = 'absolute';
-        orgs.current.style.top = `${folderOrgsRect.top}px`;
+        orgs.current.style.bottom = `calc(100vh - ${folderOrgsRect.bottom}px)`;
         orgs.current.style.left = `${folderOrgsRect.left}px`;
       }
       if (folderCompaniesRect && companies.current) {
         companies.current.style.position = 'absolute';
         companies.current.style.top = `${folderCompaniesRect.top}px`;
-        companies.current.style.left = `${folderCompaniesRect.left}px`;
+        companies.current.style.right = `calc(100vw - ${folderCompaniesRect.right}px)`;
       }
       if (folderMagnifyingGlassRect && magnifyingGlass.current) {
         magnifyingGlass.current.style.position = 'absolute';
-        magnifyingGlass.current.style.top = `${folderMagnifyingGlassRect.top}px`;
+        magnifyingGlass.current.style.bottom = `calc(100vh - ${folderMagnifyingGlassRect.bottom}px)`;
         magnifyingGlass.current.style.left = `${folderMagnifyingGlassRect.left}px`;
       }
       if (folderCardsRect && cards.current) {
@@ -118,6 +118,9 @@ export default function Page() {
   const openFolder = () => {
     setFolderOpenned(true);
     const tl = gsap.timeline();
+    const pageElementSpreadDuration = 1;
+    const pageElementSpreadEase = Power2.easeIn;
+    /* folder openning animation and swaping folder elements for page elements */
     tl.to('#folder-flap', {
       rotateX: 160,
       duration: 0.5,
@@ -127,13 +130,128 @@ export default function Page() {
       gsap.set('#click-to-open-text', { visibility: 'hidden' });
       gsap.set('.page-asset', { display: 'block' });
     });
-    tl.to(['#folder', '#page-folder-bottom'], {
-      translateY: '105vh',
-      translateX: -50,
-      rotate: 10,
-      duration: 1.5,
-      ease: Power4.easeOut
+    /* page elements rise up out of folder */
+    tl.to('.page-asset:not(#page-folder-bottom)', {
+      translateY: '-5vh',
+      duration: 1,
+      ease: Power1.easeInOut
     });
+    /* folder falling animation */
+    tl.to(
+      ['#folder', '#page-folder-bottom'],
+      {
+        translateY: '105vh',
+        translateX: -50,
+        rotate: 10,
+        duration: 1.5,
+        ease: Power4.easeInOut
+      },
+      '<' // folder drop animation starts at same time as elements rise starts
+    );
+    /* page elements spreading out animation */
+    tl.to(
+      '.page-asset:not(#page-folder-bottom)',
+      {
+        translateY: '0', // revert "up" added to page elements by prev animation
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<0.5' // page elements all animate 0.5s after folder drop animation starts
+    );
+    tl.to(
+      '#badge',
+      {
+        bottom: '15%',
+        right: '-3%',
+        rotate: -11,
+        scale: 1.67,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#feather',
+      {
+        top: 0,
+        right: '40%',
+        rotate: 10,
+        scale: 1.67,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#main-content',
+      {
+        bottom: '30%',
+        right: '50%',
+        translateX: '50%',
+        scale: 1.67,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#polaroid',
+      {
+        top: 0,
+        right: '55%',
+        scale: 1.67,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#orgs',
+      {
+        bottom: '5%',
+        left: '1%',
+        rotate: 42,
+        scale: 1.67,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#companies',
+      {
+        top: '28%',
+        right: '3%',
+        rotate: -30,
+        scale: 1.67,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#magnifying-glass',
+      {
+        left: '0%',
+        bottom: '25%',
+        rotate: 54,
+        scale: 1.67,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#cards',
+      {
+        top: '32%',
+        left: '7%',
+        scale: 1.67,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
   };
 
   useGSAP(
