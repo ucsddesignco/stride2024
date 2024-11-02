@@ -23,50 +23,48 @@ h3 {
     margin-bottom: 2rem;
   }
 
+  .card-text {
+    font: italic 13px sans-serif;
+  }
+
   .opportunities-section {
-    .opportunites-features {
+    .opportunities-features {
+      display: flex;
+      gap: 5rem;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 3.5rem;
+
       figure {
         position: relative;
-        width: 200px;
-        height: 200px; /* Adjust the height as needed */
+        width: 300px;
+        height: 300px; /* Adjust the height as needed */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        animation: sway 5s infinite alternate ease-in-out;
-      }
+        animation: sway 3s infinite alternate ease-in-out;
 
-      figure img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        border: 5px solid white; /* Polaroid frame */
-      }
-
-      figcaption {
-        text-align: center;
-        padding: 5px;
-        background-color: white;
-        font-family: Arial, sans-serif;
-        margin-left: 10px;
-      }
-
-      .pin {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-color: red;
-        margin: 0 50%;
-        border-radius: 50%;
-        animation: none !important;
-        border: 5px solid black;
-      }
-
-      @keyframes sway {
-        0% {
-          transform: rotate(-3deg);
-        }
-        100% {
-          transform: rotate(3deg);
+        .card-text {
+          font-size: 25px;
         }
       }
+
+      @media only screen and (min-width: 760px) {
+        @keyframes sway {
+          0% {
+            transform: rotate(-3deg);
+          }
+          100% {
+            transform: rotate(3deg);
+          }
+        }
+      }
+    }
+  }
+
+  .agenda-section {
+    .agenda-text {
+      font-size: 35px;
+      font-weight: bold;
     }
   }
 
