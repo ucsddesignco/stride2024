@@ -1,0 +1,17 @@
+#about-register-button {
+  svg {
+    fill: none;
+
+    &:hover {
+      fill: green;
+    }
+
+    #about-register-button-border {
+      stroke: red;
+    }
+
+    #about-register-button-text {
+      fill: white;
+    }
+  }
+}
