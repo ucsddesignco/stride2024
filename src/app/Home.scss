@@ -1,3 +1,230 @@
-#folder:hover {
-  cursor: pointer;
+// * {
+//   outline: 2px solid lime;
+// }
+
+:root {
+  --folder-width: 80vw;
+  --folder-height: 50vh;
+}
+
+#folder {
+  position: relative;
+  width: calc(var(--folder-height) * 1.411);
+  // outline: 2px solid red;
+
+  > img {
+    position: absolute;
+    bottom: 0;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#folder-back {
+  width: auto;
+}
+#folder-bottom {
+  width: auto;
+  z-index: 2;
+}
+
+#folder,
+#folder-back {
+  height: var(--folder-height);
+}
+
+#folder-bottom {
+  height: calc(var(--folder-height) * 0.6848);
+  width: auto;
+}
+
+#folder-flap {
+  height: calc(var(--folder-height) * 0.3384);
+  background-size: 100% 100%;
+  background-image: url('/images/folder/flat-folder-flap-front.svg');
+  transform-origin: center top;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 2;
+
+  > div {
+    position: absolute;
+    inset: 0;
+    background: url('/images/folder/flat-folder-flap-back.svg');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100% auto;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+  }
+}
+
+.folder-asset {
+  position: absolute;
+  height: auto;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+}
+
+#badge {
+  height: calc(var(--folder-height) * 0.488);
+  transform: translate(65%, -125%) rotate(12deg);
+}
+#feather {
+  height: calc(var(--folder-height) * 0.281);
+  transform: translate(-40%, -200%) rotate(-22.5deg);
+}
+#main-content {
+  height: calc(var(--folder-height) * 0.39);
+  transform: translate(-58%, -60%) rotate(-5deg);
+}
+#polaroid {
+  height: calc(var(--folder-height) * 0.281);
+  transform: translate(-90%, -200%) rotate(-21deg);
+}
+#orgs {
+  height: calc(var(--folder-height) * 0.39);
+  transform: translate(20%, -140%) rotate(-46deg);
+}
+#companies {
+  height: calc(var(--folder-height) * 0.336);
+  transform: translate(35%, -70%) rotate(29deg);
+}
+#magnifying-glass {
+  height: calc(var(--folder-height) * 0.962);
+  transform: translate(-100%, -65%);
+}
+#cards {
+  height: calc(var(--folder-height) * 0.353);
+  transform: translate(-110%, -140%) rotate(8deg);
+}
+
+#click-to-open-text {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+#paper-border-top-left,
+#paper-border-bottom-right,
+#paper-border-top-edge,
+#paper-border-bottom-edge {
+  position: absolute;
+  z-index: 4;
+  height: auto;
+}
+
+#paper-border-top-left {
+  width: calc(var(--folder-height) * 0.5);
+  top: -1%;
+  left: -1%;
+}
+#paper-border-bottom-right {
+  width: calc(var(--folder-height) * 0.4);
+  bottom: 0;
+  right: 0;
+}
+#paper-border-top-edge {
+  width: calc(var(--folder-height) * 0.8);
+  top: 0;
+  right: 0;
+}
+#paper-border-bottom-edge {
+  width: calc(var(--folder-height) * 0.7);
+  bottom: 0;
+  left: 30%;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  /* Styles for landscape screens (aspect ratio greater than 1) */
+  #folder {
+    height: calc(var(--folder-width) * 0.708);
+  }
+
+  #folder-back {
+    height: auto;
+  }
+  #folder-bottom {
+    height: auto;
+    z-index: 2;
+  }
+
+  #folder,
+  #folder-back,
+  #folder-bottom,
+  #folder-flap {
+    width: var(--folder-width);
+  }
+
+  #folder-flap {
+    height: calc(var(--folder-width) * 0.24);
+  }
+
+  #badge,
+  #feather,
+  #main-content,
+  #polaroid,
+  #orgs,
+  #companies,
+  #magnifying-glass,
+  #cards {
+    height: auto;
+  }
+
+  #badge {
+    width: calc(var(--folder-width) * 0.258);
+    transform: translate(65%, -125%) rotate(12deg);
+  }
+  #feather {
+    width: calc(var(--folder-width) * 0.354);
+    transform: translate(-40%, -200%) rotate(-22.5deg);
+  }
+  #main-content {
+    width: calc(var(--folder-width) * 0.54);
+    transform: translate(-58%, -60%) rotate(-5deg);
+  }
+  #polaroid {
+    width: calc(var(--folder-width) * 0.176);
+    transform: translate(-90%, -200%) rotate(-21deg);
+  }
+  #orgs {
+    width: calc(var(--folder-width) * 0.344);
+    transform: translate(20%, -140%) rotate(-46deg);
+  }
+  #companies {
+    width: calc(var(--folder-width) * 0.351);
+    transform: translate(35%, -70%) rotate(29deg);
+  }
+  #magnifying-glass {
+    width: calc(var(--folder-width) * 0.408);
+    transform: translate(-130%, -75%);
+  }
+  #cards {
+    width: calc(var(--folder-width) * 0.35);
+    transform: translate(-110%, -140%) rotate(8deg);
+  }
+
+  #paper-border-top-left {
+    width: calc(var(--folder-width) * 0.4);
+    top: -3%;
+    left: -2%;
+  }
+  #paper-border-bottom-right {
+    width: calc(var(--folder-width) * 0.4);
+    bottom: 0;
+    left: 0;
+    transform: scaleX(-1);
+  }
+  #paper-border-top-edge {
+    width: calc(var(--folder-width) * 0.8);
+    top: 0;
+    right: 0;
+  }
+  #paper-border-bottom-edge {
+    width: calc(var(--folder-width) * 0.7);
+    bottom: 0;
+    right: 0;
+  }
 }

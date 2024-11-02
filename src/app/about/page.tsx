@@ -4,7 +4,7 @@ import React, { ReactNode, useRef, useState } from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import classNames from 'classnames';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-import './about.scss';
+import './About.scss';
 
 interface AccordionTriggerProps
   extends React.ComponentPropsWithoutRef<typeof Accordion.Trigger> {

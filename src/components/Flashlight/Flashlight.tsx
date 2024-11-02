@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import './flashlight.scss';
-import Cursor from 'public/Cursor.svg';
+import '@/components/Flashlight/Flashlight.scss';
+// import Cursor from 'public/Cursor.svg';
+import { useEffect } from 'react';
 
-const Flashlight: React.FC = function Flashlight() {
+export default function Flashlight() {
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       document.documentElement.style.setProperty(
@@ -29,6 +29,4 @@ const Flashlight: React.FC = function Flashlight() {
       <div className="ring-outer" />
     </>
   );
-};
-
-export default Flashlight;
+}

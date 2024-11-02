@@ -1,8 +1,12 @@
-$p-font: var(--font-nbinternational);
-$heading-font: var(--font-neueplak);
-$mono-font: var(--font-nbinternational-mono);
+$p-font: var(--font-iosevka);
+$heading-font: var(--font-iosevka);
+$mono-font: var(--font-iosevka);
 
 $light-green: #68dea3;
+$white: #fbfefc;
+
+// Stide Logo + Gap + DCo Logo + Padding
+$nav-height: calc(60px + 10px + 12px + 2 * 3.75rem);
 
 $mobile-breakpoint: 768px;
 $tablet-breakpoint: 1366px;
