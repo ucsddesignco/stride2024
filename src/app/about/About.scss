@@ -1,0 +1,187 @@
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/violet.css';
+
+/* reset */
+button,
+h3 {
+  all: unset;
+}
+
+* {
+  background-color: black;
+  color: white;
+}
+
+.about-page-container {
+  margin-top: $nav-height;
+  max-width: fit-content;
+  margin-left: 20%;
+  margin-right: 20%;
+
+  .info,
+  .section-title {
+    margin-bottom: 2rem;
+  }
+
+  .card-text {
+    font: italic 13px sans-serif;
+  }
+
+  .opportunities-section {
+    .opportunities-features {
+      display: flex;
+      gap: 5rem;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 3.5rem;
+
+      figure {
+        position: relative;
+        width: 300px;
+        height: 300px; /* Adjust the height as needed */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        animation: sway 3s infinite alternate ease-in-out;
+
+        .card-text {
+          font-size: 25px;
+        }
+      }
+
+      @media only screen and (min-width: 760px) {
+        @keyframes sway {
+          0% {
+            transform: rotate(-3deg);
+          }
+          100% {
+            transform: rotate(3deg);
+          }
+        }
+      }
+    }
+  }
+
+  .agenda-section {
+    .agenda-text {
+      font-size: 35px;
+      font-weight: bold;
+    }
+  }
+
+  .faq-section {
+    /* Accordion Styling */
+
+    .AccordionRoot {
+      border-radius: 6px;
+      width: 100%;
+      background-color: var(--mauve-6);
+      box-shadow: 0 2px 10px var(--black-a4);
+    }
+
+    .AccordionItem {
+      overflow: hidden;
+      margin-top: 1px;
+    }
+
+    .AccordionItem:first-child {
+      margin-top: 0;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    .AccordionItem:last-child {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    .AccordionItem:focus-within {
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 2px var(--mauve-12);
+    }
+
+    .AccordionHeader {
+      display: flex;
+    }
+
+    .AccordionTrigger {
+      font-family: inherit;
+      background-color: transparent;
+      padding: 0 20px;
+      height: 45px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 15px;
+      line-height: 1;
+      color: var(--mauve-2);
+      box-shadow: 0 1px 0 var(--mauve-6);
+      background-color: black;
+    }
+
+    .AccordionContent {
+      overflow: hidden;
+      font-size: 15px;
+      color: var(--mauve-11);
+      background-color: var(--mauve-2);
+    }
+    .AccordionContent[data-state='open'] {
+      animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+    .AccordionContent[data-state='closed'] {
+      animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+
+    .AccordionContentText {
+      padding: 15px 20px;
+    }
+
+    .AccordionChevron {
+      color: var(--violet-10);
+      transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+    .AccordionTrigger[data-state='open'] > .AccordionChevron {
+      transform: rotate(180deg);
+    }
+
+    @keyframes slideDown {
+      from {
+        height: 0;
+      }
+      to {
+        height: var(--radix-accordion-content-height);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        height: var(--radix-accordion-content-height);
+      }
+      to {
+        height: 0;
+      }
+    }
+  }
+
+  .register-section {
+    margin-top: 2rem;
+    .register-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: transform 1s ease-in-out;
+
+      &:hover {
+        transform: scale(1);
+      }
+
+      .icon {
+        transition: opacity 1s ease;
+        display: block;
+      }
+    }
+  }
+}

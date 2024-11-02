@@ -1,3 +1,7 @@
+import './Companies.scss';
+
+const buttonLabels = ['Button 1', 'Button 2', 'Button 3'];
+
 export default function Companies() {
   return (
     <div className="companies-section info">
@@ -77,6 +81,44 @@ export default function Companies() {
           stroke="#68DEA3"
           strokeWidth="2.68804"
         />
+        <text x="15%" y="10%" className="title">
+          Recruiting
+        </text>
+        {buttonLabels.map((label, index) => (
+          <foreignObject
+            key={label}
+            x={125 + index * 140}
+            y="12.5%" // Adjust Y position for each button
+            width="120"
+            height="50"
+            className="button-display"
+          >
+            <div>
+              <button className="svg-button">
+                <p>{label}</p>
+              </button>
+            </div>
+          </foreignObject>
+        ))}
+        <text x="15%" y="30%" className="title">
+          Networking Only
+        </text>
+        {buttonLabels.map((label, index) => (
+          <foreignObject
+            key={label}
+            x={125 + index * 140}
+            y="32.5%" // Adjust Y position for each button
+            width="120"
+            height="50"
+            className="button-display"
+          >
+            <div>
+              <button className="svg-button">
+                <p>{label}</p>
+              </button>
+            </div>
+          </foreignObject>
+        ))}
       </svg>
     </div>
   );

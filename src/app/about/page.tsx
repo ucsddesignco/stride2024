@@ -10,7 +10,6 @@ import Agenda from '@/components/About/Agenda/Agenda';
 export default function About() {
   return (
     <main className="about-container">
-      <h1>Stride 2024</h1>
       <div className="about-page-container">
         <div className="about-section info">
           <h2 className="section-title">About</h2>
