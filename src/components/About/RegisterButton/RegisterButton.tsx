@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import './RegisterButton.scss';
 
 export default function RegisterButton() {
   return (
-    <a href="/register">
+    <Link href="/register">
       <button id="about-register-button" aria-label="Register Now">
         <svg
           width="631"
@@ -22,6 +23,6 @@ export default function RegisterButton() {
           />
         </svg>
       </button>
-    </a>
+    </Link>
   );
 }

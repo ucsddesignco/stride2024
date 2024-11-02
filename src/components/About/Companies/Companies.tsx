@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { companies } from './companies';
 import './Companies.scss';
+import { companiesData } from './constants';
 
 export default function Companies() {
   const [selectedButton, setSelectedButton] = useState<string | null>(null);
@@ -86,7 +86,7 @@ export default function Companies() {
           Recruiting
         </text>
         <g className="button-grid">
-          {companies
+          {companiesData
             .filter(obj => obj.org_type === 'Recruiting')
             .map((obj, index) => (
               <foreignObject
@@ -112,7 +112,7 @@ export default function Companies() {
           Networking Only
         </text>
         <g className="button-grid">
-          {companies
+          {companiesData
             .filter(obj => obj.org_type === 'Networking Only')
             .map((obj, index) => (
               <foreignObject

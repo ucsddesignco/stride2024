@@ -1,4 +1,4 @@
-export const companies = [
+export const companiesData = [
   { company: 'UCSD Design Lab', org_type: 'Recruiting' },
   { company: 'Deloitte', org_type: 'Recruiting' },
   { company: 'The Art of Problem Solving', org_type: 'Recruiting' },
