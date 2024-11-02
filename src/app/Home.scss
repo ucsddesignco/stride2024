@@ -50,7 +50,7 @@
   transform-origin: center top;
   position: relative;
   transform-style: preserve-3d;
-  z-index: 2;
+  z-index: 3;
 
   > div {
     position: absolute;
@@ -80,42 +80,35 @@
 
 #badge,
 #folder-badge {
-  height: calc(var(--folder-height) * 0.488);
-  transform: rotate(12deg);
+  height: calc(var(--folder-height) * 0.524);
 }
 #feather,
 #folder-feather {
-  height: calc(var(--folder-height) * 0.281);
-  transform: rotate(-22.5deg);
+  height: calc(var(--folder-height) * 0.424);
 }
 #main-content,
 #folder-main-content {
-  height: calc(var(--folder-height) * 0.39);
-  transform: rotate(-5deg);
+  height: calc(var(--folder-height) * 0.373);
 }
 #polaroid,
 #folder-polaroid {
-  height: calc(var(--folder-height) * 0.281);
-  transform: rotate(-21deg);
+  height: calc(var(--folder-height) * 0.349);
 }
 #orgs,
 #folder-orgs {
-  height: calc(var(--folder-height) * 0.39);
-  transform: rotate(-46deg);
+  height: calc(var(--folder-height) * 0.565);
 }
 #companies,
 #folder-companies {
-  height: calc(var(--folder-height) * 0.336);
-  transform: rotate(29deg);
+  height: calc(var(--folder-height) * 0.402);
 }
 #magnifying-glass,
 #folder-magnifying-glass {
-  height: calc(var(--folder-height) * 0.962);
+  height: calc(var(--folder-height) * 0.884);
 }
 #cards,
 #folder-cards {
   height: calc(var(--folder-height) * 0.353);
-  transform: rotate(8deg);
 }
 
 /* folder asset positions */
@@ -124,31 +117,32 @@
   right: 5%;
 }
 #folder-feather {
-  top: 20%;
-  right: 25%;
+  top: 18%;
+  right: 30%;
 }
 #folder-main-content {
   bottom: 10%;
   right: 27%;
 }
 #folder-polaroid {
-  top: 20%;
-  right: 45%;
+  top: 18%;
+  right: 41%;
 }
 #folder-orgs {
-  top: 20%;
-  right: 7%;
+  top: 15%;
+  right: 11%;
 }
 #folder-companies {
-  top: 55%;
+  bottom: 2%;
   right: 7%;
 }
 #folder-magnifying-glass {
-  left: -2%;
+  left: 5%;
+  bottom: 5%;
 }
 #folder-cards {
-  top: 20%;
-  left: 15%;
+  top: 27%;
+  left: 14%;
 }
 
 #click-to-open-text {
