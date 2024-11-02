@@ -4,6 +4,16 @@ import './Companies.scss';
 
 export default function Companies() {
   const [selectedButton, setSelectedButton] = useState<string | null>(null);
+  const [selectedCompany, setSelectedCompany] = useState<string>('');
+  const [companyDescription, setCompanyDescription] = useState<string>('');
+
+  const handleButtonClick = (company: string | null) => {
+    setSelectedButton(company);
+    const companyData = companies.find(obj => obj.company === company);
+    setSelectedCompany(company!);
+    setCompanyDescription(companyData?.description!);
+  };
+
   return (
     <div className="companies-section info">
       <h2 className="section-title">Companies and Organizations</h2>
@@ -100,7 +110,7 @@ export default function Companies() {
                 <div>
                   <button
                     className={`svg-button ${selectedButton === obj.company ? 'selected' : ''}`}
-                    onClick={() => setSelectedButton(obj.company)}
+                    onClick={() => handleButtonClick(obj.company)}
                   >
                     <p key={obj.company}>{obj.company}</p>
                   </button>
@@ -118,7 +128,7 @@ export default function Companies() {
               <foreignObject
                 key={obj.company}
                 x={125 + index * 175}
-                y={375 + Math.floor(index / 2) * 65}
+                y={375 + Math.floor(index / 2) * 55}
                 width={120 + obj.company.length * 5}
                 height="50"
                 className="button-display"
@@ -126,13 +136,21 @@ export default function Companies() {
                 <div>
                   <button
                     className={`svg-button ${selectedButton === obj.company ? 'selected' : ''}`}
-                    onClick={() => setSelectedButton(obj.company)}
+                    onClick={() => handleButtonClick(obj.company)}
                   >
                     <p key={obj.company}>{obj.company}</p>
                   </button>
                 </div>
               </foreignObject>
             ))}
+        </g>
+        <g>
+          <foreignObject x="15%" y="450" width="70%" height="100">
+            <div className="company-description">
+              <p>{selectedCompany}</p>
+              <p>Hello!</p>
+            </div>
+          </foreignObject>
         </g>
       </svg>
     </div>
