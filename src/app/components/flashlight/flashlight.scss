@@ -46,3 +46,11 @@
   left: var(--cursor-x);
   z-index: 1000;
 }
+
+.controls{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+
+    z-index: 1100;
+}

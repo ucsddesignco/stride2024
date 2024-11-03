@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Flashlight from './components/flashlight/flashlight';
+import Controls from './components/flashlight_controls/controls';
 export default function Home() {
 
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </div>
       <p>This is a test P</p>
       <Flashlight />
+      <Controls />
     </main>
   );
 }
