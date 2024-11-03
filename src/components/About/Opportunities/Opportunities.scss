@@ -1,7 +1,6 @@
 .opportunities-section {
-  @media only screen and (max-width: 468px) {
+  @media only screen and (min-width: 468px) and (max-width: 768px) {
     .opportunities-features {
-      gap: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -19,7 +18,6 @@
       max-width: fit-content;
       margin-left: auto;
       margin-right: auto;
-      padding-bottom: 3.5rem;
 
       figure {
         position: relative;

@@ -1,20 +1,20 @@
 import './Agenda.scss';
 
 const times = [
-  '9:00 AM',
-  '10:00 AM',
-  '11:00 AM',
   '12:00 PM',
   '1:00 PM',
-  '2:00 PM'
+  '2:00 PM',
+  '3:00 PM',
+  '4:00 PM',
+  '5:00 PM'
 ];
 const events = [
-  'Breakfast',
-  'Team Meeting',
-  'Project Work',
-  'Lunch Break',
-  'Workshop',
-  'Wrap-up'
+  'Doors Open',
+  'Google UX Panel',
+  'Arup Lightning Talk',
+  'CoNote Lightning Talk',
+  'Alan Tran Lightning Talk',
+  'Doors Close'
 ];
 
 export default function Agenda() {
@@ -27,10 +27,20 @@ export default function Agenda() {
         viewBox="0 0 806 547"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="agenda-card"
       >
-        <text x="150" y="55" fill="white" className="agenda-text">
-          Wednesday, Nov 13 | 12-5pm PST
-        </text>
+        <foreignObject
+          x="250"
+          y="50"
+          fill="white"
+          width="300"
+          height="200"
+          className="agenda-text"
+        >
+          <div>
+            <h3>Wednesday, Nov 13 | 12-5pm PST</h3>
+          </div>
+        </foreignObject>
         {/* "style=mask-type:luminance" */}
         <mask
           id="mask0_5032_8565"
@@ -63,38 +73,42 @@ export default function Agenda() {
           <g key={time}>
             {/* Left cell for time */}
             <rect
-              x="300"
+              x="100"
               y={100 + index * 50}
-              width="130"
+              width="300"
               height="50"
               stroke="#FFFFFF"
               strokeWidth="2"
             />
             <text
-              x="315"
-              y={130 + index * 50}
+              x="250"
+              y={125 + index * 50}
               fontSize="14px"
               fill="#FFFFFF"
               fontFamily="Arial"
+              textAnchor="middle"
+              dominantBaseline="middle"
             >
               {time}
             </text>
 
             {/* Right cell for event */}
             <rect
-              x="430"
+              x="400"
               y={100 + index * 50}
-              width="130"
+              width="300"
               height="50"
               stroke="#FFFFFF"
               strokeWidth="2"
             />
             <text
-              x="445"
-              y={130 + index * 50}
+              x="550"
+              y={125 + index * 50}
               fontSize="14px"
               fill="#FFFFFF"
               fontFamily="Arial"
+              textAnchor="middle"
+              dominantBaseline="middle"
             >
               {events[index]}
             </text>

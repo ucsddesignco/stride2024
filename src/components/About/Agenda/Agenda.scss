@@ -7,3 +7,10 @@
     font-weight: bold;
   }
 }
+
+/* Laptop and Tablet Breakpoints */
+@media (min-width: 768px) {
+  .agenda-card {
+    transform: translateY(40px) rotate(-5deg);
+  }
+}
