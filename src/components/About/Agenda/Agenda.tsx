@@ -30,10 +30,10 @@ export default function Agenda() {
         className="agenda-card"
       >
         <foreignObject
-          x="250"
+          x="225"
           y="50"
           fill="white"
-          width="300"
+          width="400"
           height="200"
           className="agenda-text"
         >
