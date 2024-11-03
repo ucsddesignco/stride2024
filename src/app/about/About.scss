@@ -1,0 +1,43 @@
+.about-container {
+  margin-top: $nav-height;
+  padding-inline: var(--main-padding);
+  display: grid;
+  gap: 1rem;
+
+  h2 {
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.2;
+
+    @media (min-width: 320px) {
+      font-size: 2rem;
+    }
+
+    @media (min-width: 400px) {
+      max-width: 80%;
+    }
+
+    @media (min-width: 580px) {
+      max-width: 65%;
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+      font-size: 4rem;
+    }
+  }
+
+  .about-section {
+    p {
+      margin-top: 2rem;
+    }
+  }
+
+  section {
+    padding-block: 2rem;
+  }
+
+  .info,
+  .section-title {
+    margin-bottom: 2rem;
+  }
+}
