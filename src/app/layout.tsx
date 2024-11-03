@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '@/app/styles/global.scss';
 import { ReactNode } from 'react';
+import Navbar from '@/components/Navbar/Navbar';
 
 export const metadata: Metadata = {
   title: 'Stride 2024',
@@ -9,22 +10,30 @@ export const metadata: Metadata = {
     'Stride is a uniquely design-forward career fair aiming to connect aspiring designers with company representatives.'
 };
 
-const NeuePlak = localFont({
-  src: '../../public/fonts/Neue-Plak-Extended-Bold.ttf',
-  variable: '--font-neueplak',
-  display: 'swap'
-});
-
-const NBInternational = localFont({
-  src: '../../public/fonts/NB-International-Pro-Light.otf',
-  variable: '--font-nbinternational',
-  display: 'swap'
-});
-
-const NBInternationalMono = localFont({
-  src: '../../public/fonts/NB-International-Mono.ttf',
-  variable: '--font-nbinternational-mono',
-  display: 'swap'
+const IosevkaCurly = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Iosevka-Curly-Regular.woff2',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../../public/fonts/Iosevka-Curly-Medium.woff2',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: '../../public/fonts/Iosevka-Curly-SemiBold.woff2',
+      weight: '600',
+      style: 'normal'
+    },
+    {
+      path: '../../public/fonts/Iosevka-Curly-SemiBoldItalic.woff2',
+      weight: '600',
+      style: 'italic'
+    }
+  ],
+  variable: '--font-iosevka'
 });
 
 export default function RootLayout({
@@ -33,11 +42,11 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${NeuePlak.variable} ${NBInternational.variable} ${NBInternationalMono.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="en" className={`${IosevkaCurly.variable} `}>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
