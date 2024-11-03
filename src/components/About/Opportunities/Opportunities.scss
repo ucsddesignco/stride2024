@@ -1,31 +1,46 @@
 .opportunities-section {
-  .opportunities-features {
-    display: flex;
-    gap: 5rem;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 3.5rem;
-
-    figure {
-      position: relative;
-      width: 300px;
-      height: 300px; /* Adjust the height as needed */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      animation: sway 3s infinite alternate ease-in-out;
-
-      .card-text {
-        font-size: 25px;
-      }
+  @media only screen and (max-width: 468px) {
+    .opportunities-features {
+      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
     }
+  }
 
-    @media only screen and (min-width: 760px) {
-      @keyframes sway {
-        0% {
-          transform: rotate(-3deg);
+  @media only screen and (min-width: 1024px) {
+    .opportunities-features {
+      display: flex;
+      gap: 5rem;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 3.5rem;
+
+      figure {
+        position: relative;
+        width: 300px;
+        height: 300px; /* Adjust the height as needed */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        animation: sway 3s infinite alternate ease-in-out;
+
+        .card-text {
+          font-size: 25px;
         }
-        100% {
-          transform: rotate(3deg);
+      }
+
+      @media only screen and (min-width: 760px) {
+        @keyframes sway {
+          0% {
+            transform: rotate(-3deg);
+          }
+          100% {
+            transform: rotate(3deg);
+          }
         }
       }
     }
