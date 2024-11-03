@@ -1,12 +1,13 @@
 .companies-section {
   .title {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     fill: white;
   }
   .button-display {
     .svg-button {
       padding: 4px;
+      background-color: black;
       color: white;
       border: 2px solid white;
       border-radius: 4px;
@@ -54,8 +55,22 @@
     padding: 10px;
     font-size: 14px;
     overflow-y: auto;
-    height: 90px;
+    height: 450px;
     box-sizing: border-box;
-    z-index: 1;
+    margin: 2rem 0;
+
+    h3 {
+      font-weight: bold;
+      font-size: 40px;
+    }
+
+    h3,
+    p {
+      margin-top: 1.5rem;
+    }
+
+    p {
+      font-size: 18px;
+    }
   }
 }

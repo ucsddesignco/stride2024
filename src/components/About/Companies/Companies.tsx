@@ -2,16 +2,32 @@ import { useState } from 'react';
 import './Companies.scss';
 import { companies } from './constants';
 
+interface Dimensions {
+  width: string;
+  height: string;
+}
+
+interface Company {
+  company: string;
+  org_type: string;
+  description: string;
+  companyImage: string;
+  dimensions?: Dimensions;
+}
+
 export default function Companies() {
-  const [selectedButton, setSelectedButton] = useState<string | null>(null);
-  const [selectedCompany, setSelectedCompany] = useState<string>('');
-  const [companyDescription, setCompanyDescription] = useState<string>('');
+  const [selectedButton, setSelectedButton] = useState<string | null>('');
+  const [companyData, setCompanyData] = useState<Company | null>(null);
 
   const handleButtonClick = (company: string | null) => {
     setSelectedButton(company);
-    const companyData = companies.find(obj => obj.company === company);
-    setSelectedCompany(company!);
-    setCompanyDescription(companyData?.description!);
+    const foundCompany = companies.find(obj => obj.company === company);
+
+    if (foundCompany) {
+      setCompanyData(foundCompany);
+    } else {
+      console.error(`Company with name "${company}" not found.`);
+    }
   };
 
   return (
@@ -59,6 +75,77 @@ export default function Companies() {
           fill="#FBFEFC"
           stroke="white"
         />
+
+        <foreignObject
+          x="15%"
+          y="7.5%"
+          width="400"
+          height="300"
+          className="title"
+        >
+          <div>
+            <h3 className="title">Recruiting</h3>
+          </div>
+        </foreignObject>
+        <g className="button-grid">
+          {companies
+            .filter(obj => obj.org_type === 'Recruiting')
+            .map((obj, index) => (
+              <foreignObject
+                key={obj.company}
+                x={125 + (index % 2) * 300}
+                y={125 + Math.floor(index / 2) * 55}
+                width={200 + obj.company.length * 2}
+                height="50"
+                className="button-display"
+              >
+                <div>
+                  <button
+                    className={`svg-button ${selectedButton === obj.company ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(obj.company)}
+                  >
+                    <p key={obj.company}>{obj.company}</p>
+                  </button>
+                </div>
+              </foreignObject>
+            ))}
+        </g>
+        <foreignObject x="15%" y="30%" width="400" height="300">
+          <div>
+            <h3 className="title">Networking Only</h3>
+          </div>
+        </foreignObject>
+        <g className="button-grid">
+          {companies
+            .filter(obj => obj.org_type === 'Networking Only')
+            .map((obj, index) => (
+              <foreignObject
+                key={obj.company}
+                x={125 + index * 175}
+                y={350 + Math.floor(index / 2) * 55}
+                width={120 + obj.company.length * 5}
+                height="50"
+                className="button-display"
+              >
+                <div>
+                  <button
+                    className={`svg-button ${selectedButton === obj.company ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(obj.company)}
+                  >
+                    <p key={obj.company}>{obj.company}</p>
+                  </button>
+                </div>
+              </foreignObject>
+            ))}
+        </g>
+        <g>
+          <foreignObject x="15%" y="400" width="70%" height="700">
+            <div className="company-description">
+              <h3>{companyData && <p>{companyData.company}</p>}</h3>
+              <p>{companyData && <p>{companyData.description}</p>}</p>
+            </div>
+          </foreignObject>
+        </g>
         <path
           d="M801 754.712L809.5 706.212V757.212L801 768.212L809.5 777.712V794.212L790 768.212L801 754.712Z"
           fill="#FBFEFC"
@@ -92,66 +179,24 @@ export default function Companies() {
           stroke="#68DEA3"
           strokeWidth="2.68804"
         />
-        <text x="15%" y="10%" className="title">
-          Recruiting
-        </text>
-        <g className="button-grid">
-          {companies
-            .filter(obj => obj.org_type === 'Recruiting')
-            .map((obj, index) => (
-              <foreignObject
-                key={obj.company}
-                x={125 + (index % 2) * 300}
-                y={120 + Math.floor(index / 2) * 55}
-                width={200 + obj.company.length * 2}
-                height="50"
-                className="button-display"
-              >
-                <div>
-                  <button
-                    className={`svg-button ${selectedButton === obj.company ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(obj.company)}
-                  >
-                    <p key={obj.company}>{obj.company}</p>
-                  </button>
-                </div>
-              </foreignObject>
-            ))}
-        </g>
-        <text x="15%" y="35%" className="title">
-          Networking Only
-        </text>
-        <g className="button-grid">
-          {companies
-            .filter(obj => obj.org_type === 'Networking Only')
-            .map((obj, index) => (
-              <foreignObject
-                key={obj.company}
-                x={125 + index * 175}
-                y={375 + Math.floor(index / 2) * 55}
-                width={120 + obj.company.length * 5}
-                height="50"
-                className="button-display"
-              >
-                <div>
-                  <button
-                    className={`svg-button ${selectedButton === obj.company ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(obj.company)}
-                  >
-                    <p key={obj.company}>{obj.company}</p>
-                  </button>
-                </div>
-              </foreignObject>
-            ))}
-        </g>
-        <g>
-          <foreignObject x="15%" y="450" width="70%" height="100">
-            <div className="company-description">
-              <p>{selectedCompany}</p>
-              <p>Hello!</p>
+        {companyData?.companyImage && (
+          <foreignObject
+            x="65%"
+            y="775px"
+            width="25%"
+            height="150px"
+            className="company-image"
+          >
+            <div>
+              <img
+                src={companyData?.companyImage || 'undefined'}
+                alt={companyData?.company || 'Company image'}
+                width="150px"
+                height="50px"
+              />
             </div>
           </foreignObject>
-        </g>
+        )}
       </svg>
     </div>
   );

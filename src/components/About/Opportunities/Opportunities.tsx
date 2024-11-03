@@ -45,9 +45,18 @@ export default function Opportunities() {
               strokeWidth="2"
               stroke-linecap="round"
             />
-            <text x="30%" y="50%" fill="white" className="card-text">
-              One-on-Ones
-            </text>
+            <foreignObject
+              x="30%"
+              y="47.5%"
+              width="400"
+              height="300"
+              fill="white"
+              className="card-text"
+            >
+              <div>
+                <p>1:1 Networking</p>
+              </div>
+            </foreignObject>
           </svg>
         </figure>
         <figure className="figure">
@@ -86,9 +95,18 @@ export default function Opportunities() {
               strokeWidth="2"
               stroke-linecap="round"
             />
-            <text x="15%" y="50%" fill="white" className="card-text">
-              Company Info Sessions
-            </text>
+            <foreignObject
+              x="20%"
+              y="47.5%"
+              width="400"
+              height="300"
+              fill="white"
+              className="card-text"
+            >
+              <div>
+                <p>Company Info Sessions</p>
+              </div>
+            </foreignObject>
           </svg>
         </figure>
         <figure className="figure">
@@ -127,9 +145,18 @@ export default function Opportunities() {
               strokeWidth="2"
               stroke-linecap="round"
             />
-            <text x="22.5%" y="50%" fill="white" className="card-text">
-              Resume Reviews
-            </text>
+            <foreignObject
+              x="27.5%"
+              y="47.5%"
+              width="400"
+              height="300"
+              fill="white"
+              className="card-text"
+            >
+              <div>
+                <p>Resume Reviews</p>
+              </div>
+            </foreignObject>
           </svg>
         </figure>
       </div>
