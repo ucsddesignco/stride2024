@@ -121,9 +121,9 @@ export default function Companies() {
             .map((obj, index) => (
               <foreignObject
                 key={obj.company}
-                x={125 + index * 175}
+                x={125 + (index % 2) * 300}
                 y={350 + Math.floor(index / 2) * 55}
-                width={120 + obj.company.length * 5}
+                width={120 + obj.company.length * 2}
                 height="50"
                 className="button-display"
               >
@@ -139,7 +139,7 @@ export default function Companies() {
             ))}
         </g>
         <g>
-          <foreignObject x="15%" y="400" width="70%" height="700">
+          <foreignObject x="15%" y="420" width="70%" height="700">
             <div className="company-description">
               <h3>{companyData && <p>{companyData.company}</p>}</h3>
               <p>{companyData && <p>{companyData.description}</p>}</p>
@@ -182,7 +182,7 @@ export default function Companies() {
         {companyData?.companyImage && (
           <foreignObject
             x="65%"
-            y="775px"
+            y="750px"
             width="25%"
             height="150px"
             className="company-image"
@@ -192,7 +192,7 @@ export default function Companies() {
                 src={companyData?.companyImage || 'undefined'}
                 alt={companyData?.company || 'Company image'}
                 width="150px"
-                height="50px"
+                height="100px"
               />
             </div>
           </foreignObject>
