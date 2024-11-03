@@ -1,5 +1,4 @@
 import '@/components/Flashlight/Flashlight.scss';
-// import Cursor from 'public/Cursor.svg';
 import { useEffect } from 'react';
 
 export default function Flashlight() {
@@ -23,10 +22,10 @@ export default function Flashlight() {
   }, []);
 
   return (
-    <>
+    <div className="flashlight">
       <div className="custom-cursor" />
       <div className="ring-inner" />
       <div className="ring-outer" />
-    </>
+    </div>
   );
 }

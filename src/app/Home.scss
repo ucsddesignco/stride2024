@@ -2,6 +2,18 @@
 //   outline: 2px solid lime;
 // }
 
+//not sure if this is bad practice
+body {
+  cursor: url('../../public/images/cursors/Cursor.svg'), auto;
+  padding: 50px;
+  border: 1px solid #ccc;
+}
+
+a,
+button {
+  cursor: url('../../public/images/cursors/Cursor-hover.svg'), auto;
+}
+
 :root {
   --folder-width: 80vw;
   --folder-height: 50vh;
@@ -17,7 +29,7 @@
     position: absolute;
   }
   &:hover {
-    cursor: pointer;
+    cursor: (url('../../public/images/cursors/Cursor-hover.svg'), auto);
   }
 }
 

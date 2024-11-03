@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import '@/app/Home.scss';
 import Image from 'next/image';
 import Flashlight from '@/components/Flashlight/Flashlight';
+import Controls from '@/components/flashlight_controls/controls';
 
 gsap.registerPlugin(useGSAP);
 
@@ -276,6 +277,7 @@ export default function Page() {
   return (
     <div style={{ minHeight: '100vh', height: '100vh' }}>
       <Flashlight />
+      <Controls />
       <div
         style={{
           backgroundColor: 'black',

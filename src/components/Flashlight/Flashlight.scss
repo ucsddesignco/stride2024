@@ -1,7 +1,14 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .flashlight {
-  cursor: url('/Cursor.svg'), auto;
-  padding: 50px;
-  border: 1px solid #ccc;
+  z-index: 1000;
 }
 
 .custom-cursor {
@@ -16,7 +23,8 @@
   transform: translate(-50%, -50%);
   top: var(--cursor-y);
   left: var(--cursor-x);
-  z-index: 1000;
+  z-index: inherit;
+  animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
 }
 
 .ring-inner {
@@ -30,7 +38,8 @@
   mix-blend-mode: lighten;
   top: var(--cursor-y);
   left: var(--cursor-x);
-  z-index: 1000;
+  z-index: inherit;
+  animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
 }
 
 .ring-outer {
@@ -44,13 +53,6 @@
   mix-blend-mode: lighten;
   top: var(--cursor-y);
   left: var(--cursor-x);
-  z-index: 1000;
-}
-
-.controls {
-  display: flex;
-  flex-direction: row;
-  align-self: center;
-
-  z-index: 1100;
+  z-index: inherit;
+  animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
 }
