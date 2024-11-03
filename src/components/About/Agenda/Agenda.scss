@@ -1,4 +1,7 @@
 .agenda-section {
+  display: flex;
+  flex-direction: column;
+
   .agenda-text {
     font-size: 35px;
     font-weight: bold;

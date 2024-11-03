@@ -12,7 +12,6 @@ interface Company {
   org_type: string;
   description: string;
   companyImage: string;
-  dimensions?: Dimensions;
 }
 
 export default function Companies() {

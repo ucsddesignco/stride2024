@@ -28,7 +28,7 @@ export default function Agenda() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <text x="500" y="515" fill="white" className="agenda-text">
+        <text x="150" y="55" fill="white" className="agenda-text">
           Wednesday, Nov 13 | 12-5pm PST
         </text>
         {/* "style=mask-type:luminance" */}
@@ -63,16 +63,16 @@ export default function Agenda() {
           <g key={time}>
             {/* Left cell for time */}
             <rect
-              x="50"
-              y={40 + index * 60}
+              x="300"
+              y={100 + index * 50}
               width="130"
               height="50"
               stroke="#FFFFFF"
               strokeWidth="2"
             />
             <text
-              x="65"
-              y={70 + index * 60}
+              x="315"
+              y={130 + index * 50}
               fontSize="14px"
               fill="#FFFFFF"
               fontFamily="Arial"
@@ -82,16 +82,16 @@ export default function Agenda() {
 
             {/* Right cell for event */}
             <rect
-              x="190"
-              y={40 + index * 60}
+              x="430"
+              y={100 + index * 50}
               width="130"
               height="50"
               stroke="#FFFFFF"
               strokeWidth="2"
             />
             <text
-              x="205"
-              y={70 + index * 60}
+              x="445"
+              y={130 + index * 50}
               fontSize="14px"
               fill="#FFFFFF"
               fontFamily="Arial"
