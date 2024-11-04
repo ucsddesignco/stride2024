@@ -3,10 +3,15 @@ $heading-font: var(--font-iosevka);
 $mono-font: var(--font-iosevka);
 
 $light-green: #68dea3;
+$dark-green: #58c988;
 $white: #fbfefc;
+$dark-gray: #565656;
 
 $mobile-breakpoint: 768px;
-$tablet-breakpoint: 1366px;
+$tablet-breakpoint: 1024px;
+
+// Stride Logo + DCo Logo + Logo Gap +  padding
+$nav-height: calc(60px + 12px + 10px + 2 * 3.75rem);
 
 $nav-padding-mobile: 24px;
 $nav-padding-desktop: 36px;

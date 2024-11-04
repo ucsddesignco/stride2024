@@ -1,0 +1,112 @@
+#register-page-container {
+  margin-top: $nav-height;
+  padding: $main-padding-mobile;
+  height: calc(100dvh - $nav-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  #register-top {
+    #smaller-register-header {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 3rem;
+
+      svg {
+        margin-top: 11px;
+        margin-inline: auto;
+        max-width: 13ch;
+      }
+
+      @media (min-width: 400px) {
+        display: none;
+      }
+    }
+
+    #larger-register-header {
+      display: none;
+
+      @media (min-width: 400px) {
+        font-size: 4rem;
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1.25rem;
+        }
+      }
+    }
+
+    @media (min-width: 400px) {
+      font-size: 1rem;
+    }
+
+    > p {
+      margin-inline: auto;
+      max-width: 30ch;
+
+      @media (min-width: 400px) {
+        max-width: 38ch;
+      }
+    }
+  }
+
+  #register-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 17.5rem;
+    margin-inline: auto;
+
+    a,
+    button {
+      width: 100%;
+      font-family: $p-font;
+      font-size: 1.25rem;
+      line-height: 100%;
+      text-decoration: none;
+      border-radius: 30px;
+      background: $white;
+      color: black;
+      border: 2px solid $white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
+
+      @media (min-width: 400px) {
+        padding: 1rem 2rem;
+      }
+    }
+
+    #luma-button-container {
+      width: 100%;
+      position: relative;
+      svg {
+        pointer-events: none;
+        position: absolute;
+        top: -30%;
+        right: -8%;
+      }
+    }
+
+    #create-badge-button {
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 0.875rem;
+      text-align: center;
+    }
+  }
+}

@@ -1,61 +1,169 @@
 @use '../form_var' as *;
 
-.form-step4 {
+#form-step4 {
   height: 100%;
-  $padding: 2rem;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
-  .badge {
-    width: 90%;
-    max-width: 300px;
-    height: 100%;
-    border: $border-width solid white;
-    border-radius: 24px;
-    margin-inline: auto;
+  &-text {
+    opacity: 0;
+    animation: FadeIn 0.8s 0.9s forwards;
 
-    .badge-top {
-      display: flex;
-      justify-content: space-between;
-      margin-inline: auto;
-      padding: 1rem;
-      padding-inline: $padding;
-      border-bottom: 3px solid white;
-
-      .long-hole {
-        width: 2.5rem;
-        height: 1rem;
-        border-radius: 24px;
-        border: $border-width solid white;
-      }
-
-      .short-hole {
-        width: 1rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        border: $border-width solid white;
+    @keyframes FadeIn {
+      100% {
+        opacity: 1;
       }
     }
 
-    .badge-center {
-      padding: $padding;
+    p:first-child {
+      margin-bottom: 1rem;
+    }
 
-      &-top {
-        display: flex;
-        gap: 1rem;
-      }
+    align-self: start;
 
-      .badge-code {
-        svg {
-          width: 5rem;
-          height: auto;
+    span {
+      color: $dark-green;
+    }
+  }
+
+  #mascot-badge-container {
+    position: relative;
+    height: 100%;
+
+    .mascot-badge {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      aspect-ratio: 252/378;
+      height: 100%;
+      border: 2px solid white;
+      border-radius: 25px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      scale: 1;
+      animation:
+        SlideUp 0.8s,
+        ScaleDown 0.8s 0.8s forwards;
+      margin-inline: auto;
+      transform: scale(1.05);
+
+      @keyframes SlideUp {
+        0% {
+          transform: translateY(100%) scale(1.05);
+        }
+        100% {
+          transform: translateY(-15%) scale(1.05);
         }
       }
 
-      .badge-mascot {
-        width: fit-content;
-        height: fit-content;
-        padding: 0.5rem;
-        border: $border-width solid white;
-        border-radius: 24px;
+      @keyframes ScaleDown {
+        0% {
+          transform: translateY(-15%) scale(1.05);
+        }
+        100% {
+          transform: scale(0.9) translateY(0);
+        }
+      }
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 50%;
+        bottom: 0;
+        background-color: transparent;
+        margin-inline: auto;
+        border: 0.5rem solid rgb(0, 0, 0);
+        border-radius: 0 0 23px 23px;
+        border-top: none;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .badge-top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+        padding-inline: 1rem;
+        border-bottom: 3px solid white;
+
+        .long-hole {
+          width: 2.75rem;
+          height: 1rem;
+          border-radius: 24px;
+          border: 2px solid white;
+        }
+
+        .short-hole {
+          width: 1rem;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          border: 2px solid white;
+        }
+      }
+
+      .badge-center {
+        padding: 1rem;
+
+        &-top {
+          display: flex;
+          justify-content: space-between;
+          padding-block: 1rem;
+          position: relative;
+
+          h2 {
+            display: grid;
+            font-size: 1.5rem;
+            // font-size: 25px;
+            font-style: italic;
+            font-weight: 600;
+            // gap: 1rem;
+          }
+
+          #vertical-dotted-bar {
+            position: absolute;
+            left: 0;
+          }
+
+          #horizontal-dotted-bar {
+            position: absolute;
+            bottom: 0;
+          }
+
+          p {
+            position: relative;
+            display: grid;
+            padding-inline: 1.5rem;
+          }
+        }
+
+        &-center {
+          display: flex;
+          justify-content: space-between;
+          padding-block: 1rem;
+
+          p {
+            font-size: 1rem;
+            font-weight: 400;
+          }
+        }
+
+        .badge-code {
+          svg {
+            width: 4.5rem;
+            height: auto;
+          }
+        }
+      }
+
+      .badge-bottom {
+        height: 100%;
+        z-index: -1;
+        position: relative;
       }
     }
   }

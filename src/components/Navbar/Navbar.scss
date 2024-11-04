@@ -1,5 +1,6 @@
 #navbar {
   position: absolute;
+  top: 0;
   z-index: 1;
   padding: 3.5rem 3.75rem;
   display: flex;
@@ -26,6 +27,7 @@
       border: 2px solid $white;
       background: black;
       padding: 0.5rem 0.75rem;
+      padding-left: 8px;
       display: flex;
       align-items: center;
       gap: 0.5rem;

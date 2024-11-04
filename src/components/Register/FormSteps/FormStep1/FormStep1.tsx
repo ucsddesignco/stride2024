@@ -20,24 +20,25 @@ export default function FormStep1({
       <FormText
         register={register}
         name="name"
-        label="Full Name"
-        placeholder="Detective Croc"
+        label="Name"
+        placeholder="e.g. Detective Croc"
         error={errors.name}
       />
       <FormText
         register={register}
         name="pronouns"
         label="Pronouns"
-        placeholder="She/Hers"
+        placeholder="e.g. they/them"
         error={errors.pronouns}
       />
       <FormSelect
         control={control}
         name="year"
-        width="10rem"
-        defaultValue="2025"
+        width="12rem"
+        defaultLabel="Grad Year"
+        // defaultValue="2025"
         options={['2025', '2026', '2027', '2028', '2029']}
-        label="Grad Year"
+        label="Graduation Year"
         error={errors.year}
       />
     </div>

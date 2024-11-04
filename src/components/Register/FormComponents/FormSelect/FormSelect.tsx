@@ -20,6 +20,7 @@ export default function FormSelect({
   control,
   options = [],
   defaultValue,
+  defaultLabel,
   hasOtherOption = false,
   width = 'auto',
   error
@@ -37,7 +38,7 @@ export default function FormSelect({
   };
 
   return (
-    <div className="registration-textfield">
+    <div className="registration-textfield-container registration-select-container">
       <label htmlFor={inputId}>{label}</label>
       <Controller
         name={name}
@@ -55,7 +56,11 @@ export default function FormSelect({
             className="register-select"
           >
             <Button style={{ width }}>
-              <SelectValue />
+              <SelectValue>
+                {({ defaultChildren, isPlaceholder }) => {
+                  return isPlaceholder ? defaultLabel : defaultChildren;
+                }}
+              </SelectValue>
               <span aria-hidden="true">
                 <SelectArrow />
               </span>

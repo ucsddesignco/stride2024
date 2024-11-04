@@ -1,0 +1,42 @@
+.mascot-circles-container {
+  display: grid;
+  place-items: center;
+  position: relative;
+  height: 100%;
+  bottom: -35%;
+
+  .mascot-container {
+    position: absolute;
+    transform-origin: bottom;
+    margin-inline: auto;
+    width: 35%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    bottom: 15%;
+  }
+
+  .half-badge-circle {
+    aspect-ratio: 1;
+    background-color: $white;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    position: absolute;
+    z-index: 0;
+
+    &.outer {
+      width: 100%;
+      background-color: #16643d;
+    }
+    &.middle {
+      width: 62.5%;
+      background-color: #68dea3;
+    }
+    &.inner {
+      width: 42.5%;
+      background-color: $white;
+    }
+  }
+}
