@@ -60,6 +60,6 @@ export const companies = [
     org_type: 'Networking Only',
     companyImage: 'images/company-images/illumina.svg',
     description:
-      "Notion blends your everyday work tools into one. Product roadmap? Company wiki? Meeting notes? With Notion, they're all in one place, and totally customizable to meet the needs of any workflow. It's the all-in-one workspace for you, your team, and your whole company."
+      'Illumina is a leading developer, manufacturer, and marketer of life science tools and integrated systems dedicated to making genomics useful for all. Innovating at the intersection of technology, biology, and health, they provide sequencing innovations enabling researchers and clinicians to usher in the future of personalized medicine.'
   }
 ];

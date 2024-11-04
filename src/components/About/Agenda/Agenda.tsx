@@ -130,8 +130,8 @@ export default function Agenda() {
           stroke="white"
         />
         <foreignObject
-          x="225"
-          y="50"
+          x="25"
+          y="25"
           fill="white"
           width="400"
           height="200"
@@ -145,17 +145,17 @@ export default function Agenda() {
           <g key={time}>
             {/* Left cell for time */}
             <rect
-              x="100"
-              y={130 + index * 50}
-              width="300"
+              x="25"
+              y={75 + index * 50}
+              width="125"
               height="50"
               stroke="#FFFFFF"
               strokeWidth="2"
             />
             <text
-              x="250"
-              y={155 + index * 50}
-              fontSize="14px"
+              x="85"
+              y={100 + index * 50}
+              fontSize="12px"
               fill="#FFFFFF"
               fontFamily="Arial"
               textAnchor="middle"
@@ -166,17 +166,17 @@ export default function Agenda() {
 
             {/* Right cell for event */}
             <rect
-              x="400"
-              y={130 + index * 50}
-              width="300"
+              x="150"
+              y={75 + index * 50}
+              width="125"
               height="50"
               stroke="#FFFFFF"
               strokeWidth="2"
             />
             <text
-              x="550"
-              y={155 + index * 50}
-              fontSize="14px"
+              x="225"
+              y={100 + index * 50}
+              fontSize="12px"
               fill="#FFFFFF"
               fontFamily="Arial"
               textAnchor="middle"
