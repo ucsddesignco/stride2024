@@ -3,7 +3,7 @@ import './RegisterButton.scss';
 
 export default function RegisterButton() {
   return (
-    <Link href="/register">
+    <Link href="/register" className="register-section">
       <button id="about-register-button" aria-label="Register Now">
         <svg
           width="631"

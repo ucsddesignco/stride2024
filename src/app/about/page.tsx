@@ -21,6 +21,11 @@ export default function About() {
           copy of your resume!
         </p>
         <p>Note: There will be a $7 registration fee</p>
+        <div className="about-images">
+          <img src="images/past-photos/stride-1.jpg" className="image1" />
+          <img src="images/past-photos/stride-2.jpg" className="image2" />
+          <img src="images/past-photos/stride-3.jpg" className="image3" />
+        </div>
       </section>
       <Opportunities />
       <Companies />

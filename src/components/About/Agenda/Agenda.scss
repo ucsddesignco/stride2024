@@ -8,6 +8,19 @@
   }
 }
 
+@media only screen and (max-width: 468px) {
+  .mobile-agenda-card {
+    display: block;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .agenda-card {
+    display: none;
+  }
+}
+
 /* Laptop and Tablet Breakpoints */
 @media (min-width: 768px) {
   .mobile-agenda-card {
