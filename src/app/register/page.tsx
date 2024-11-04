@@ -2,30 +2,47 @@
 
 import Image from 'next/image';
 import './Register.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import StrideLogo from '@/components/Register/StrideLogo';
 import FeeTag from '@/components/Register/FeeTag';
 import RegisterAssets from '@/components/Register/RegisterAssets/RegisterAssets';
+import { Dialog, Modal } from 'react-aria-components';
 
 export default function RegisterPage() {
-  // This is to ensure users don't click on register button before the script is loaded
-  const [scriptLoaded, setScriptLoaded] = useState(false);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://embed.lu.ma/checkout-button.js';
-    script.async = true;
-    document.body.appendChild(script);
-    setScriptLoaded(true);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <main id="register-page-container">
+      <Modal isDismissable isOpen={isOpen} onOpenChange={setIsOpen}>
+        <Dialog>
+          {({ close }) => (
+            <div id="luma-iframe-container">
+              <iframe
+                src="https://lu.ma/embed/event/evt-tY8EjR5s2pogihW/simple"
+                allowFullScreen
+                title="Luma Registration"
+                aria-hidden="false"
+              />
+              {/* <button
+                type="button"
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+                className="close-icon"
+              >
+                <Image
+                  src="/images/icons/close-icon.svg"
+                  width="35"
+                  height="35"
+                  alt="Close Registration Modal"
+                />
+              </button> */}
+            </div>
+          )}
+        </Dialog>
+      </Modal>
+
       <RegisterAssets />
       <div id="register-top">
         <h1 id="smaller-register-header">
@@ -44,27 +61,14 @@ export default function RegisterPage() {
       </div>
       <div id="register-bottom">
         <div id="luma-button-container">
-          <a
-            href="https://lu.ma/event/evt-tY8EjR5s2pogihW"
+          <button
             id="luma-register-button"
-            data-luma-action="checkout"
-            data-luma-event-id="evt-tY8EjR5s2pogihW"
-            style={{
-              pointerEvents: scriptLoaded ? 'auto' : 'none',
-              cursor: scriptLoaded ? 'pointer' : 'not-allowed'
+            onClick={() => {
+              setIsOpen(true);
             }}
           >
-            <span>
-              <Image
-                src="/images/Icons/newtab-icon.svg"
-                width={24}
-                height={24}
-                alt="New Tab"
-                aria-hidden
-              />
-            </span>
-            {scriptLoaded ? 'Register On Luma' : 'Loading...'}
-          </a>
+            Register on Luma
+          </button>
           <FeeTag id="register-fee-tag" />
         </div>
 
