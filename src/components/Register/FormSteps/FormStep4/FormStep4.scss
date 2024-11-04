@@ -1,62 +1,45 @@
 @use '../form_var' as *;
 
-.form-step4 {
+#form-step4 {
   height: 100%;
-  $padding: 2rem;
+  width: 100%;
+  // overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
-  .badge {
-    width: 90%;
-    max-width: 300px;
-    height: 100%;
-    border: $border-width solid white;
-    border-radius: 24px;
-    margin-inline: auto;
+  &-text {
+    opacity: 0;
+    animation: FadeIn 0.8s 0.9s forwards;
 
-    .badge-top {
-      display: flex;
-      justify-content: space-between;
-      margin-inline: auto;
-      padding: 1rem;
-      padding-inline: $padding;
-      border-bottom: 3px solid white;
+    @media (min-width: $tablet-breakpoint) {
+      opacity: 1;
+      animation: none;
+    }
 
-      .long-hole {
-        width: 2.5rem;
-        height: 1rem;
-        border-radius: 24px;
-        border: $border-width solid white;
+    p {
+      &:first-child {
+        margin-bottom: 1rem;
       }
 
-      .short-hole {
-        width: 1rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        border: $border-width solid white;
+      @media (min-width: $tablet-breakpoint) {
+        font-size: 1.5rem;
       }
     }
 
-    .badge-center {
-      padding: $padding;
+    span {
+      color: $dark-green;
+    }
 
-      &-top {
-        display: flex;
-        gap: 1rem;
+    @keyframes FadeIn {
+      100% {
+        opacity: 1;
       }
+    }
+  }
 
-      .badge-code {
-        svg {
-          width: 5rem;
-          height: auto;
-        }
-      }
-
-      .badge-mascot {
-        width: fit-content;
-        height: fit-content;
-        padding: 0.5rem;
-        border: $border-width solid white;
-        border-radius: 24px;
-      }
+  #mascot-badge-container {
+    @media (min-width: $tablet-breakpoint) {
+      display: none;
     }
   }
 }

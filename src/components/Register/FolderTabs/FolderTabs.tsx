@@ -36,12 +36,9 @@ function FolderTab({
       <span>{label}</span>
 
       {activeTab && (
-        <>
-          <div className="active-line1">
-            <div className="active-line2" />
-          </div>
-          <div className="active-line3" />
-        </>
+        <div className="active-line1">
+          <div className="active-line2" />
+        </div>
       )}
     </button>
   );

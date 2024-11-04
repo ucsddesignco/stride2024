@@ -17,6 +17,9 @@ html {
   @media (min-width: $tablet-breakpoint) {
     --main-padding: 4rem;
   }
+  @media (min-width: $desktop-breakpoint) {
+    --main-padding: 7.5rem;
+  }
 }
 
 * {

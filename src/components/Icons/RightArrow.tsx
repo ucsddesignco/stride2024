@@ -4,18 +4,16 @@ export default function RightArrow(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
-      width="18"
-      height="14"
-      viewBox="0 0 18 14"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M1 7H17M17 7L11 13M17 7L11 1"
+        d="M9.10947 2.79377L14.3146 7.99891M14.3146 7.99891L9.10947 13.204M14.3146 7.99891L0 7.99914"
         stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeWidth="1.99985"
       />
     </svg>
   );

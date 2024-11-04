@@ -13,7 +13,7 @@ export default function FormText({
   const inputId = useId();
 
   return (
-    <div className="registration-textfield">
+    <div className="registration-textfield-container">
       <label htmlFor={inputId}>{label}</label>
       <input placeholder={placeholder} {...register(name)} id={inputId} />
 
