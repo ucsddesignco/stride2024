@@ -14,8 +14,8 @@ export default function VerticalBar(props: SVGProps<SVGSVGElement>) {
       <path
         d="M1.46387 0.882812V37.8668"
         stroke="#FBFEFC"
-        stroke-width="1.072"
-        stroke-dasharray="2.14 2.14"
+        strokeWidth="1.072"
+        strokeDasharray="2.14 2.14"
       />
     </svg>
   );

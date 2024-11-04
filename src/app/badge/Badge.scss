@@ -1,84 +1,130 @@
 #badge-page-container {
   margin-top: $nav-height;
-  padding: $main-padding-mobile;
+  padding: var(--main-padding);
   height: calc(100dvh - $nav-height);
   font-family: $p-font;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
+  max-width: 1800px;
+  margin-inline: auto;
 
-  #badge-page-main-content {
-    height: 100%;
+  @media (min-width: $tablet-breakpoint) {
+    padding-block: 0;
     display: flex;
-    flex-direction: column;
-    @media (min-width: 580px) {
-      width: 30rem;
-      margin-inline: auto;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    h1 {
-      margin-bottom: 2rem;
-    }
-
-    #badge-form-body {
-      height: 100%;
-    }
+    align-items: center;
   }
 
-  #badge-footer {
+  #badge-page-left-content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
+    height: 100%;
 
-    #current-step-small {
-      @media (min-width: 400px) {
-        display: none;
-      }
+    @media (min-width: $tablet-breakpoint) {
+      // height: fit-content;
+      max-height: 720px;
     }
 
-    #current-step-large {
-      display: none;
-
-      @media (min-width: 400px) {
-        display: block;
-      }
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
-
-    button {
-      border-radius: 22px;
-      padding: 0.5rem 1rem;
-      font-size: 1.2rem;
-      font-family: $p-font;
-      font-weight: 600;
+    #badge-page-main-content {
+      height: 100%;
       display: flex;
-      gap: 0.5rem;
-      border: none;
-      align-items: center;
-      border: 2px solid $white;
-      cursor: pointer;
+      flex-direction: column;
 
-      .right-arrow {
-        transform: rotate(180deg);
+      @media (min-width: 580px) {
+        width: 30rem;
+        margin-inline: auto;
+      }
+
+      // @media (min-width: $tablet-breakpoint) {
+      //   height: auto;
+      // }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      h1 {
+        margin-bottom: 2rem;
+
+        @media (min-width: $tablet-breakpoint) {
+          font-size: 4rem;
+        }
+      }
+
+      #badge-form-body {
+        height: 100%;
+      }
+    }
+
+    #badge-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      #current-step-small {
+        @media (min-width: 400px) {
+          display: none;
+        }
+      }
+
+      #current-step-large {
+        display: none;
+
+        @media (min-width: 400px) {
+          display: block;
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      button {
+        border-radius: 22px;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        font-family: $p-font;
+        font-weight: 600;
+        display: flex;
+        gap: 0.5rem;
+        border: none;
+        align-items: center;
+        border: 2px solid $white;
+        cursor: pointer;
+
+        .right-arrow {
+          transform: rotate(180deg);
+          color: white;
+        }
+      }
+
+      .back-button {
+        background-color: transparent;
         color: white;
       }
     }
+  }
 
-    .back-button {
-      background-color: transparent;
-      color: white;
+  #badge-page-right-content {
+    display: none;
+
+    @media (min-width: $tablet-breakpoint) {
+      display: block;
+      height: 100%;
+      width: 100%;
+      margin-bottom: calc($nav-height/2);
+
+      #mascot-badge-container {
+        display: grid;
+        place-items: center;
+      }
+
+      .mascot-badge {
+        margin-inline: 0;
+        margin-left: auto;
+      }
     }
   }
 }

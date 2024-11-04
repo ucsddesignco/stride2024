@@ -1,12 +1,23 @@
 #register-page-container {
   margin-top: $nav-height;
-  padding: $main-padding-mobile;
+  padding: 2.5rem 1.5rem;
+  // padding: $main-padding-mobile;
   height: calc(100dvh - $nav-height);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
+  @media (min-width: $tablet-breakpoint) {
+    padding-bottom: calc($nav-height / 2);
+    justify-content: center;
+    // align-items: center;
+  }
+
   #register-top {
+    @media (min-width: 400px) {
+      margin-inline: auto;
+    }
+
     #smaller-register-header {
       font-size: 2.25rem;
       text-align: center;
@@ -30,14 +41,21 @@
         font-size: 4rem;
         display: block;
         width: fit-content;
-        margin-inline: auto;
 
         span {
           display: flex;
           align-items: center;
           gap: 1rem;
           margin-bottom: 1.25rem;
+
+          svg {
+            width: 3.2em;
+          }
         }
+      }
+
+      @media (min-width: $tablet-breakpoint) {
+        font-size: 5rem;
       }
     }
 
@@ -63,6 +81,11 @@
     gap: 1rem;
     max-width: 17.5rem;
     margin-inline: auto;
+
+    @media (min-width: $tablet-breakpoint) {
+      margin-top: 2.5rem;
+      max-width: 24rem;
+    }
 
     a,
     button {

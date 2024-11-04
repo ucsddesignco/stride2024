@@ -9,6 +9,17 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  --main-padding: 1.5rem;
+
+  @media (min-width: 580px) {
+    --main-padding: 2rem;
+  }
+  @media (min-width: $tablet-breakpoint) {
+    --main-padding: 4rem;
+  }
+  @media (min-width: $desktop-breakpoint) {
+    --main-padding: 7.5rem;
+  }
 }
 
 * {

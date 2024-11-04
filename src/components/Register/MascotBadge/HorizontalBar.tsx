@@ -14,8 +14,8 @@ export default function HorizontalBar(props: SVGProps<SVGSVGElement>) {
       <path
         d="M0.151855 1.26562L180.248 1.26562"
         stroke="#FBFEFC"
-        stroke-width="1.072"
-        stroke-dasharray="2.14 2.14"
+        strokeWidth="1.072"
+        strokeDasharray="2.14 2.14"
       />
     </svg>
   );

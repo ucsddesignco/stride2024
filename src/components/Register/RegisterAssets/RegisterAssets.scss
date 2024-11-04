@@ -1,0 +1,85 @@
+.register-asset-wrapper {
+  .register-asset {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+
+    @media (min-width: $tablet-breakpoint) {
+      display: block;
+    }
+  }
+
+  #register-asset {
+    &-top-edge {
+      top: 0;
+      right: 30%;
+    }
+
+    &-stacked-papers {
+      top: 10%;
+      left: 0;
+    }
+
+    &-magnify-glass {
+      top: 0%;
+      right: 0;
+    }
+
+    &-right-edge {
+      right: 0;
+      z-index: 1;
+      top: 45%;
+    }
+
+    &-hole-papers {
+      top: 23%;
+      right: 0;
+    }
+    &-polaroid {
+      bottom: 12%;
+      left: 0;
+    }
+    &-bottom-left-edge {
+      bottom: 0;
+      left: 0;
+    }
+    &-bottom-left-paper {
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+    &-bottom-papers {
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+    }
+    &-feather {
+      bottom: 0;
+      right: 12%;
+    }
+  }
+
+  &.simplified {
+    #register-asset {
+      &-stacked-papers {
+        display: none;
+      }
+
+      &-magnify-glass {
+        display: none;
+      }
+
+      &-polaroid {
+        display: none;
+      }
+
+      &-bottom-left-paper {
+        display: none;
+      }
+
+      &-feather {
+        display: none;
+      }
+    }
+  }
+}

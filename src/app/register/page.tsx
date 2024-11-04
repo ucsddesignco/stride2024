@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import StrideLogo from '@/components/Register/StrideLogo';
 import FeeTag from '@/components/Register/FeeTag';
+import RegisterAssets from '@/components/Register/RegisterAssets/RegisterAssets';
 
 export default function RegisterPage() {
   // This is to ensure users don't click on register button before the script is loaded
@@ -25,6 +26,7 @@ export default function RegisterPage() {
 
   return (
     <main id="register-page-container">
+      <RegisterAssets />
       <div id="register-top">
         <h1 id="smaller-register-header">
           <span>Register For</span>
@@ -34,15 +36,11 @@ export default function RegisterPage() {
           Register
           <span>
             For
-            <Image
-              src="/images/logos/stride-logo.svg"
-              width={208}
-              height={50}
-              alt="Stride Logo"
-            />
+            <StrideLogo />
           </span>
         </h1>
-        <p>Lorem Ipsum Dolor Sit Amet Include something about the $5 fee?</p>
+        <p>Lorem Ipsum Dolor Sit Amet</p>
+        <p>Include something about the $5 fee?</p>
       </div>
       <div id="register-bottom">
         <div id="luma-button-container">
