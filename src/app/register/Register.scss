@@ -1,16 +1,16 @@
 #register-page-container {
   margin-top: $nav-height;
   padding: 2.5rem 1.5rem;
-  // padding: $main-padding-mobile;
   height: calc(100dvh - $nav-height);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   @media (min-width: $tablet-breakpoint) {
-    padding-bottom: calc($nav-height / 2);
+    margin-top: 0;
+    align-items: center;
     justify-content: center;
-    // align-items: center;
+    height: 100%;
   }
 
   #register-top {
