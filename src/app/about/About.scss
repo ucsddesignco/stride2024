@@ -70,15 +70,15 @@
       }
 
       .image1 {
-        transform: rotate(-10deg) translateX(-20px);
+        transform: rotate(-15deg) translateX(-100px);
       }
 
       .image2 {
-        transform: rotate(5deg) translateX(0px);
+        transform: rotate(1deg) translateX(-45px) translateY(-5px);
       }
 
       .image3 {
-        transform: rotate(-5deg) translateX(20px);
+        transform: rotate(10deg) translateX(20px) translateY(50px);
       }
     }
   }
