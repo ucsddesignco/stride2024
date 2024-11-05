@@ -10,43 +10,38 @@
     right: 0;
     z-index: 1;
     aspect-ratio: 252/378;
-    max-width: 20.5rem;
-    max-height: 100%;
     border: 2px solid white;
     border-radius: 25px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     scale: 1;
-    animation:
-      SlideUp 0.8s,
-      ScaleDown 0.8s 0.8s forwards;
     margin-inline: auto;
+    max-width: 20.5rem;
+    transform-origin: top;
+    transform: translateY(100%);
 
     @media (min-width: $tablet-breakpoint) {
       max-width: 23rem;
+      height: auto;
+      max-height: 90%;
       animation: none;
+      transform: translateY(0);
     }
 
     @media (min-width: $desktop-breakpoint) {
       max-width: 25rem;
     }
 
-    @keyframes SlideUp {
+    @keyframes SlideUpAndScale {
       0% {
-        transform: translateY(100%) scale(1.05);
+        transform: translateY(100%) scale(calc(1.1 * var(--badge-scale)));
+      }
+      50% {
+        transform: translateY(-15%) scale(calc(1.1 * var(--badge-scale)));
       }
       100% {
-        transform: translateY(-15%) scale(1.05);
-      }
-    }
-
-    @keyframes ScaleDown {
-      0% {
-        transform: translateY(-15%) scale(1.05);
-      }
-      100% {
-        transform: scale(0.9) translateY(0);
+        transform: translateY(0) scale(calc(0.95 * var(--badge-scale)));
       }
     }
 
@@ -106,7 +101,8 @@
 
         h2 {
           display: grid;
-          font-size: 1.5rem;
+          // font-size: 1.5rem;
+          // font-size: 50%;
           font-style: italic;
           font-weight: 600;
 

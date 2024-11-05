@@ -67,6 +67,15 @@ export default function RegisterPage() {
               setIsOpen(true);
             }}
           >
+            <span>
+              <Image
+                src="/images/Icons/newtab-icon.svg"
+                width={24}
+                height={24}
+                alt="New Tab"
+                aria-hidden
+              />
+            </span>
             Register on Luma
           </button>
           <FeeTag id="register-fee-tag" />
