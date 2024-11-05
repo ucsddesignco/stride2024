@@ -15,16 +15,18 @@ type ParsedFormData = {
 };
 
 const DEFAULT_VALUES = {
-  name: '??? ???',
-  pronouns: '???/???',
-  year: '???'
+  name: 'Detective Duck',
+  pronouns: 'They/Them',
+  year: '???',
+  link: '',
+  email: ''
 };
 
 const parseFormData = (formData: TFormData): ParsedFormData => {
   const name = formData.name || DEFAULT_VALUES.name;
   const pronouns = formData.pronouns || DEFAULT_VALUES.pronouns;
-  const [firstName = '???', lastName = '???'] = name.split(' ');
-  const [firstPronoun = '???', secondPronoun = '???'] = pronouns.split('/');
+  const [firstName, lastName] = name.split(' ');
+  const [firstPronoun, secondPronoun] = pronouns.split('/');
 
   return {
     firstName,
@@ -39,6 +41,14 @@ export default function MascotBadge({ formData }: { formData: TFormData }) {
   const { firstName, lastName, firstPronoun, secondPronoun, year } =
     parseFormData(formData);
 
+  const defaultStyle = (field: keyof TFormData) => {
+    const isDefault =
+      !Object.keys(formData).includes(field) ||
+      formData[field] === undefined ||
+      formData[field] === '';
+    return isDefault ? { color: 'gray' } : { color: 'white' };
+  };
+
   return (
     <div id="mascot-badge-container">
       <div className="mascot-badge">
@@ -50,25 +60,27 @@ export default function MascotBadge({ formData }: { formData: TFormData }) {
         <div className="badge-center">
           <div className="badge-center-top ">
             <h2>
-              <span>{firstName}</span>
-              <span>{lastName}</span>
+              <span style={defaultStyle('name')}>{firstName}</span>
+              <span style={defaultStyle('name')}>{lastName}</span>
             </h2>
             <p>
               <VerticalBar id="vertical-dotted-bar" />
-              <span>{firstPronoun}/</span>
-              <span>{secondPronoun}</span>
+              <span style={defaultStyle('pronouns')}>{firstPronoun}/</span>
+              <span style={defaultStyle('pronouns')}>{secondPronoun}</span>
             </p>
             <HorizontalBar id="horizontal-dotted-bar" />
           </div>
           <div className="badge-center-center">
             <div className="badge-code">
-              {formData?.link === undefined ? (
+              {formData?.link === undefined || formData?.link === '' ? (
                 <div id="empty-qr-code" />
               ) : (
                 <QRCode value={formData?.link || ''} />
               )}
             </div>
-            <p>Class of {year}</p>
+            <p>
+              Class of <span style={defaultStyle('year')}>{year}</span>
+            </p>
           </div>
         </div>
         <div className="badge-bottom">
