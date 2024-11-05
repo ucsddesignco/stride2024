@@ -5,6 +5,7 @@ import './Navbar.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import StrideLogo from '../Register/StrideLogo';
+import DCOLogo from './Logos/DCOLogo';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -17,28 +18,17 @@ export default function Navbar() {
   };
 
   return (
-    <nav id="navbar">
+    <nav id="navbar" className={pathname === '/' ? 'home' : ''}>
       <Link id="nav-logo-container" href="/">
-        {pathname === '/' && (
-          <Image
-            src="images/logos/dco-logo.svg"
-            width={110}
-            height={12}
-            alt="Stride Logo"
-          />
-        )}
-        {pathname === '/' ? (
-          <StrideLogo id="nav-stride-logo" width="260" />
-        ) : (
-          <div id="nav-logo-current-page">
-            <StrideLogo id="nav-stride-logo" width="130" />
-            <p>/ {parsePathname(pathname)}</p>
-          </div>
-        )}
+        <DCOLogo />
+        <div id="nav-logo-current-page">
+          <StrideLogo id="nav-stride-logo" width="130" />
+          <p>/ {parsePathname(pathname)}</p>
+        </div>
       </Link>
 
-      {pathname === '/' ? (
-        <div id="nav-home-button-container">
+      <div id="nav-button-container">
+        {pathname !== '/about' && (
           <Link id="about-button" href="/about">
             <span>
               <Image
@@ -51,33 +41,13 @@ export default function Navbar() {
             </span>
             About <span className="longer-about-text">Stride</span>
           </Link>
+        )}
+        {pathname !== '/register' && pathname !== '/badge' && (
           <Link id="register-button" href="/register">
-            Register <span className="longer-about-text">Now</span>
+            Register <span className="longer-about-text">&nbsp;Now</span>
           </Link>
-        </div>
-      ) : (
-        <div id="nav-button-container">
-          {pathname !== '/about' && (
-            <Link id="about-button" href="/about">
-              <span>
-                <Image
-                  src="images/icons/info-icon.svg"
-                  width={24}
-                  height={24}
-                  alt="Info Icon"
-                  aria-hidden="true"
-                />
-              </span>
-              About <span className="longer-about-text">Stride</span>
-            </Link>
-          )}
-          {pathname !== '/register' && pathname !== '/badge' && (
-            <Link id="register-button" href="/register">
-              Register <span className="longer-about-text">Now</span>
-            </Link>
-          )}
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 }
