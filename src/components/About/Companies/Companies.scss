@@ -4,6 +4,13 @@
     font-weight: bold;
     fill: white;
   }
+
+  @media only screen and (max-width: 468px) {
+    .ducky {
+      display: none;
+    }
+  }
+
   .button-display {
     .svg-button {
       padding: 4px;
@@ -53,7 +60,6 @@
     border: 1px solid white;
     border-radius: 4px;
     padding: 10px;
-    font-size: 14px;
     overflow-y: auto;
     height: 450px;
     box-sizing: border-box;
@@ -61,16 +67,20 @@
 
     h3 {
       font-weight: bold;
-      font-size: 40px;
+      font-size: 30px;
     }
 
     h3,
     p {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
 
     p {
-      font-size: 18px;
+      font-size: 16.25px;
+    }
+
+    .company-writeup {
+      margin-right: 33%;
     }
   }
 }

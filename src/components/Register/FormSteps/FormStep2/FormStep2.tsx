@@ -21,20 +21,21 @@ export default function FormStep2({
         register={register}
         name="email"
         label="UCSD Email"
-        placeholder="duck@ucsd.edu"
+        placeholder="e.g. duck@ucsd.edu"
         error={errors.email}
       />
       <FormText
         register={register}
         name="link"
-        label="Linkedin/Portfolio"
-        placeholder="linkedin.com/in/duck"
+        // label="Linkedin/Portfolio"
+        label="Personal Link"
+        placeholder="e.g. LinkedIn, Portfolio"
         error={errors.link}
       />
-      <FormSelect
+      {/* <FormSelect
         control={control}
         name="interest"
-        width="18rem"
+        width="17rem"
         hasOtherOption
         defaultValue="Product Design"
         options={[
@@ -47,7 +48,7 @@ export default function FormStep2({
         ]}
         label="Interest"
         error={errors.interest}
-      />
+      /> */}
     </div>
   );
 }

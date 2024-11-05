@@ -1,5 +1,13 @@
+@media only screen and (min-width: 768px) {
+  .about-container {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .about-container {
-  margin-top: $nav-height;
+  margin-top: var(--nav-height);
   padding-inline: var(--main-padding);
   display: grid;
   gap: 1rem;
@@ -29,6 +37,57 @@
   .about-section {
     p {
       margin-top: 2rem;
+    }
+
+    @media only screen and (max-width: 469px) {
+      .about-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .about-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 200px;
+          height: auto;
+        }
+      }
+    }
+
+    .about-images {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-top: 5rem;
+
+      img {
+        position: relative;
+        width: 400px;
+        height: auto;
+        border: 2px solid white;
+        transform-origin: center center;
+      }
+
+      .image1 {
+        transform: rotate(-15deg) translateX(-100px);
+      }
+
+      .image2 {
+        transform: rotate(1deg) translateX(-45px) translateY(-5px);
+      }
+
+      .image3 {
+        transform: rotate(10deg) translateX(20px) translateY(50px);
+      }
     }
   }
 

@@ -1,8 +1,7 @@
-.registration-textfield {
-  --temp-fontsize: 1.2rem;
+.registration-textfield-container {
   display: grid;
   gap: 0.5rem;
-  font-size: var(--temp-fontsize);
+  font-size: 1.5rem;
 
   .error-message {
     height: var(--temp-fontsize);
@@ -26,6 +25,10 @@
     padding-block: 0.25rem;
     outline: none;
     transition: border-bottom 0.3s;
+
+    &::placeholder {
+      color: $dark-gray;
+    }
 
     &:focus {
       border-bottom: 1px solid $light-green;

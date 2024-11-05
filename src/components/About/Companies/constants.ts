@@ -39,7 +39,7 @@ export const companies = [
     org_type: 'Recruiting',
     companyImage: 'images/company-images/ucsdlibrary.svg',
     description:
-      "The UC San Diego Library, one of the nation's top public academic libraries, plays a critical role in advancing and supporting the university's research, teaching, patient care, and public service missions. The Library provides the foundation of knowledge needed to advance cutting-edge discoveries in a wide range of disciplines--from healthcare and science to public policy and the arts. The Library provides access to more than 7 million items, including digital and print volumes, journals, and multimedia materials to meet the knowledge demands of scholars, students, and members of the public."
+      "The UC San Diego Library, one of the nation's top public academic libraries, plays a critical role in advancing the university's research, teaching, patient care, and public service missions. The Library provides the foundation of knowledge needed to advance cutting-edge discoveries in a wide range of disciplines--from healthcare to public policy to the arts. The Library provides access to more than 7 million items, including digital and print volumes and multimedia materials to meet the knowledge demands of scholars, students, and members of the public."
   },
   {
     company: 'Notion',
@@ -60,6 +60,6 @@ export const companies = [
     org_type: 'Networking Only',
     companyImage: 'images/company-images/illumina.svg',
     description:
-      "Notion blends your everyday work tools into one. Product roadmap? Company wiki? Meeting notes? With Notion, they're all in one place, and totally customizable to meet the needs of any workflow. It's the all-in-one workspace for you, your team, and your whole company."
+      'Illumina is a leading developer, manufacturer, and marketer of life science tools and integrated systems dedicated to making genomics useful for all. Innovating at the intersection of technology, biology, and health, they provide sequencing innovations enabling researchers and clinicians to usher in the future of personalized medicine.'
   }
 ];

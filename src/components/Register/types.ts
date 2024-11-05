@@ -17,8 +17,8 @@ export type TFormData = {
   name: string;
   pronouns: string;
   year: string;
-  interest: string;
-  interest_other?: string;
+  // interest: string;
+  // interest_other?: string;
   email: string;
   link: string;
 };
@@ -41,7 +41,8 @@ export type FormSelectProps = {
   name: keyof TFormData;
   control: Control<TFormData, any>;
   options: Array<string>;
-  defaultValue: string;
+  defaultValue?: string;
+  defaultLabel?: string;
   hasOtherOption?: boolean;
   error?: FieldError;
   width?: string;
@@ -66,12 +67,12 @@ export const RegistrationSchema: ZodType<TFormData> = z.object({
       },
       { message: 'Year must be between 2022 and 2029' }
     ),
-  interest: z.string().min(2, { message: 'Interest is too short' }),
-  interest_other: z
-    .string()
-    .min(2, { message: 'Interest is too short' })
-    .max(50, { message: 'Interest needs to be under 30 characters.' })
-    .optional(),
+  // interest: z.string().min(2, { message: 'Interest is too short' }),
+  // interest_other: z
+  //   .string()
+  //   .min(2, { message: 'Interest is too short' })
+  //   .max(50, { message: 'Interest needs to be under 30 characters.' })
+  //   .optional(),
   link: z
     .string()
     .includes('linkedin.com', { message: 'Invalid LinkedIn URL' }),
