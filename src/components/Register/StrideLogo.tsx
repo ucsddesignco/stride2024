@@ -1,10 +1,13 @@
 import { SVGProps } from 'react';
 
-export default function StrideLogo(props: SVGProps<SVGSVGElement>) {
+export default function StrideLogo({
+  width,
+  ...props
+}: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
-      width="100%"
+      width={width || '100%'}
       viewBox="0 0 209 49"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

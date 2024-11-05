@@ -7,7 +7,7 @@
 }
 
 .about-container {
-  margin-top: $nav-height;
+  margin-top: var(--nav-height);
   padding-inline: var(--main-padding);
   display: grid;
   gap: 1rem;
