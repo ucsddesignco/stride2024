@@ -16,7 +16,8 @@
     overflow: hidden;
     position: relative;
     margin-top: -1.5rem;
-    width: 100%;
+    width: auto;
+    height: 50%;
 
     @media (min-width: 400px) {
       width: auto;

@@ -7,6 +7,10 @@ import Opportunities from '@/components/About/Opportunities/Opportunities';
 import Companies from '@/components/About/Companies/Companies';
 import Agenda from '@/components/About/Agenda/Agenda';
 import FAQ from '@/components/About/FAQ/FAQ';
+import Image from 'next/image';
+import Stride1 from '@/../public/images/past-photos/stride-1.webp';
+import Stride2 from '@/../public/images/past-photos/stride-2.webp';
+import Stride3 from '@/../public/images/past-photos/stride-3.webp';
 
 export default function About() {
   return (
@@ -22,9 +26,21 @@ export default function About() {
         </p>
         <p>Note: There will be a $7 registration fee</p>
         <div className="about-images">
-          <img src="images/past-photos/stride-1.jpg" className="image1" />
-          <img src="images/past-photos/stride-2.jpg" className="image2" />
-          <img src="images/past-photos/stride-3.jpg" className="image3" />
+          <Image
+            src={Stride1}
+            className="image1"
+            alt="Students at career fair speaking with Apple employee who worked on Apple Vision Pro"
+          />
+          <Image
+            src={Stride2}
+            className="image2"
+            alt="Two students sitting at table showing career fair postcard while smiling"
+          />
+          <Image
+            src={Stride3}
+            className="image3"
+            alt="Multiple Google employees sitting on stage giving a talk"
+          />
         </div>
       </section>
       <Opportunities />
