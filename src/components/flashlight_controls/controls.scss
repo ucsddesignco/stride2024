@@ -1,7 +1,150 @@
+.label {
+  color: #000;
+  align-content: center;
+}
+
 .controls {
+  cursor: url('../Icons/Cursor.svg');
   background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 330px;
+  height: 70px;
+
+  border: #000 2px solid;
+  border-radius: 100px;
   position: fixed;
-  bottom: 0;
+  bottom: 10px;
+  align-items: center;
+  z-index: 2000;
+  justify-content: space-evenly;
+}
+
+/* =============== Slider =============== */
+.slider-track {
+  height: 6px;
+  border: #000 2px solid;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.slider-thumb::before,
+.slider-thumb::after {
+  content: '';
+  width: 2px;
+  height: 70%;
+  background: white;
+  position: absolute;
+}
+
+.slider-thumb::before {
+  left: 5px;
+}
+
+.slider-thumb::after {
+  right: 5px;
+}
+
+.slider-thumb {
+  width: 16px;
+  height: 24px;
+  background: #000;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: url('../Icons/Cursor-1.svg');
+}
+
+.slider-output {
+  display: none;
+}
+
+#slider {
+  width: 30%;
+  align-content: center;
+  height: 50%;
+}
+
+/* =============== Switch =============== */
+.switch {
+  width: 100px;
+  height: 44px;
+  border: #000 2px solid;
+  border-radius: 40px;
+  position: relative;
+  align-content: center;
+  align-items: center;
+  background: #68dea3;
+  cursor: url('../Icons/Cursor-1.svg');
+}
+
+.switch-background.selected {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background: #ffffff;
+  position: relative;
+}
+
+.switch-thumb {
+  width: 48px;
+  height: 36px;
+  background: #000;
+  border-radius: 40px;
+  position: relative;
+  left: 4px;
+  transition: left 0.2s;
+  align-content: center;
+  justify-items: center;
+}
+
+.switch-thumb.selected {
+  left: 46px;
+  top: 2px;
+  background: #000000;
+  position: absolute;
+}
+
+.On-Text {
+  display: inline;
+  position: absolute;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
   align-self: center;
-  z-index: 900;
+  left: 58px;
+  top: 12px;
+}
+
+.Off-Text {
+  display: none;
+  position: absolute;
+  color: #000000;
+  font-size: 20px;
+  top: 12px;
+  left: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.On-Text.selected {
+  display: none;
+}
+
+.Off-Text.selected {
+  display: inline;
+}
+
+.icon-off {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-light {
+  position: relative;
+  z-index: 901;
+  align-self: center;
 }

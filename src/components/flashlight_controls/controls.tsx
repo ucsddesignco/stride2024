@@ -1,5 +1,15 @@
 import React from 'react';
 import './controls.scss';
+import {
+  Label,
+  Slider,
+  SliderOutput,
+  SliderThumb,
+  SliderTrack,
+  Switch
+} from 'react-aria-components';
+import IconLightOn from '../Icons/icon-light-on';
+import IconLightOff from '../Icons/icon-light-off';
 
 function Controls() {
   return (
@@ -37,6 +47,29 @@ function Controls() {
           </g>
         </svg>
       </div>
+      <p className="label">Size</p>
+      <Slider id="slider" defaultValue={50} minValue={0} maxValue={100}>
+        <SliderTrack className="slider-track">
+          <SliderThumb className="slider-thumb" />
+        </SliderTrack>
+        <SliderOutput className="slider-output" />
+      </Slider>
+      <Switch id="switch" className="switch">
+        {({ isSelected }) => (
+          <div className={`switch-background ${isSelected ? 'selected' : ''}`}>
+            <p className={`Off-Text ${isSelected ? 'selected' : ''}`}>Off</p>
+            <div className={`switch-thumb ${isSelected ? 'selected' : ''}`}>
+              <div
+                className={`icon-light ${isSelected ? 'icon-light-off' : 'icon-light-on'}`}
+              >
+                {isSelected ? <IconLightOff /> : <IconLightOn />}
+              </div>
+            </div>
+            <div className="icon-off" />
+            <p className={`On-Text ${isSelected ? 'selected' : ''}`}>On</p>
+          </div>
+        )}
+      </Switch>
     </div>
   );
 }
