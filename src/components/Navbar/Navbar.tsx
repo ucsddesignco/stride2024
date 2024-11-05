@@ -71,7 +71,7 @@ export default function Navbar() {
               About <span className="longer-about-text">Stride</span>
             </Link>
           )}
-          {pathname !== '/register' && (
+          {pathname !== '/register' && pathname !== '/badge' && (
             <Link id="register-button" href="/register">
               Register <span className="longer-about-text">Now</span>
             </Link>
