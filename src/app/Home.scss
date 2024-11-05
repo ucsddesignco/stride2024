@@ -10,7 +10,17 @@ body {
 }
 
 a,
-button {
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='range'],
+input[type='file'],
+input[type='checkbox'],
+input[type='date'],
+label,
+select,
+summary {
   cursor: url('../../public/images/cursors/Cursor-hover.svg'), auto;
 }
 
