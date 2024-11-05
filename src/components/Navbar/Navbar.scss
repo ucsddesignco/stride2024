@@ -29,6 +29,12 @@
       }
     }
 
+    #nav-button-container #register-button {
+      @media (min-width: $desktop-breakpoint) {
+        padding: 1.125rem 2rem;
+      }
+    }
+
     @media (min-width: $tablet-breakpoint) {
       padding: 4rem;
     }
@@ -59,8 +65,7 @@
     }
   }
 
-  #nav-button-container,
-  #nav-home-button-container {
+  #nav-button-container {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -95,10 +100,6 @@
       text-transform: uppercase;
       padding: 6px;
       padding-inline: 1rem;
-
-      @media (min-width: $desktop-breakpoint) {
-        padding: 1.125rem 2rem;
-      }
     }
 
     a {
