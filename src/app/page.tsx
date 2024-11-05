@@ -220,7 +220,7 @@ export default function Page() {
     tl.to(
       '#companies',
       {
-        top: '28%',
+        top: '23%',
         right: '3%',
         rotate: -30,
         scale: 1.67,
@@ -324,8 +324,8 @@ export default function Page() {
           className="page-asset"
           src="/images/page-assets/cards.svg"
           alt=""
-          width={287}
-          height={223}
+          width={271}
+          height={192}
         />
 
         <Image
@@ -344,8 +344,8 @@ export default function Page() {
           className="page-asset"
           src="/images/page-assets/companies.svg"
           alt=""
-          width={269}
-          height={222}
+          width={265}
+          height={256}
         />
 
         <Image
@@ -354,8 +354,8 @@ export default function Page() {
           className="page-asset"
           src="/images/page-assets/orgs.svg"
           alt=""
-          width={268}
-          height={301}
+          width={245}
+          height={240}
         />
 
         <Image
@@ -364,8 +364,8 @@ export default function Page() {
           className="page-asset"
           src="/images/page-assets/polaroid.svg"
           alt=""
-          width={175}
-          height={186}
+          width={176}
+          height={187}
         />
 
         <Image
@@ -374,8 +374,8 @@ export default function Page() {
           className="page-asset"
           src="/images/page-assets/main-content.svg"
           alt=""
-          width={423}
-          height={242}
+          width={430}
+          height={229}
         />
 
         <Image
@@ -384,8 +384,8 @@ export default function Page() {
           className="page-asset"
           src="/images/page-assets/feather.svg"
           alt=""
-          width={196}
-          height={227}
+          width={202}
+          height={229}
         />
 
         <Image
@@ -438,8 +438,8 @@ export default function Page() {
             className="folder-asset"
             src="/images/page-assets/cards.svg"
             alt=""
-            width={287}
-            height={223}
+            width={271}
+            height={192}
           />
           <Image
             id="folder-magnifying-glass"
@@ -456,8 +456,8 @@ export default function Page() {
             className="folder-asset"
             src="/images/page-assets/companies.svg"
             alt=""
-            width={269}
-            height={222}
+            width={265}
+            height={256}
           />
           <Image
             id="folder-orgs"
@@ -465,8 +465,8 @@ export default function Page() {
             className="folder-asset"
             src="/images/page-assets/orgs.svg"
             alt=""
-            width={268}
-            height={301}
+            width={245}
+            height={240}
           />
           <Image
             id="folder-polaroid"
@@ -474,8 +474,8 @@ export default function Page() {
             className="folder-asset"
             src="/images/page-assets/polaroid.svg"
             alt=""
-            width={175}
-            height={186}
+            width={176}
+            height={187}
           />
           <Image
             id="folder-main-content"
@@ -483,8 +483,8 @@ export default function Page() {
             className="folder-asset"
             src="/images/page-assets/main-content.svg"
             alt=""
-            width={423}
-            height={242}
+            width={430}
+            height={229}
           />
           <Image
             id="folder-feather"
@@ -492,8 +492,8 @@ export default function Page() {
             className="folder-asset"
             src="/images/page-assets/feather.svg"
             alt=""
-            width={196}
-            height={227}
+            width={202}
+            height={229}
           />
           <Image
             id="folder-badge"

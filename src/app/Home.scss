@@ -84,23 +84,23 @@
 }
 #feather,
 #folder-feather {
-  height: calc(var(--folder-height) * 0.424);
+  height: calc(var(--folder-height) * 0.43);
 }
 #main-content,
 #folder-main-content {
-  height: calc(var(--folder-height) * 0.373);
+  height: calc(var(--folder-height) * 0.43);
 }
 #polaroid,
 #folder-polaroid {
-  height: calc(var(--folder-height) * 0.349);
+  height: calc(var(--folder-height) * 0.351);
 }
 #orgs,
 #folder-orgs {
-  height: calc(var(--folder-height) * 0.565);
+  height: calc(var(--folder-height) * 0.45);
 }
 #companies,
 #folder-companies {
-  height: calc(var(--folder-height) * 0.402);
+  height: calc(var(--folder-height) * 0.48);
 }
 #magnifying-glass,
 #folder-magnifying-glass {
@@ -108,7 +108,7 @@
 }
 #cards,
 #folder-cards {
-  height: calc(var(--folder-height) * 0.353);
+  height: calc(var(--folder-height) * 0.36);
 }
 
 // TODO: DELETE LATER
@@ -258,23 +258,23 @@
   }
 
   #badge {
-    width: calc(var(--folder-width) * 0.258);
+    width: calc(var(--folder-width) * 0.311);
     transform: translate(65%, -125%) rotate(12deg);
   }
   #feather {
-    width: calc(var(--folder-width) * 0.354);
+    width: calc(var(--folder-width) * 0.269);
     transform: translate(-40%, -200%) rotate(-22.5deg);
   }
   #main-content {
-    width: calc(var(--folder-width) * 0.54);
+    width: calc(var(--folder-width) * 0.572);
     transform: translate(-58%, -60%) rotate(-5deg);
   }
   #polaroid {
-    width: calc(var(--folder-width) * 0.176);
+    width: calc(var(--folder-width) * 0.234);
     transform: translate(-90%, -200%) rotate(-21deg);
   }
   #orgs {
-    width: calc(var(--folder-width) * 0.344);
+    width: calc(var(--folder-width) * 0.326);
     transform: translate(20%, -140%) rotate(-46deg);
   }
   #companies {
@@ -282,11 +282,11 @@
     transform: translate(35%, -70%) rotate(29deg);
   }
   #magnifying-glass {
-    width: calc(var(--folder-width) * 0.408);
+    width: calc(var(--folder-width) * 0.297);
     transform: translate(-130%, -75%);
   }
   #cards {
-    width: calc(var(--folder-width) * 0.35);
+    width: calc(var(--folder-width) * 0.36);
     transform: translate(-110%, -140%) rotate(8deg);
   }
 
