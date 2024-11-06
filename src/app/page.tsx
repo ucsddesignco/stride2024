@@ -6,12 +6,16 @@ import { useGSAP } from '@gsap/react';
 import '@/app/Home.scss';
 import Image from 'next/image';
 import Flashlight from '@/components/Flashlight/Flashlight';
-import Controls from '@/components/flashlight_controls/controls';
+import Controls from '@/components/FlashlightControls/Controls';
 
 gsap.registerPlugin(useGSAP);
 
 export default function Page() {
+  const [isOn, setIsOn] = useState(false);
+  const [size, setSize] = useState(1);
+
   const [folderOpenned, setFolderOpenned] = useState(false);
+
   const [isHoveringFolder, setIsHoveringFolder] = useState(false);
 
   const badge = useRef<HTMLImageElement>(null);
@@ -33,6 +37,13 @@ export default function Page() {
   const folderMagnifyingGlass = useRef<HTMLImageElement>(null);
   const folderCards = useRef<HTMLImageElement>(null);
   const folderBottom = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (folderOpenned) {
+      setIsOn(true);
+      console.log('Folder opened', isOn);
+    }
+  }, [folderOpenned]);
 
   useEffect(() => {
     const setNonFolderPositions = () => {
@@ -424,15 +435,12 @@ export default function Page() {
   );
 
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        overflowX: 'hidden',
-        scrollbarWidth: 'none'
-      }}
-    >
-      <Flashlight />
-      <Controls />
+    <div style={{ minHeight: '100vh', height: '100vh' }}>
+      <Flashlight isOn={isOn} size={size} />
+      {folderOpenned && (
+        <Controls isOn={isOn} setIsOn={setIsOn} setSize={setSize} />
+      )}
+
       <div
         id="page-container"
         style={{

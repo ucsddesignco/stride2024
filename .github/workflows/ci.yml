@@ -1,9 +1,9 @@
-name: Linting and Styling Check
+name: CI Checks
 
 on: [push, pull_request]
 
 jobs:
-  lint:
+  quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -22,5 +22,22 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Run Linting and Styling Check
+      - name: Run Linting/Style Check
         run: pnpm lint-check
+
+      - name: Type Check
+        run: pnpm type-check
+
+      - name: Build Check
+        run: pnpm build
+
+      - name: Cache build output
+        uses: actions/cache@v3
+        with:
+          path: |
+            .next
+            dist
+            build
+          key: ${{ runner.os }}-build-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-build-

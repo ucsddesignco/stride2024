@@ -1,13 +1,14 @@
 .companies-section {
-  .title {
-    font-size: 30px;
-    font-weight: bold;
-    fill: white;
+  @media (min-width: $desktop-breakpoint) {
+    max-width: 780px;
+    margin-inline: auto;
   }
 
-  @media only screen and (max-width: 468px) {
-    .ducky {
-      display: none;
+  h2 {
+    max-width: 22ch;
+
+    @media (min-width: $desktop-breakpoint) {
+      max-width: none;
     }
   }
 
@@ -85,22 +86,5 @@
         margin-right: 33%;
       }
     }
-  }
-}
-
-@media only screen and (max-width: 468px) {
-  .company-text,
-  .company-polaroid {
-    display: none;
-  }
-
-  .modal-text {
-    margin-top: 1rem;
-  }
-}
-
-@media only screen and (min-width: 469px) {
-  .company-modal {
-    display: none;
   }
 }
