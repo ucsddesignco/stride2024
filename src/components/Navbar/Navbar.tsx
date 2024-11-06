@@ -22,7 +22,7 @@ export default function Navbar() {
       <Link id="nav-logo-container" href="/">
         <DCOLogo />
         <div id="nav-logo-current-page">
-          <StrideLogo id="nav-stride-logo" width="130" />
+          <StrideLogo id="nav-stride-logo" />
           <p>/ {parsePathname(pathname)}</p>
         </div>
       </Link>

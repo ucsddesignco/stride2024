@@ -1,19 +1,11 @@
 import './Agenda.scss';
 
-const times = [
-  '12:00 PM',
-  '1:00 PM',
-  '2:00 PM',
-  '3:00 PM',
-  '4:00 PM',
-  '5:00 PM'
-];
+const times = ['10:00 AM', '10:30 AM', '11:30 AM', '1:00 PM', '2:00 PM'];
 const events = [
   'Doors Open',
-  'Google UX Panel',
-  'Arup Lightning Talk',
-  'CoNote Lightning Talk',
-  'Alan Tran Lightning Talk',
+  'Presentation 1',
+  'Presentation 2',
+  'Presentation 3',
   'Doors Close'
 ];
 
@@ -30,11 +22,11 @@ export default function Agenda() {
         className="agenda-card"
       >
         <foreignObject
-          x="225"
+          x="200"
           y="50"
           fill="white"
-          width="400"
-          height="200"
+          width="350"
+          height="50"
           className="agenda-text"
         >
           <div>
@@ -133,12 +125,12 @@ export default function Agenda() {
           x="25"
           y="25"
           fill="white"
-          width="400"
-          height="200"
-          className="agenda-text"
+          width="200"
+          height="50"
+          className="mobile-agenda-text"
         >
           <div>
-            <h3>Wednesday, Nov 13 | 12-5pm PST</h3>
+            <h3 className="mobile-title">Wednesday, Nov 13 | 12-5pm PST</h3>
           </div>
         </foreignObject>
         {times.map((time, index) => (
@@ -168,7 +160,7 @@ export default function Agenda() {
             <rect
               x="150"
               y={75 + index * 50}
-              width="125"
+              width="150"
               height="50"
               stroke="#FFFFFF"
               strokeWidth="2"

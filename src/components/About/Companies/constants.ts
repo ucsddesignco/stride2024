@@ -61,5 +61,12 @@ export const companies = [
     companyImage: 'images/company-images/illumina.svg',
     description:
       'Illumina is a leading developer, manufacturer, and marketer of life science tools and integrated systems dedicated to making genomics useful for all. Innovating at the intersection of technology, biology, and health, they provide sequencing innovations enabling researchers and clinicians to usher in the future of personalized medicine.'
+  },
+  {
+    company: 'Google',
+    org_type: 'Networking Only',
+    companyImage: 'images/company-images/google.svg',
+    description:
+      'Google is a global technology leader known for its search engine, online advertising, and diverse range of products. Beginning as an online search firm, it has expanded to include services such as Google Cloud, YouTube, and Android. Committed to innovation, Google’s mission is to organize the world’s information and make it universally accessible and useful.'
   }
 ];

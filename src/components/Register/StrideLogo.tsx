@@ -7,7 +7,6 @@ export default function StrideLogo({
   return (
     <svg
       {...props}
-      width={width || '100%'}
       viewBox="0 0 209 49"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

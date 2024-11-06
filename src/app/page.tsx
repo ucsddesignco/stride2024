@@ -115,15 +115,24 @@ export default function Page() {
     // return () => window.removeEventListener('resize', setNonFolderPositions);
   }, []);
 
-  const [matches, setMatches] = useState(false);
+  const [isDesktop, setIsDesktop] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-    window
-      .matchMedia('(min-width: 1100px)')
-      .addEventListener('change', e => setMatches(e.matches));
+    const handleResize = () => {
+      if (window.innerWidth >= 1100) {
+        setIsDesktop(true);
+      } else {
+        setIsDesktop(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const openFolderMobile = () => {
@@ -565,12 +574,13 @@ export default function Page() {
             position: 'absolute',
             top: 0,
             left: '50%',
-            transform: 'translateX(-50%)',
+            transform: 'translate(-50%)',
             display: 'grid',
             height: '100vh',
             alignContent: 'center',
             alignSelf: 'start',
-            gap: '3rem'
+            gap: '3rem',
+            marginTop: 'calc(var(--nav-height)/2)'
           }}
         >
           <div
@@ -579,7 +589,8 @@ export default function Page() {
             onMouseEnter={() => setIsHoveringFolder(true)}
             onMouseLeave={() => setIsHoveringFolder(false)}
             onClick={() => {
-              if (matches) {
+              if (isDesktop === undefined) return;
+              if (isDesktop) {
                 openFolderDesktop();
               } else {
                 openFolderMobile();
@@ -591,7 +602,7 @@ export default function Page() {
             onBlur={() => setIsHoveringFolder(false)}
             onKeyDown={e => {
               if (e.key === 'Enter' || e.key === ' ') {
-                if (matches) {
+                if (isDesktop) {
                   openFolderDesktop();
                 } else {
                   openFolderMobile();
