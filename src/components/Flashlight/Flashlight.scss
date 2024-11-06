@@ -16,6 +16,9 @@
   scale: var(--flashlight-scale, 1);
   transform-origin: center;
   transform: translate(-50%, -50%) scale(var(--flashlight-scale, 1));
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+  isolation: isolate;
 
   &.custom-cursor {
     width: 50vh;
@@ -26,36 +29,30 @@
     position: fixed;
     pointer-events: none;
     mix-blend-mode: difference;
-    top: var(--cursor-y);
-    left: var(--cursor-x);
     z-index: inherit;
     animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
   }
 
   &.ring-inner {
-    width: 61vh; /* Adjust size as needed */
-    height: 61vh; /* Adjust size as needed */
-    border: 50px solid #68dea3; /* Adjust thickness and color as needed */
+    width: 65vw; /* Adjust size as needed */
+    height: 65vw; /* Adjust size as needed */
+    border: 5vw solid #68dea3; /* Adjust thickness and color as needed */
     border-radius: 50%; /* Make it circular */
     position: fixed; /* Use fixed positioning */
     pointer-events: none; /* Ensure it doesn't interfere with cursor events */
     mix-blend-mode: lighten;
-    top: var(--cursor-y);
-    left: var(--cursor-x);
     z-index: inherit;
     animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
   }
 
   &.ring-outer {
-    width: 72vh; /* Adjust size as needed */
-    height: 72vh; /* Adjust size as needed */
-    border: 100px solid #16643d; /* Adjust thickness and color as needed */
+    width: 80vw; /* Adjust size as needed */
+    height: 80vw; /* Adjust size as needed */
+    border: 10vw solid #16643d; /* Adjust thickness and color as needed */
     border-radius: 50%; /* Make it circular */
     position: fixed; /* Use fixed positioning */
     pointer-events: none; /* Ensure it doesn't interfere with cursor events */
     mix-blend-mode: lighten;
-    top: var(--cursor-y);
-    left: var(--cursor-x);
     z-index: inherit;
     animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
   }
