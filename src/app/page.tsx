@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react';
 import '@/app/Home.scss';
 import Image from 'next/image';
 import Flashlight from '@/components/Flashlight/Flashlight';
-import Controls from '@/components/flashlight_controls/controls';
+import Controls from '@/components/FlashlightControls/Controls';
 
 gsap.registerPlugin(useGSAP);
 
