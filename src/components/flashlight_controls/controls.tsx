@@ -55,9 +55,9 @@ function Controls({ isOn, setIsOn, setSize }: ControlsProps) {
       <p className="label">Size</p>
       <Slider
         id="slider"
-        defaultValue={1.1}
-        minValue={0.95}
-        maxValue={1.3}
+        defaultValue={1}
+        minValue={0.8}
+        maxValue={1.2}
         step={0.01}
         onChange={value => setSize(value)}
       >
