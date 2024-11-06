@@ -6,9 +6,8 @@ export default function RegisterButton() {
     <Link href="/register" className="register-section">
       <button id="about-register-button" aria-label="Register Now">
         <svg
-          width="631"
-          height="625"
-          viewBox="0 0 631 250"
+          width="100%"
+          viewBox="0 -175 631 425"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
         >

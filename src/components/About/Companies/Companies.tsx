@@ -40,9 +40,8 @@ export default function Companies() {
     <div className="companies-section info">
       <h2 className="section-title">Companies and Organizations</h2>
       <svg
-        width="1000"
-        height="1071"
-        viewBox="0 0 900 971"
+        width="100%"
+        viewBox="0 0 900 1100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -82,13 +81,7 @@ export default function Companies() {
           stroke="white"
         />
 
-        <foreignObject
-          x="125"
-          y="7.5%"
-          width="400"
-          height="50"
-          className="title"
-        >
+        <foreignObject x="125" y="6%" width="400" height="50" className="title">
           <div>
             <h3 className="title">Recruiting</h3>
           </div>
@@ -116,7 +109,7 @@ export default function Companies() {
               </foreignObject>
             ))}
         </g>
-        <foreignObject x="125" y="31%" width="400" height="50">
+        <foreignObject x="125" y="26.5%" width="400" height="50">
           <div>
             <h3 className="title">Networking Only</h3>
           </div>

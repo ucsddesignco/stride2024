@@ -46,8 +46,8 @@ export default function Opportunities() {
               strokeLinecap="round"
             />
             <foreignObject
-              x="30%"
-              y="47.5%"
+              x="25%"
+              y="45%"
               width="400"
               height="300"
               fill="white"
@@ -60,13 +60,7 @@ export default function Opportunities() {
           </svg>
         </figure>
         <figure className="figure">
-          <svg
-            width="360"
-            height="379"
-            viewBox="0 0 360 379"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg width="360" height="379" viewBox="0 0 360 379" fill="none">
             <path
               d="M359.001 289.387V20.0008H1.001V378.001H139.29"
               stroke="white"
@@ -96,8 +90,8 @@ export default function Opportunities() {
               strokeLinecap="round"
             />
             <foreignObject
-              x="20%"
-              y="47.5%"
+              x="50px"
+              y="45%"
               width="400"
               height="300"
               fill="white"
@@ -146,8 +140,8 @@ export default function Opportunities() {
               strokeLinecap="round"
             />
             <foreignObject
-              x="27.5%"
-              y="47.5%"
+              x="25%"
+              y="45%"
               width="400"
               height="300"
               fill="white"

@@ -23,7 +23,6 @@ export default function CompanyModal({
 
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
-      // Prevent scrolling on body when modal is open
       document.body.style.overflow = 'hidden';
     }
 
