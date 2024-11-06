@@ -14,7 +14,12 @@ export default function RegisterPage() {
 
   return (
     <main id="register-page-container">
-      <Modal isDismissable isOpen={isOpen} onOpenChange={setIsOpen}>
+      <Modal
+        isDismissable
+        isOpen={isOpen}
+        onOpenChange={setIsOpen}
+        className="register-modal"
+      >
         <Dialog>
           {({ close }) => (
             <div id="luma-iframe-container">

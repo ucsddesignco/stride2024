@@ -1,6 +1,19 @@
 .faq-section {
   font-family: $p-font;
 
+  h2 {
+    font-style: italic;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @media (min-width: $tablet-breakpoint) {
+      font-size: 4rem;
+      flex-direction: row;
+    }
+  }
+
   .top-paper,
   .bottom-paper {
     position: relative;

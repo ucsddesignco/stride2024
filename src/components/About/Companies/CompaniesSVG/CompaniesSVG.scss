@@ -1,0 +1,146 @@
+#companies-svg-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  @media (min-width: 480px) {
+    max-width: 450px;
+  }
+
+  @media (min-width: $tablet-breakpoint) {
+    max-width: none;
+    width: 100%;
+  }
+
+  margin-inline: auto;
+
+  #about-companies-svg {
+    overflow: visible;
+
+    @media (min-width: $tablet-breakpoint) {
+      max-width: 1000px;
+      margin-inline: auto;
+    }
+    #about-companies-content-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      gap: 1.5rem;
+
+      @media (min-width: $tablet-breakpoint) {
+        justify-content: flex-start;
+        padding-top: 1.5rem;
+        gap: 1rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+
+        @media (min-width: $tablet-breakpoint) {
+          font-size: 0.8rem;
+        }
+      }
+
+      .about-company-pill-container {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 12px;
+        row-gap: 10px;
+
+        @media (min-width: $tablet-breakpoint) {
+          column-gap: 6px;
+          row-gap: 5px;
+        }
+
+        .about-company-pill {
+          cursor: pointer;
+          font-size: 1rem;
+          border-radius: 30px;
+          border: 2px solid $white;
+          background-color: transparent;
+          color: $white;
+          padding: 0.2rem 0.3rem;
+          transition:
+            color 0.15s,
+            background-color 0.15s,
+            border-color 0.15s;
+
+          @media (min-width: $tablet-breakpoint) {
+            &.active {
+              background-color: $light-green;
+              border-color: $light-green;
+              color: black;
+            }
+          }
+
+          &:is(:hover, .focus-visible) {
+            background-color: black;
+            border-color: $light-green;
+            color: $light-green;
+          }
+
+          @media (min-width: $tablet-breakpoint) {
+            border: 1px solid $white;
+            font-size: 0.45rem;
+          }
+        }
+      }
+
+      #about-company-info {
+        display: none;
+        @media (min-width: $tablet-breakpoint) {
+          display: block;
+          padding-block: 1rem;
+          padding-inline: 0.5rem;
+          height: 100%;
+          max-height: 100%;
+          border: 1px solid $white;
+
+          h3 {
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            font-size: 0.45rem;
+          }
+        }
+      }
+    }
+  }
+
+  #about-companies-mascot {
+    position: absolute;
+    top: 0;
+    right: 30%;
+    transform: translateY(-53%);
+    width: 20%;
+
+    @media (min-width: 400px) {
+      top: 38%;
+      right: 0;
+      transform: translateY(-40%);
+      rotate: 90deg;
+    }
+  }
+
+  #company-logo-polaroid {
+    display: none;
+    @media (min-width: $tablet-breakpoint) {
+      display: block;
+      position: absolute;
+      width: 30%;
+      bottom: -10%;
+      right: 15%;
+      max-width: 300px;
+
+      img {
+        padding: 2rem;
+        rotate: 4.5deg;
+      }
+    }
+  }
+}

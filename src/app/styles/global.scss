@@ -50,6 +50,7 @@ button,
 input,
 label {
   line-height: 100%;
+  font-family: $p-font;
 }
 
 h1,
@@ -77,6 +78,8 @@ h3 {
 p {
   font-family: $p-font;
   font-size: $p-size;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 a:not([class]) {
