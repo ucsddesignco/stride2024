@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import './controls.scss';
+import './Controls.scss';
 import {
   Slider,
   SliderOutput,
@@ -18,7 +18,7 @@ type ControlsProps = {
 
 function Controls({ isOn, setIsOn, setSize }: ControlsProps) {
   return (
-    <div className="controls">
+    <div id="flashlight-controls">
       <div>
         <svg
           width="32"

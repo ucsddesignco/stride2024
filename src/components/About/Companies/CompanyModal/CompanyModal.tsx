@@ -1,65 +1,50 @@
-import React, { useEffect, useRef } from 'react';
+import { Dialog, Modal } from 'react-aria-components';
 import './CompanyModal.scss';
+import Image from 'next/image';
+import { Company } from '../constants';
+import CompanyPolaroid from '../CompanyPolaroid/CompanyPolaroid';
 
-interface ModalProps {
+type CompanyModalProps = {
   isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-}
+  setIsOpen: (isOpen: boolean) => void;
+  companyData: Company;
+};
 
 export default function CompanyModal({
   isOpen,
-  onClose,
-  children
-}: ModalProps) {
-  const modalRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      // Prevent scrolling on body when modal is open
-      document.body.style.overflow = 'hidden';
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen, onClose]);
-
-  useEffect(() => {
-    if (isOpen && modalRef.current) {
-      modalRef.current.focus();
-    }
-  }, [isOpen]);
-
-  if (!isOpen) return null;
-
+  setIsOpen,
+  companyData
+}: CompanyModalProps) {
   return (
-    <div className="modal-wrapper" role="presentation">
-      <div
-        className="modal-content"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-        ref={modalRef}
-        tabIndex={-1}
-      >
-        <button
-          className="close-button"
-          onClick={onClose}
-          aria-label="Close modal"
-        >
-          X
-        </button>
-        {children}
-      </div>
-    </div>
+    <Modal
+      isDismissable
+      isOpen={isOpen}
+      onOpenChange={setIsOpen}
+      className="company-modal"
+    >
+      <Dialog>
+        <div id="luma-iframe-container">
+          <h3>
+            {companyData.name}
+            <p>{companyData.description}</p>
+          </h3>
+          <button
+            type="button"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            id="company-modal-close-button"
+          >
+            <Image
+              src="/images/icons/close-icon.svg"
+              width="35"
+              height="35"
+              alt="Close Company Modal"
+            />
+          </button>
+        </div>
+        <CompanyPolaroid companyData={companyData} />
+      </Dialog>
+    </Modal>
   );
 }

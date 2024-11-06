@@ -10,6 +10,7 @@
     "lint": "next lint",
     "lint-fix": "next lint --fix && prettier --write .",
     "lint-check": "next lint && prettier --check .",
+    "type-check": "tsc --noEmit",
     "prepare": "husky"
   },
   "dependencies": {

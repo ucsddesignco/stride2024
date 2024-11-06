@@ -42,8 +42,8 @@ export default function Agenda() {
           height="547"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M703.166 0.175781H533.693L518.193 14.2481L501.193 0.175781H247.193L211.193 14.248L192.193 0.175781H0.962891V403.248L12.1934 426.248L0.962891 443.248V546.248H318.693L341.193 537.248L370.193 546.248H803.193L805.135 253.748L796.693 239.748L805.135 226.248V92.274L703.166 0.175781Z"
             fill="white"
           />
@@ -54,8 +54,8 @@ export default function Agenda() {
             fill="white"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M804.755 92.537H702.785V0.439453L804.755 92.537Z"
             fill="white"
           />
@@ -115,8 +115,8 @@ export default function Agenda() {
         className="mobile-agenda-card"
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M281.467 0.699219H213.678L207.478 11.9031L200.678 0.699219H99.078L84.678 11.9031L77.078 0.699219H0.585938V321.613L5.07814 339.925L0.585938 353.459V435.465H127.678L136.678 428.299L148.278 435.465H321.478L322.255 202.585L318.878 191.439L322.255 180.691V74.0249L281.467 0.699219Z"
           fill="none"
           stroke="white"

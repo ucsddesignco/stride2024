@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react';
 import '@/app/Home.scss';
 import Image from 'next/image';
 import Flashlight from '@/components/Flashlight/Flashlight';
-import Controls from '@/components/flashlight_controls/controls';
+import Controls from '@/components/FlashlightControls/Controls';
 
 gsap.registerPlugin(useGSAP);
 
@@ -438,7 +438,7 @@ export default function Page() {
     <div style={{ minHeight: '100vh', height: '100vh' }}>
       <Flashlight isOn={isOn} size={size} />
       {folderOpenned && (
-        <Controls isOn={isOn} size={size} setIsOn={setIsOn} setSize={setSize} />
+        <Controls isOn={isOn} setIsOn={setIsOn} setSize={setSize} />
       )}
 
       <div

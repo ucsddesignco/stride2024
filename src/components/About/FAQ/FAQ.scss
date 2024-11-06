@@ -1,5 +1,35 @@
 .faq-section {
+  --paper-margins: 1rem;
   font-family: $p-font;
+
+  @media (min-width: 400px) {
+    --paper-margins: 1.5rem;
+  }
+
+  @media (min-width: 580px) {
+    --paper-margins: 2rem;
+  }
+
+  @media (min-width: $tablet-breakpoint) {
+    --paper-margins: 5rem;
+  }
+
+  h2 {
+    font-style: italic;
+    font-size: 2rem;
+    max-width: 20ch;
+    line-height: 1.2;
+
+    @media (min-width: $tablet-breakpoint) {
+      font-size: 4rem;
+      flex-direction: row;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+      max-width: 780px;
+      margin-inline: auto;
+    }
+  }
 
   .top-paper,
   .bottom-paper {
@@ -14,14 +44,18 @@
   }
 
   .top-paper {
-    margin-bottom: 1rem;
+    margin-bottom: var(--paper-margins);
   }
 
   .bottom-paper {
-    margin-top: 1rem;
+    margin-top: var(--paper-margins);
   }
 
   .AccordionRoot {
+    @media (min-width: $desktop-breakpoint) {
+      max-width: 780px;
+      margin-inline: auto;
+    }
     .AccordionItem {
       border-radius: 0;
       overflow: hidden;
