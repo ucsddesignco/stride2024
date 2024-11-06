@@ -79,7 +79,7 @@ export default function Companies() {
           x="125"
           y="7.5%"
           width="400"
-          height="300"
+          height="50"
           className="title"
         >
           <div>
@@ -109,7 +109,7 @@ export default function Companies() {
               </foreignObject>
             ))}
         </g>
-        <foreignObject x="125" y="30%" width="400" height="300">
+        <foreignObject x="125" y="31%" width="400" height="50">
           <div>
             <h3 className="title">Networking Only</h3>
           </div>
@@ -138,14 +138,16 @@ export default function Companies() {
             ))}
         </g>
         <g>
-          <foreignObject x="125" y="420" width="60%" height="700">
-            <div className="company-description">
-              <h3>{companyData && <h3>{companyData.company}</h3>}</h3>
-              <p className="company-writeup">
-                {companyData && <p>{companyData.description}</p>}
-              </p>
-            </div>
-          </foreignObject>
+          <g>
+            <foreignObject x="125" y="490" width="60%" height="450px">
+              <div className="company-description">
+                <h3>{companyData && <h3>{companyData.company}</h3>}</h3>
+                <p className="company-writeup">
+                  {companyData && <p>{companyData.description}</p>}
+                </p>
+              </div>
+            </foreignObject>
+          </g>
         </g>
         <path
           d="M801 754.712L809.5 706.212V757.212L801 768.212L809.5 777.712V794.212L790 768.212L801 754.712Z"
