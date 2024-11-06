@@ -4,10 +4,6 @@ export default function Opportunities() {
   return (
     <section className="opportunities-section info">
       <h2 className="section-title">Opportunities</h2>
-      <p>
-        Stride is a uniquely designed career fair aiming to connect aspiring
-        designers with company respresentatives
-      </p>
       <div className="opportunities-features">
         <figure className="figure">
           <svg

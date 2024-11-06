@@ -1,47 +1,76 @@
-.register-section {
-  padding-block: 10rem;
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
+#register-section {
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-#about-register-button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+  max-width: 780px;
 
-  svg {
-    fill: none;
+  #register-button-link {
+    display: grid;
+    place-items: center;
 
-    &:hover,
-    &:focus {
-      #about-register-button-border {
-        stroke: #6ee7b7;
+    #about-register-button {
+      margin-inline: auto;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      width: 90%;
+
+      @media (min-width: 400px) {
+        max-width: 350px;
       }
 
-      #about-register-button-text {
-        fill: #6ee7b7;
-      }
-    }
+      @media (min-width: $tablet-breakpoint) {
+        margin-top: 1rem;
 
-    &:active {
-      fill: #6ee7b7;
-
-      #about-register-button-border {
-        stroke: #6ee7b7;
+        max-width: 500px;
       }
 
-      #about-register-button-text {
-        fill: black;
+      #register-button-container {
+        overflow: visible;
+        color: white;
+        text-transform: uppercase;
+        rotate: -7.33deg;
+
+        h2 {
+          font-size: 1.8rem;
+        }
       }
-    }
 
-    #about-register-button-border {
-      stroke: white;
-    }
+      svg {
+        fill: none;
 
-    #about-register-button-text {
-      fill: white;
+        &:is(:hover, :focus) {
+          #about-register-button-border {
+            stroke: #6ee7b7;
+          }
+
+          #register-button-container {
+            h2 {
+              color: #6ee7b7;
+            }
+          }
+        }
+
+        &:active {
+          fill: #6ee7b7;
+
+          #about-register-button-border {
+            stroke: #6ee7b7;
+          }
+
+          #register-button-container {
+            h2 {
+              color: black;
+            }
+          }
+        }
+
+        #about-register-button-border {
+          stroke: white;
+        }
+      }
     }
   }
 }
