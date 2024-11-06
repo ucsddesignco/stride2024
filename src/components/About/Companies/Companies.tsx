@@ -241,20 +241,65 @@ export default function Companies() {
             </foreignObject>
           )}
         </g>
-        <g className="company-modal">
-          <foreignObject x="125" y="550" width="60%" height="500px">
-            <CompanyModal isOpen={isModalOpen} onClose={() => closeModal()}>
-              {companyData && (
-                <div className="company-description">
-                  <h3>{companyData && <h3>{companyData.company}</h3>}</h3>
-                  <p className="modal-text">
-                    {companyData && <p>{companyData.description}</p>}
-                  </p>
+        {isModalOpen && (
+          <g className="company-modal">
+            <foreignObject x="125" y="540" width="80%" height="500px">
+              <CompanyModal isOpen={isModalOpen} onClose={() => closeModal()}>
+                {companyData && (
+                  <div className="company-description">
+                    <h3>{companyData && <h3>{companyData.company}</h3>}</h3>
+                    <p className="modal-text">
+                      {companyData && <p>{companyData.description}</p>}
+                    </p>
+                  </div>
+                )}
+              </CompanyModal>
+            </foreignObject>
+            <g transform="translate(250,840)">
+              <path
+                d="M21.0666 1.64149L53.8379 5.03803L70.2235 6.7363L78.4163 7.58543L83.0057 10.2076L86.6092 8.43457L152.4 13.3556L219.147 17.1198L209.959 99.9711L209.066 121.65L208.62 132.49L205.511 134.001L208.396 137.91L208.173 143.33L200.271 255.212L184.284 254.236L178.279 249.921L176.291 253.748L168.297 253.26L136.323 251.307L33.1253 240.578L2.36482 239.523L3.53706 220.078L4.12318 210.355L9.13436 206.205L4.7093 200.633L7.05379 161.742L18.5092 47.3076L21.0666 1.64149Z"
+                fill="black"
+                stroke="#FBFEFC"
+                stroke-width="2"
+              />
+              <rect
+                x="31.9482"
+                y="13.3409"
+                width="175.308"
+                height="184.947"
+                transform="rotate(4.53287 31.9482 13.3409)"
+                fill="black"
+              />
+              <rect
+                x="31.9482"
+                y="13.3409"
+                width="175.308"
+                height="184.947"
+                transform="rotate(4.53287 31.9482 13.3409)"
+                stroke="#FBFEFC"
+                stroke-width="2"
+              />
+            </g>
+            {companyData?.companyImage && (
+              <foreignObject
+                x="285"
+                y="900px"
+                width="25%"
+                height="150px"
+                className="company-image"
+              >
+                <div>
+                  <img
+                    src={companyData?.companyImage || 'undefined'}
+                    alt={companyData?.company || 'Company image'}
+                    width="150px"
+                    height="100px"
+                  />
                 </div>
-              )}
-            </CompanyModal>
-          </foreignObject>
-        </g>
+              </foreignObject>
+            )}
+          </g>
+        )}
       </svg>
     </div>
   );
