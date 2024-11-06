@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import './controls.scss';
 import {
-  Label,
   Slider,
   SliderOutput,
   SliderThumb,
@@ -11,7 +10,13 @@ import {
 import IconLightOn from '../Icons/icon-light-on';
 import IconLightOff from '../Icons/icon-light-off';
 
-function Controls() {
+type ControlsProps = {
+  isOn: boolean;
+  setIsOn: Dispatch<SetStateAction<boolean>>;
+  setSize: Dispatch<SetStateAction<number>>;
+};
+
+function Controls({ isOn, setIsOn, setSize }: ControlsProps) {
   return (
     <div className="controls">
       <div>
@@ -48,13 +53,32 @@ function Controls() {
         </svg>
       </div>
       <p className="label">Size</p>
-      <Slider id="slider" defaultValue={50} minValue={0} maxValue={100}>
+      <Slider
+        id="slider"
+        defaultValue={1}
+        minValue={0.8}
+        maxValue={1.2}
+        step={0.01}
+        onChange={value => setSize(value)}
+      >
+        <label
+          htmlFor="slider"
+          className="slider-label"
+          style={{ display: 'none' }}
+        >
+          Adjust Size
+        </label>
         <SliderTrack className="slider-track">
           <SliderThumb className="slider-thumb" />
         </SliderTrack>
         <SliderOutput className="slider-output" />
       </Slider>
-      <Switch id="switch" className="switch">
+      <Switch
+        id="switch"
+        className="switch"
+        isSelected={!isOn}
+        onChange={value => setIsOn(!value)}
+      >
         {({ isSelected }) => (
           <div className={`switch-background ${isSelected ? 'selected' : ''}`}>
             <p className={`Off-Text ${isSelected ? 'selected' : ''}`}>Off</p>

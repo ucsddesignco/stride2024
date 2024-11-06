@@ -11,48 +11,65 @@
   z-index: 1000;
 }
 
-.custom-cursor {
-  width: 600px;
-  height: 600px;
-  background-color: #fbfefc;
-  border: 2px solid #fbfefc;
-  border-radius: 100%;
-  position: fixed;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
+.flashlight-ring {
+  z-index: 1000;
+  scale: var(--flashlight-scale, 1);
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(var(--flashlight-scale, 1));
   top: var(--cursor-y);
   left: var(--cursor-x);
-  z-index: inherit;
-  animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
-}
+  isolation: isolate;
 
-.ring-inner {
-  width: 700px; /* Adjust size as needed */
-  height: 700px; /* Adjust size as needed */
-  border: 50px solid #68dea3; /* Adjust thickness and color as needed */
-  border-radius: 50%; /* Make it circular */
-  position: fixed; /* Use fixed positioning */
-  pointer-events: none; /* Ensure it doesn't interfere with cursor events */
-  transform: translate(-50%, -50%); /* Center the ring on the cursor */
-  mix-blend-mode: lighten;
-  top: var(--cursor-y);
-  left: var(--cursor-x);
-  z-index: inherit;
-  animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
-}
+  &.custom-cursor {
+    width: 50vh;
+    height: 50vh;
+    background-color: #fbfefc;
+    border-radius: 100%;
+    position: fixed;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: inherit;
+    animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
+  }
 
-.ring-outer {
-  width: 800px; /* Adjust size as needed */
-  height: 800px; /* Adjust size as needed */
-  border: 100px solid #16643d; /* Adjust thickness and color as needed */
-  border-radius: 50%; /* Make it circular */
-  position: fixed; /* Use fixed positioning */
-  pointer-events: none; /* Ensure it doesn't interfere with cursor events */
-  transform: translate(-50%, -50%); /* Center the ring on the cursor */
-  mix-blend-mode: lighten;
-  top: var(--cursor-y);
-  left: var(--cursor-x);
-  z-index: inherit;
-  animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
+  &.fake-cursor {
+    width: 50vh;
+    height: 50vh;
+    background-color: #fbfefc00;
+    border-radius: 100%;
+    position: fixed;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    z-index: inherit;
+    animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: lighten;
+      z-index: inherit;
+      animation: fadeIn 1s cubic-bezier(1, -0.21, 1, 1.63);
+    }
+
+    &::before {
+      width: 60vh;
+      height: 60vh;
+      border: 5vh solid #68dea3;
+      top: -5vh;
+      left: -5vh;
+      mix-blend-mode: lighten;
+    }
+
+    &::after {
+      width: 70vh;
+      height: 70vh;
+      border: 10vh solid #16643d;
+      top: -10vh;
+      left: -10vh;
+      mix-blend-mode: lighten;
+    }
+  }
 }
