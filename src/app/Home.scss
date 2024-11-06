@@ -7,6 +7,18 @@
   --folder-height: 50vh;
 }
 
+#page-container {
+  background-color: black;
+  //   display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  gap: 3rem;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 #folder {
   position: relative;
   width: calc(var(--folder-height) * 1.411);
@@ -68,7 +80,6 @@
   position: absolute;
   display: none;
   width: auto;
-  //   outline: 2px solid red;
   z-index: 1;
 }
 
@@ -110,46 +121,6 @@
 #folder-cards {
   height: calc(var(--folder-height) * 0.36);
 }
-
-// TODO: DELETE LATER
-// #badge {
-//   bottom: 15%;
-//   right: -3%;
-//   transform: rotate(-11deg);
-// }
-// #feather {
-//   top: 0;
-//   right: 40%;
-//   transform: rotate(10deg);
-// }
-// #main-content {
-//   bottom: 30%;
-//   right: 50%;
-//   transform: translateX(50%);
-// }
-// #polaroid {
-//   top: 0;
-//   right: 55%;
-// }
-// #orgs {
-//   bottom: 5%;
-//   left: 1%;
-//   transform: rotate(42deg);
-// }
-// #companies {
-//   top: 28%;
-//   right: 3%;
-//   transform: rotate(-30deg);
-// }
-// #magnifying-glass {
-//   left: 0%;
-//   bottom: 25%;
-//   transform: rotate(54deg);
-// }
-// #cards {
-//   top: 32%;
-//   left: 8%;
-// }
 
 /* folder asset positions */
 #folder-badge {
@@ -221,7 +192,7 @@
   left: 30%;
 }
 
-/* Styles for landscape screens (aspect ratio greater than 1) */
+/* Styles for vertical screens (aspect ratio less than 1) */
 @media (max-aspect-ratio: 1/1) {
   #folder {
     height: calc(var(--folder-width) * 0.708);
@@ -238,12 +209,17 @@
   #folder,
   #folder-back,
   #folder-bottom,
+  #page-folder-bottom,
   #folder-flap {
     width: var(--folder-width);
   }
 
   #folder-flap {
     height: calc(var(--folder-width) * 0.24);
+  }
+
+  #folder > .folder-asset {
+    height: auto;
   }
 
   #badge,
@@ -253,41 +229,42 @@
   #orgs,
   #companies,
   #magnifying-glass,
-  #cards {
+  #cards,
+  #page-folder-bottom {
     height: auto;
   }
 
-  #badge {
+  #badge,
+  #folder-badge {
     width: calc(var(--folder-width) * 0.311);
-    transform: translate(65%, -125%) rotate(12deg);
   }
-  #feather {
+  #feather,
+  #folder-feather {
     width: calc(var(--folder-width) * 0.269);
-    transform: translate(-40%, -200%) rotate(-22.5deg);
   }
-  #main-content {
+  #main-content,
+  #folder-main-content {
     width: calc(var(--folder-width) * 0.572);
-    transform: translate(-58%, -60%) rotate(-5deg);
   }
-  #polaroid {
+  #polaroid,
+  #folder-polaroid {
     width: calc(var(--folder-width) * 0.234);
-    transform: translate(-90%, -200%) rotate(-21deg);
   }
-  #orgs {
+  #orgs,
+  #folder-orgs {
     width: calc(var(--folder-width) * 0.326);
-    transform: translate(20%, -140%) rotate(-46deg);
   }
-  #companies {
-    width: calc(var(--folder-width) * 0.351);
-    transform: translate(35%, -70%) rotate(29deg);
+  #companies,
+  #folder-companies {
+    width: calc(var(--folder-width) * 0.352);
   }
-  #magnifying-glass {
+  #magnifying-glass,
+  #folder-magnifying-glass {
     width: calc(var(--folder-width) * 0.297);
-    transform: translate(-130%, -75%);
   }
-  #cards {
+  #cards,
+  #folder-cards {
     width: calc(var(--folder-width) * 0.36);
-    transform: translate(-110%, -140%) rotate(8deg);
   }
 
   #paper-border-top-left {

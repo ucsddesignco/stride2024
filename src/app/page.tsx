@@ -33,18 +33,6 @@ export default function Page() {
   const folderCards = useRef<HTMLImageElement>(null);
   const folderBottom = useRef<HTMLImageElement>(null);
 
-  //   const setPageAssetPosition = (
-  //     pageAssetRef: RefObject<HTMLImageElement>,
-  //     folderAssetRef: RefObject<HTMLImageElement>
-  //   ): void => {
-  //     const folderAssetRect = folderAssetRef.current?.getBoundingClientRect();
-  //     const pageAsset = pageAssetRef.current;
-  //     if (folderAssetRect && pageAsset) {
-  //       pageAsset.style.top = `${folderAssetRect.top}px`;
-  //       pageAsset.style.left = `${folderAssetRect.left}px`;
-  //     }
-  //   };
-
   useEffect(() => {
     const setNonFolderPositions = () => {
       const folderBadgeRect = folderBadge.current?.getBoundingClientRect();
@@ -63,7 +51,7 @@ export default function Page() {
 
       if (folderBadgeRect && badge.current) {
         badge.current.style.position = 'absolute';
-        badge.current.style.bottom = `calc(100vh - ${folderBadgeRect.bottom}px)`;
+        badge.current.style.top = `${folderBadgeRect.top}px`;
         badge.current.style.right = `calc(100vw - ${folderBadgeRect.right}px)`;
       }
       if (folderFeatherRect && feather.current) {
@@ -73,7 +61,7 @@ export default function Page() {
       }
       if (folderMainContentRect && mainContent.current) {
         mainContent.current.style.position = 'absolute';
-        mainContent.current.style.bottom = `calc(100vh - ${folderMainContentRect.bottom}px)`;
+        mainContent.current.style.top = `${folderMainContentRect.top}px`;
         mainContent.current.style.right = `calc(100vw - ${folderMainContentRect.right}px)`;
       }
       if (folderPolaroidRect && polaroid.current) {
@@ -83,7 +71,7 @@ export default function Page() {
       }
       if (folderOrgsRect && orgs.current) {
         orgs.current.style.position = 'absolute';
-        orgs.current.style.bottom = `calc(100vh - ${folderOrgsRect.bottom}px)`;
+        orgs.current.style.top = `${folderOrgsRect.top}px`;
         orgs.current.style.left = `${folderOrgsRect.left}px`;
       }
       if (folderCompaniesRect && companies.current) {
@@ -93,7 +81,7 @@ export default function Page() {
       }
       if (folderMagnifyingGlassRect && magnifyingGlass.current) {
         magnifyingGlass.current.style.position = 'absolute';
-        magnifyingGlass.current.style.bottom = `calc(100vh - ${folderMagnifyingGlassRect.bottom}px)`;
+        magnifyingGlass.current.style.top = `${folderMagnifyingGlassRect.top}px`;
         magnifyingGlass.current.style.left = `${folderMagnifyingGlassRect.left}px`;
       }
       if (folderCardsRect && cards.current) {
@@ -115,7 +103,158 @@ export default function Page() {
     // return () => window.removeEventListener('resize', setNonFolderPositions);
   }, []);
 
-  const openFolder = () => {
+  const [matches, setMatches] = useState(
+    window.matchMedia('(min-width: 1100px)').matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia('(min-width: 1100px)')
+      .addEventListener('change', e => setMatches(e.matches));
+  }, []);
+
+  const openFolderMobile = () => {
+    setFolderOpenned(true);
+    const tl = gsap.timeline();
+    const pageElementSpreadDuration = 1;
+    const pageElementSpreadEase = Power2.easeIn;
+    const assetScale = 2.5;
+    /* folder openning animation and swaping folder elements for page elements */
+    tl.to('#folder-flap', {
+      rotateX: 160,
+      duration: 0.5,
+      ease: Power2.easeInOut
+    }).add(() => {
+      gsap.set('.folder-asset', { display: 'none' });
+      gsap.set('#click-to-open-text', { visibility: 'hidden' });
+      gsap.set('.page-asset', { display: 'block' });
+    });
+    /* page elements rise up out of folder */
+    tl.to('.page-asset:not(#page-folder-bottom)', {
+      translateY: '-5vh',
+      duration: 1,
+      ease: Power1.easeInOut
+    });
+    tl.to('#page-container', {
+      height: '400vw',
+      duration: 1.5
+    });
+    tl.to(
+      ['#folder', '#page-folder-bottom'],
+      {
+        y: '450vw',
+        translateX: -50,
+        rotate: 10,
+        duration: 2,
+        ease: Power3.easeInOut
+      },
+      '<' // folder drop animation starts at same time as elements rise starts
+    );
+    tl.to(
+      '.page-asset:not(#page-folder-bottom)',
+      {
+        translateY: '0', // revert "up" added to page elements by prev animation
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<0.5' // page elements all animate 0.5s after folder drop animation starts
+    );
+    tl.to(
+      '#main-content',
+      {
+        top: '50vw',
+        right: '20%',
+        scale: 2,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#magnifying-glass',
+      {
+        top: '115vw',
+        left: '5%',
+        rotate: 54,
+        scale: assetScale,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<+=0.5'
+    );
+    tl.to(
+      '#cards',
+      {
+        top: '110vw',
+        left: '30%',
+        scale: assetScale,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#companies',
+      {
+        top: '175vw',
+        right: '20%',
+        rotate: -30,
+        scale: 2.6,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#feather',
+      {
+        top: '240vw',
+        left: '40%',
+        rotate: 10,
+        scale: 2.6,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#polaroid',
+      {
+        top: '240vw',
+        left: '5%',
+        scale: 2.7,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#badge',
+      {
+        top: '280vw',
+        right: '5%',
+        rotate: -11,
+        scale: 2.8,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+    tl.to(
+      '#orgs',
+      {
+        top: '340vw',
+        left: '10%',
+        rotate: 42,
+        scale: assetScale,
+        duration: pageElementSpreadDuration,
+        ease: pageElementSpreadEase
+      },
+      '<'
+    );
+  };
+
+  const openFolderDesktop = () => {
     setFolderOpenned(true);
     const tl = gsap.timeline();
     const pageElementSpreadDuration = 1;
@@ -161,7 +300,7 @@ export default function Page() {
     tl.to(
       '#badge',
       {
-        bottom: '15%',
+        top: '60%',
         right: '-3%',
         rotate: -11,
         scale: 1.67,
@@ -185,7 +324,7 @@ export default function Page() {
     tl.to(
       '#main-content',
       {
-        bottom: '30%',
+        top: '52%',
         right: '50%',
         translateX: '50%',
         scale: 1.67,
@@ -208,7 +347,7 @@ export default function Page() {
     tl.to(
       '#orgs',
       {
-        bottom: '5%',
+        top: '70%',
         left: '1%',
         rotate: 42,
         scale: 1.67,
@@ -232,8 +371,8 @@ export default function Page() {
     tl.to(
       '#magnifying-glass',
       {
+        top: '31%',
         left: '0%',
-        bottom: '25%',
         rotate: 54,
         scale: 1.67,
         duration: pageElementSpreadDuration,
@@ -274,19 +413,21 @@ export default function Page() {
   );
 
   return (
-    <div style={{ minHeight: '100vh', height: '100vh' }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        overflowX: 'hidden',
+        scrollbarWidth: 'none'
+      }}
+    >
       <Flashlight />
+
       <div
+        id="page-container"
         style={{
-          backgroundColor: 'black',
-          display: 'grid',
-          justifyContent: 'center',
-          justifyItems: 'center',
-          alignContent: 'center',
-          gap: '3rem',
-          height: '100%',
+          height: '100vh',
           overflow: 'hidden',
-          position: 'relative'
+          background: 'transparent'
         }}
       >
         <Image
@@ -318,6 +459,7 @@ export default function Page() {
           height={42}
         />
 
+        {/* page animation assets */}
         <Image
           id="cards"
           ref={cards}
@@ -409,115 +551,139 @@ export default function Page() {
         />
 
         <div
-          id="folder"
-          aria-label="Folder"
-          onMouseEnter={() => setIsHoveringFolder(true)}
-          onMouseLeave={() => setIsHoveringFolder(false)}
-          onClick={openFolder}
-          role="button"
-          tabIndex={0}
-          onFocus={() => setIsHoveringFolder(true)}
-          onBlur={() => setIsHoveringFolder(false)}
-          onKeyDown={e => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              openFolder();
-            }
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'grid',
+            height: '100vh',
+            alignContent: 'center',
+            alignSelf: 'start',
+            gap: '3rem'
           }}
         >
-          <Image
-            id="folder-back"
-            src="/images/folder/flat-folder-back.svg"
-            alt=""
-            width={754}
-            height={535}
-          />
+          <div
+            id="folder"
+            aria-label="Folder"
+            onMouseEnter={() => setIsHoveringFolder(true)}
+            onMouseLeave={() => setIsHoveringFolder(false)}
+            onClick={() => {
+              if (matches) {
+                openFolderDesktop();
+              } else {
+                openFolderMobile();
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            onFocus={() => setIsHoveringFolder(true)}
+            onBlur={() => setIsHoveringFolder(false)}
+            onKeyDown={e => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                if (matches) {
+                  openFolderDesktop();
+                } else {
+                  openFolderMobile();
+                }
+              }
+            }}
+          >
+            <Image
+              id="folder-back"
+              src="/images/folder/flat-folder-back.svg"
+              alt=""
+              width={754}
+              height={535}
+            />
 
-          <Image
-            id="folder-cards"
-            ref={folderCards}
-            className="folder-asset"
-            src="/images/page-assets/cards.svg"
-            alt=""
-            width={271}
-            height={192}
-          />
-          <Image
-            id="folder-magnifying-glass"
-            ref={folderMagnifyingGlass}
-            className="folder-asset"
-            src="/images/page-assets/magnifying-glass.svg"
-            alt=""
-            width={223}
-            height={471}
-          />
-          <Image
-            id="folder-companies"
-            ref={folderCompanies}
-            className="folder-asset"
-            src="/images/page-assets/companies.svg"
-            alt=""
-            width={265}
-            height={256}
-          />
-          <Image
-            id="folder-orgs"
-            ref={folderOrgs}
-            className="folder-asset"
-            src="/images/page-assets/orgs.svg"
-            alt=""
-            width={245}
-            height={240}
-          />
-          <Image
-            id="folder-polaroid"
-            ref={folderPolaroid}
-            className="folder-asset"
-            src="/images/page-assets/polaroid.svg"
-            alt=""
-            width={176}
-            height={187}
-          />
-          <Image
-            id="folder-main-content"
-            ref={folderMainContent}
-            className="folder-asset"
-            src="/images/page-assets/main-content.svg"
-            alt=""
-            width={430}
-            height={229}
-          />
-          <Image
-            id="folder-feather"
-            ref={folderFeather}
-            className="folder-asset"
-            src="/images/page-assets/feather.svg"
-            alt=""
-            width={202}
-            height={229}
-          />
-          <Image
-            id="folder-badge"
-            ref={folderBadge}
-            className="folder-asset"
-            src="/images/page-assets/badge.svg"
-            alt=""
-            width={234}
-            height={279}
-          />
+            <Image
+              id="folder-cards"
+              ref={folderCards}
+              className="folder-asset"
+              src="/images/page-assets/cards.svg"
+              alt=""
+              width={271}
+              height={192}
+            />
+            <Image
+              id="folder-magnifying-glass"
+              ref={folderMagnifyingGlass}
+              className="folder-asset"
+              src="/images/page-assets/magnifying-glass.svg"
+              alt=""
+              width={223}
+              height={471}
+            />
+            <Image
+              id="folder-companies"
+              ref={folderCompanies}
+              className="folder-asset"
+              src="/images/page-assets/companies.svg"
+              alt=""
+              width={265}
+              height={256}
+            />
+            <Image
+              id="folder-orgs"
+              ref={folderOrgs}
+              className="folder-asset"
+              src="/images/page-assets/orgs.svg"
+              alt=""
+              width={245}
+              height={240}
+            />
+            <Image
+              id="folder-polaroid"
+              ref={folderPolaroid}
+              className="folder-asset"
+              src="/images/page-assets/polaroid.svg"
+              alt=""
+              width={176}
+              height={187}
+            />
+            <Image
+              id="folder-main-content"
+              ref={folderMainContent}
+              className="folder-asset"
+              src="/images/page-assets/main-content.svg"
+              alt=""
+              width={430}
+              height={229}
+            />
+            <Image
+              id="folder-feather"
+              ref={folderFeather}
+              className="folder-asset"
+              src="/images/page-assets/feather.svg"
+              alt=""
+              width={202}
+              height={229}
+            />
+            <Image
+              id="folder-badge"
+              ref={folderBadge}
+              className="folder-asset"
+              src="/images/page-assets/badge.svg"
+              alt=""
+              width={234}
+              height={279}
+            />
 
-          <Image
-            id="folder-bottom"
-            ref={folderBottom}
-            src="/images/folder/flat-folder-bottom.svg"
-            alt=""
-            width={754}
-            height={365}
-          />
-          <div id="folder-flap">
-            <div />
+            <Image
+              id="folder-bottom"
+              ref={folderBottom}
+              src="/images/folder/flat-folder-bottom.svg"
+              alt=""
+              width={754}
+              height={365}
+            />
+            <div id="folder-flap">
+              <div />
+            </div>
           </div>
+          <h1 id="click-to-open-text">Click/Tap To Open</h1>
         </div>
-        <h1 id="click-to-open-text">Click/Tap To Open</h1>
       </div>
     </div>
   );
