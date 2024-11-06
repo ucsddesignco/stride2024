@@ -109,6 +109,9 @@ export default function Page() {
   );
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
     window
       .matchMedia('(min-width: 1100px)')
       .addEventListener('change', e => setMatches(e.matches));
