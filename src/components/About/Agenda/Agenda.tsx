@@ -34,7 +34,7 @@ export default function Agenda() {
           y="50"
           fill="white"
           width="400"
-          height="200"
+          height="50"
           className="agenda-text"
         >
           <div>
@@ -133,7 +133,7 @@ export default function Agenda() {
           x="25"
           y="25"
           fill="white"
-          width="400"
+          width="300"
           height="200"
           className="agenda-text"
         >
@@ -168,7 +168,7 @@ export default function Agenda() {
             <rect
               x="150"
               y={75 + index * 50}
-              width="125"
+              width="150"
               height="50"
               stroke="#FFFFFF"
               strokeWidth="2"
