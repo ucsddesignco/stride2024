@@ -68,7 +68,9 @@
   width: 30%;
   align-content: center;
   height: 50%;
-  cursor: url('../Icons/Cursor-hover.svg'), auto;
+  cursor:
+    url('../Icons/Cursor-hover.svg') 4 4,
+    auto;
 }
 
 /* =============== Switch =============== */
