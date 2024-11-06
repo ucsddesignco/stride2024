@@ -8,11 +8,11 @@
 }
 
 .flashlight {
-  z-index: 1000;
+  z-index: 15;
 }
 
 .flashlight-ring {
-  z-index: 1000;
+  z-index: 15;
   scale: var(--flashlight-scale, 1);
   transform-origin: center;
   transform: translate(-50%, -50%) scale(var(--flashlight-scale, 1));

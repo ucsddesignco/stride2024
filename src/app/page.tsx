@@ -438,7 +438,7 @@ export default function Page() {
     <div style={{ minHeight: '100vh', height: '100vh' }}>
       <Flashlight isOn={isOn} size={size} />
       {folderOpenned && (
-        <Controls isOn={isOn} size={size} setIsOn={setIsOn} setSize={setSize} />
+        <Controls isOn={isOn} setIsOn={setIsOn} setSize={setSize} />
       )}
 
       <div
