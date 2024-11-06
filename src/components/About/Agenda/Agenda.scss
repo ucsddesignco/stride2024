@@ -3,7 +3,7 @@
   flex-direction: column;
 
   .agenda-text {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
   }
 }
@@ -11,13 +11,20 @@
 @media only screen and (max-width: 468px) {
   .mobile-agenda-card {
     display: block;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 1rem;
+  }
+
+  .mobile-title {
+    font-size: 15px;
   }
 
   .agenda-card {
     display: none;
+  }
+
+  .mobile-agenda-text {
+    margin-right: 25%;
+    font-size: 1px;
   }
 }
 
