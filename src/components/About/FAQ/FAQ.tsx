@@ -21,10 +21,7 @@ export default function FAQ() {
         </svg>
       </div>
 
-      <h2 className="section-title">
-        <span>Frequently</span>
-        <span>Asked Questions</span>
-      </h2>
+      <h2 className="section-title">Frequently Asked Questions</h2>
       <div className="faq-accordion">
         <Accordion.Root className="AccordionRoot" type="single" collapsible>
           {FAQData.map((item, index) => (
