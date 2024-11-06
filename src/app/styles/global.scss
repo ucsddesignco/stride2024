@@ -11,6 +11,7 @@ html {
   text-size-adjust: none;
   --main-padding: 1.5rem;
   --nav-padding: 1.5rem;
+  scrollbar-gutter: stable;
   // Stide Logo + Gap + DCo Logo + Padding
   --nav-height: calc(31px + 1rem + 1.5rem + 2 * var(--nav-padding));
 
