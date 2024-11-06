@@ -1,7 +1,12 @@
 import '@/components/Flashlight/Flashlight.scss';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-export default function Flashlight() {
+type FlashlightProps = {
+  isOn: boolean;
+  size: number;
+};
+
+export default function Flashlight({ isOn, size }: FlashlightProps) {
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       document.documentElement.style.setProperty(
@@ -22,10 +27,19 @@ export default function Flashlight() {
   }, []);
 
   return (
-    <div className="flashlight">
-      <div className="custom-cursor" />
-      <div className="ring-inner" />
-      <div className="ring-outer" />
+    <div
+      className="flashlight"
+      style={
+        {
+          display: isOn ? 'block' : 'none',
+          '--flashlight-scale': size
+          // transform: `translate(-50%, -50%) scale(${size})`,
+        } as React.CSSProperties
+      }
+    >
+      <div className="custom-cursor flashlight-ring" />
+      <div className="ring-inner flashlight-ring" />
+      <div className="ring-outer flashlight-ring" />
     </div>
   );
 }

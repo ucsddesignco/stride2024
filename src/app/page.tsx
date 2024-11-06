@@ -11,7 +11,11 @@ import Controls from '@/components/flashlight_controls/controls';
 gsap.registerPlugin(useGSAP);
 
 export default function Page() {
+  const [isOn, setIsOn] = useState(false);
+  const [size, setSize] = useState(1);
+
   const [folderOpenned, setFolderOpenned] = useState(false);
+
   const [isHoveringFolder, setIsHoveringFolder] = useState(false);
 
   const badge = useRef<HTMLImageElement>(null);
@@ -45,6 +49,13 @@ export default function Page() {
   //       pageAsset.style.left = `${folderAssetRect.left}px`;
   //     }
   //   };
+
+  useEffect(() => {
+    if (folderOpenned) {
+      setIsOn(true);
+      console.log('Folder opened', isOn);
+    }
+  }, [folderOpenned]);
 
   useEffect(() => {
     const setNonFolderPositions = () => {
@@ -276,8 +287,11 @@ export default function Page() {
 
   return (
     <div style={{ minHeight: '100vh', height: '100vh' }}>
-      <Flashlight />
-      <Controls />
+      <Flashlight isOn={isOn} size={size} />
+      {folderOpenned && (
+        <Controls isOn={isOn} size={size} setIsOn={setIsOn} setSize={setSize} />
+      )}
+
       <div
         style={{
           backgroundColor: 'black',
