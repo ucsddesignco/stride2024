@@ -1,7 +1,7 @@
-import Mascot from '@/components/Register/Mascot/Mascot';
 import './FormStep3.scss';
 import { useState } from 'react';
 import BlockIcon from '@/components/Icons/BlockIcon';
+import MascotCircles from '@/components/MascotCircles/MascotCircles';
 import { COLOR_THEMES } from '../../constants';
 import { MascotBreeds, MascotHats } from '../../types';
 import FolderTabs from '../../FolderTabs/FolderTabs';
@@ -22,8 +22,8 @@ export default function FormStep3() {
 
   return (
     <div className="form-step3">
-      <div className="form-step3-mascot">
-        <Mascot />
+      <div id="half-badge">
+        <MascotCircles />
       </div>
       <div className="customization-container">
         <FolderTabs activeTab={activeTab} setActiveTab={setActiveTab} />

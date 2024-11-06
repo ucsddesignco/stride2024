@@ -10,12 +10,19 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   --main-padding: 1.5rem;
+  --nav-padding: 1.5rem;
+  scrollbar-gutter: stable;
+  // Stide Logo + Gap + DCo Logo + Padding
+  --nav-height: calc(31px + 1rem + 1.5rem + 2 * var(--nav-padding));
 
   @media (min-width: 580px) {
     --main-padding: 2rem;
   }
   @media (min-width: $tablet-breakpoint) {
     --main-padding: 4rem;
+  }
+  @media (min-width: $desktop-breakpoint) {
+    --main-padding: 7.5rem;
   }
 }
 
