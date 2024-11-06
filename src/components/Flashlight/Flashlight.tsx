@@ -33,13 +33,11 @@ export default function Flashlight({ isOn, size }: FlashlightProps) {
         {
           display: isOn ? 'block' : 'none',
           '--flashlight-scale': size
-          // transform: `translate(-50%, -50%) scale(${size})`,
         } as React.CSSProperties
       }
     >
       <div className="custom-cursor flashlight-ring" />
-      <div className="ring-inner flashlight-ring" />
-      <div className="ring-outer flashlight-ring" />
+      <div className="fake-cursor flashlight-ring" />
     </div>
   );
 }
