@@ -100,7 +100,7 @@ export default function Companies() {
               <foreignObject
                 key={obj.company}
                 x={125 + (index % 2) * 300}
-                y={125 + Math.floor(index / 2) * 55}
+                y={125 + Math.floor(index / 2) * 50}
                 width={200 + obj.company.length * 2}
                 height="50"
                 className="button-display"
@@ -128,7 +128,7 @@ export default function Companies() {
               <foreignObject
                 key={obj.company}
                 x={125 + (index % 2) * 300}
-                y={350 + Math.floor(index / 2) * 55}
+                y={350 + Math.floor(index / 2) * 50}
                 width={120 + obj.company.length * 2}
                 height="50"
                 className="button-display"

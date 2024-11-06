@@ -56,7 +56,7 @@ export default function CompanyModal({
           onClick={onClose}
           aria-label="Close modal"
         >
-          ×
+          X
         </button>
         {children}
       </div>
