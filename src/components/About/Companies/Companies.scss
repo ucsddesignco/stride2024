@@ -56,32 +56,51 @@
     }
   }
 
-  .company-description {
-    border: 1px solid white;
-    border-radius: 4px;
-    width: 100%;
-    height: 385px;
-    padding: 10px;
-    overflow-y: auto;
-    box-sizing: border-box;
-    margin: 2rem 0;
+  .company-text {
+    .company-description {
+      border: 1px solid white;
+      border-radius: 4px;
+      width: 100%;
+      height: 385px;
+      padding: 10px;
+      overflow-y: auto;
+      box-sizing: border-box;
+      margin: 2rem 0;
 
-    h3 {
-      font-weight: bold;
-      font-size: 30px;
-    }
+      h3 {
+        font-weight: bold;
+        font-size: 30px;
+      }
 
-    h3,
-    p {
-      margin-top: 1.5rem;
-    }
+      h3,
+      p {
+        margin-top: 1.5rem;
+      }
 
-    p {
-      font-size: 16.25px;
-    }
+      p {
+        font-size: 16.25px;
+      }
 
-    .company-writeup {
-      margin-right: 33%;
+      .company-writeup {
+        margin-right: 33%;
+      }
     }
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  .company-text,
+  .company-polaroid {
+    display: none;
+  }
+
+  .modal-text {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (min-width: 469px) {
+  .company-modal {
+    display: none;
   }
 }
