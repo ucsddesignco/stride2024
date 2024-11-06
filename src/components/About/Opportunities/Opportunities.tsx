@@ -43,7 +43,7 @@ export default function Opportunities() {
               d="M186.628 16.9581V16.9581C181.744 16.7021 177.577 20.4541 177.321 25.3383V25.3383"
               stroke="#FBFEFC"
               strokeWidth="2"
-              stroke-linecap="round"
+              strokeLinecap="round"
             />
             <foreignObject
               x="30%"
@@ -93,7 +93,7 @@ export default function Opportunities() {
               d="M201.762 16.9207V16.9207C206.641 16.5796 210.873 20.2582 211.214 25.1372V25.1372"
               stroke="#FBFEFC"
               strokeWidth="2"
-              stroke-linecap="round"
+              strokeLinecap="round"
             />
             <foreignObject
               x="20%"
@@ -143,7 +143,7 @@ export default function Opportunities() {
               d="M175.121 21.0382V21.0382C179.994 21.4645 183.598 25.7599 183.172 30.6322V30.6322"
               stroke="#FBFEFC"
               strokeWidth="2"
-              stroke-linecap="round"
+              strokeLinecap="round"
             />
             <foreignObject
               x="27.5%"

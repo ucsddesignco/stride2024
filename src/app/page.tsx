@@ -104,9 +104,7 @@ export default function Page() {
     // return () => window.removeEventListener('resize', setNonFolderPositions);
   }, []);
 
-  const [matches, setMatches] = useState(
-    window.matchMedia('(min-width: 1100px)').matches
-  );
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') {
