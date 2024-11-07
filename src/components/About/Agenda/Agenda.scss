@@ -10,12 +10,15 @@
     }
   }
   #mobile-agenda-svg-container {
+    rotate: -4deg;
     margin-top: -2rem;
+    margin-bottom: 2rem;
     margin-inline: auto;
     scale: 1.25;
 
     @media (min-width: 400px) {
       margin-top: -4.5rem;
+      margin-bottom: 0;
       scale: 1;
     }
 
@@ -31,7 +34,6 @@
       display: none;
     }
     #mobile-agenda-content {
-      rotate: -4deg;
       padding-inline: 2rem;
       padding-top: 1rem;
 
