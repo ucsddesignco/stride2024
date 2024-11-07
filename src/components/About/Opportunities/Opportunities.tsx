@@ -44,8 +44,7 @@ export default function Opportunities() {
             <foreignObject
               x="25%"
               y="45%"
-              width="400"
-              height="300"
+              width="100%"
               fill="white"
               className="card-text"
             >
@@ -88,8 +87,7 @@ export default function Opportunities() {
             <foreignObject
               x="50px"
               y="45%"
-              width="400"
-              height="300"
+              width="100%"
               fill="white"
               className="card-text"
             >
@@ -138,8 +136,7 @@ export default function Opportunities() {
             <foreignObject
               x="25%"
               y="45%"
-              width="400"
-              height="300"
+              width="100%"
               fill="white"
               className="card-text"
             >
