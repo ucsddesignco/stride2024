@@ -36,7 +36,7 @@ export const companies: CompaniesMap = {
     org_type: 'Recruiting',
     companyImage: 'images/company-images/ucsdlibrary.svg',
     description:
-      "The UC San Diego Library, one of the nation's top public academic libraries, plays a critical role in advancing the university's research, teaching, patient care, and public service missions. The Library provides the foundation of knowledge needed to advance cutting-edge discoveries in a wide range of disciplines--from healthcare to public policy to the arts. The Library provides access to more than 7 million items, including digital and print volumes and multimedia materials to meet the knowledge demands of scholars, students, and members of the public."
+      "The UC San Diego Library, one of the nation's top public academic libraries, plays a critical role in advancing the university's research, teaching, patient care, and public service missions. The Library provides the foundation of knowledge needed to advance cutting-edge discoveries in a wide range of disciplines--from healthcare to public policy to the arts."
   },
   'UCSD ACM': {
     name: 'UCSD ACM',
