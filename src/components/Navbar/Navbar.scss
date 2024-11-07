@@ -21,11 +21,15 @@
       }
 
       #nav-logo-current-page {
-        svg {
+        #nav-stride-logo {
           width: 260px;
           transition: width 0.3s;
 
-          @media (min-width: $tablet-breakpoint) {
+          &.scrolled {
+            width: 130px;
+          }
+
+          @media (min-width: 580px) {
             width: 260px;
           }
         }
@@ -54,7 +58,7 @@
       flex-direction: column;
       gap: 1rem;
 
-      svg {
+      #nav-stride-logo {
         width: 130px;
       }
 

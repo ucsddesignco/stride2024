@@ -40,7 +40,7 @@ export default function Opportunities() {
               strokeWidth="2"
               strokeLinecap="round"
             />
-            <foreignObject width="100%" height="100%" fill="white">
+            <foreignObject width="100%" height="386" fill="white">
               <div className="card-text">
                 <p>1:1 Networking</p>
               </div>
@@ -77,7 +77,7 @@ export default function Opportunities() {
               strokeWidth="2"
               strokeLinecap="round"
             />
-            <foreignObject width="100%" height="100%" fill="white">
+            <foreignObject width="100%" height="379" fill="white">
               <div className="card-text">
                 <p>Company Info Sessions</p>
               </div>
@@ -119,7 +119,7 @@ export default function Opportunities() {
               strokeWidth="2"
               strokeLinecap="round"
             />
-            <foreignObject width="100%" height="100%" fill="white">
+            <foreignObject width="100%" height="391" fill="white">
               <div className="card-text">
                 <p>Resume Reviews</p>
               </div>

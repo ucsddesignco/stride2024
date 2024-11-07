@@ -1,72 +1,63 @@
 .opportunities-section {
   margin-top: 3.5rem;
+  display: grid;
 
-  .card-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    min-height: 100%;
-    text-align: center;
-
-    p {
-      font-size: 35px;
-      margin: 0;
+  h2 {
+    @media (min-width: $desktop-breakpoint) {
+      margin-inline: auto;
+      max-width: 780px;
+      width: 100%;
+      text-align: left;
     }
   }
 
-  @media only screen and (max-width: 468px) {
-    .opportunities-features {
-      display: flex;
-      gap: 2rem;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      max-width: fit-content;
-      margin-inline: auto;
-      margin-block: auto;
+  .opportunities-features {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
 
+    @media (min-width: 580px) {
+      flex-direction: row;
+      padding-top: 1rem;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+      max-width: 1500px;
+    }
+
+    figure {
+      max-width: 200px;
+      margin-inline: auto;
+
+      @media (min-width: 580px) {
+        max-width: 35%;
+      }
+
+      &:first-child {
+        rotate: -11deg;
+        p {
+          max-width: 13ch;
+        }
+      }
+
+      &:nth-child(2) {
+        rotate: 15deg;
+      }
+
+      &:nth-child(3) {
+        rotate: -12deg;
+      }
       .card-text {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
-        min-height: 100%;
         text-align: center;
 
         p {
           font-size: 35px;
           margin: 0;
-        }
-      }
-    }
-  }
-
-  @media only screen and (min-width: 768px) {
-    .opportunities-features {
-      display: flex;
-      gap: 5rem;
-      max-width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      margin-block: auto;
-
-      figure {
-        position: relative;
-        width: 300px;
-        height: 300px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        animation: sway 3s infinite alternate ease-in-out;
-      }
-
-      @media only screen and (min-width: 760px) {
-        @keyframes sway {
-          0% {
-            transform: rotate(-3deg);
-          }
-          100% {
-            transform: rotate(3deg);
-          }
         }
       }
     }

@@ -23,9 +23,9 @@ export default function Navbar() {
       const logo = document.getElementById('nav-stride-logo');
       if (!logo) return;
       if (window.scrollY > 0) {
-        logo.style.width = '130px';
+        logo.classList.add('scrolled');
       } else {
-        logo.style.width = '260px';
+        logo.classList.remove('scrolled');
       }
     };
 
