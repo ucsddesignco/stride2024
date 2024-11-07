@@ -8,7 +8,7 @@
   }
 
   @media (min-width: $tablet-breakpoint) {
-    max-width: none;
+    max-width: 1000px;
     width: 100%;
   }
 
@@ -114,16 +114,16 @@
 
   #about-companies-mascot {
     position: absolute;
-    top: 0;
-    right: 30%;
-    transform: translateY(-53%);
-    width: 20%;
+    height: auto;
+    width: 22%;
+    top: -14%;
+    right: 20%;
+    rotate: -90deg;
 
     @media (min-width: 400px) {
-      top: 38%;
-      right: 0;
-      transform: translateY(-40%);
-      rotate: 90deg;
+      top: 34%;
+      right: -10%;
+      rotate: none;
     }
   }
 
