@@ -7,7 +7,20 @@ import Navbar from '@/components/Navbar/Navbar';
 export const metadata: Metadata = {
   title: 'Stride 2024',
   description:
-    'Stride is a uniquely design-forward career fair aiming to connect aspiring designers with company representatives.'
+    'Stride is a uniquely design-forward career fair aiming to connect aspiring designers with company representatives.',
+  openGraph: {
+    type: 'website',
+    url: 'https://stride24.ucsddesign.co',
+    title: 'Stride 2024',
+    description:
+      'Stride is a uniquely design-forward career fair aiming to connect aspiring designers with company representatives.',
+    siteName: 'Stride 2024',
+    images: [
+      {
+        url: 'https://stride24.ucsddesign.co/og-image.jpg'
+      }
+    ]
+  }
 };
 
 const IosevkaCurly = localFont({

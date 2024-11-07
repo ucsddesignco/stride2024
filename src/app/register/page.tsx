@@ -61,8 +61,10 @@ export default function RegisterPage() {
             <StrideLogo />
           </span>
         </h1>
-        <p>Lorem Ipsum Dolor Sit Amet</p>
-        <p>Include something about the $5 fee?</p>
+        <p>
+          Registration is $5 if you register in advance and $7 if you register
+          day-of.
+        </p>
       </div>
       <div id="register-bottom">
         <div id="luma-button-container">
@@ -99,8 +101,8 @@ export default function RegisterPage() {
           </span>
         </Link>
         <p>
-          contact designatucsd@gmail.com for inquiries about financial
-          assistance
+          Contact designatucsd@gmail.com for inquiries about financial
+          assistance.
         </p>
       </div>
     </main>

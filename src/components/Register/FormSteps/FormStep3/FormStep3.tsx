@@ -33,15 +33,17 @@ export default function FormStep3() {
               {Object.entries(COLOR_THEMES).map(([breed, colors]) => (
                 <li key={`duck-type-${breed}`}>
                   <button
+                    type="button"
                     className="color-grouping"
                     onClick={() => onColorChange(breed as MascotBreeds)}
                     aria-label={`${breed} color scheme`}
                   >
-                    <ul>
-                      <li style={{ backgroundColor: colors.head }} />
-                      <li style={{ backgroundColor: colors.arm }} />
-                      <li style={{ backgroundColor: colors.body }} />
-                    </ul>
+                    <div
+                      style={{
+                        border: `4px solid ${colors.shadow}`,
+                        backgroundColor: colors.color
+                      }}
+                    />
                   </button>
                 </li>
               ))}
@@ -55,11 +57,11 @@ export default function FormStep3() {
                   onHatChange('');
                 }}
               />
-              <TestHat
+              {/* <TestHat
                 onClick={() => {
                   onHatChange('test');
                 }}
-              />
+              /> */}
             </div>
           )}
         </div>
