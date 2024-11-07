@@ -34,7 +34,7 @@ export default function FormStep1({
       <FormSelect
         control={control}
         name="year"
-        width="12rem"
+        width="14rem"
         defaultLabel="Grad Year"
         // defaultValue="2025"
         options={['2025', '2026', '2027', '2028', '2029']}

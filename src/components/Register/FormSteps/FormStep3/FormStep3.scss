@@ -68,32 +68,30 @@
     padding: 1rem;
     list-style-type: none;
     display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-columns: repeat(auto-fit, 10rem);
+    gap: 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(calc(40px + 5vw), 1fr));
+    // grid-template-columns: repeat(auto-fit, 10rem);
 
     .color-grouping {
       border: none;
       background-color: inherit;
       transition: background-color 0.3s;
-      padding: 10px 20px;
+      // padding: 10px 20px;
       border-radius: 8px;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
 
       &:hover {
         background-color: rgb(66, 66, 66);
       }
 
-      ul {
-        padding-left: 0;
-        list-style-type: none;
-        display: flex;
-        gap: 10px;
-
-        li {
-          width: 25px;
-          height: 25px;
-          border-radius: 50%;
-        }
+      div {
+        width: 40px;
+        border-radius: 10px;
+        aspect-ratio: 1;
       }
     }
   }
