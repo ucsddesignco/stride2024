@@ -5,6 +5,7 @@ import './Mascot.scss';
 import { COLOR_THEMES } from '../constants';
 import { MascotBreeds, MascotHats } from '../types';
 import TestHat from './Hats/TestHat';
+import { mascotHats } from '../MascotHats/constants';
 
 type MascotColors = {
   type?: string;
@@ -54,7 +55,10 @@ export default function Mascot() {
 
   return (
     <div className="mascot-container">
-      {hat === 'test' && <TestHat id="mascot-hat" />}
+      {/* {hat === 'test' && <TestHat id="mascot-hat" />} */}
+      <div id={`mascot-hat-${hat}`} className="mascot-hat">
+        {mascotHats[hat]?.component}
+      </div>
 
       <svg
         width="100%"

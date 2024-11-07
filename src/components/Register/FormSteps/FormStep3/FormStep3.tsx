@@ -1,11 +1,11 @@
 import './FormStep3.scss';
 import { useState } from 'react';
-import BlockIcon from '@/components/Icons/BlockIcon';
 import MascotCircles from '@/components/MascotCircles/MascotCircles';
+import Image from 'next/image';
 import { COLOR_THEMES } from '../../constants';
 import { MascotBreeds, MascotHats } from '../../types';
 import FolderTabs from '../../FolderTabs/FolderTabs';
-import TestHat from '../../Mascot/Hats/TestHat';
+import { mascotHats } from '../../MascotHats/constants';
 
 export default function FormStep3() {
   const onColorChange = (breed: MascotBreeds) => {
@@ -51,18 +51,25 @@ export default function FormStep3() {
           )}
 
           {activeTab === 'Hat' && (
-            <div className="hat-container">
-              <BlockIcon
-                onClick={() => {
-                  onHatChange('');
-                }}
-              />
-              {/* <TestHat
-                onClick={() => {
-                  onHatChange('test');
-                }}
-              /> */}
-            </div>
+            <ul className="hat-container">
+              {Object.entries(mascotHats).map(([hatName, hatData]) => (
+                <li key={hatName}>
+                  <button
+                    type="button"
+                    onClick={() => onHatChange(hatName as MascotHats)}
+                    aria-label={`${hatName} hat`}
+                  >
+                    {/* {component} */}
+                    <Image
+                      src={hatData.iconSrc}
+                      alt={`${hatName} icon`}
+                      width={100}
+                      height={100}
+                    />
+                  </button>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       </div>
