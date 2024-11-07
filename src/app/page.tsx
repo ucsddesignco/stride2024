@@ -7,6 +7,7 @@ import '@/app/Home.scss';
 import Image from 'next/image';
 import Flashlight from '@/components/Flashlight/Flashlight';
 import Controls from '@/components/FlashlightControls/Controls';
+import MobileHomeNav from '@/components/Navbar/MobileHomeNav/MobileHomeNav';
 
 gsap.registerPlugin(useGSAP);
 
@@ -720,6 +721,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <MobileHomeNav visible={folderOpenned} />
     </div>
   );
 }

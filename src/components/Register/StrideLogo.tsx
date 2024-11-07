@@ -2,10 +2,12 @@ import { SVGProps } from 'react';
 
 export default function StrideLogo({
   width,
+  ref,
   ...props
 }: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      ref={ref}
       {...props}
       viewBox="0 0 209 49"
       fill="none"

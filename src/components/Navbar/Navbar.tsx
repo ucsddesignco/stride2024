@@ -4,6 +4,7 @@ import Image from 'next/image';
 import './Navbar.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 import StrideLogo from '../Register/StrideLogo';
 import DCOLogo from './Logos/DCOLogo';
 
@@ -16,6 +17,24 @@ export default function Navbar() {
     const page = currentPath.replace('/', '');
     return page.charAt(0).toUpperCase() + page.slice(1) || '';
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const logo = document.getElementById('nav-stride-logo');
+      if (!logo) return;
+      if (window.scrollY > 0) {
+        logo.style.width = '130px';
+      } else {
+        logo.style.width = '260px';
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <nav id="navbar" className={pathname === '/' ? 'home' : ''}>

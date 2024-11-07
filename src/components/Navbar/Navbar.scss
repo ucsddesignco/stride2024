@@ -22,7 +22,8 @@
 
       #nav-logo-current-page {
         svg {
-          width: 130px;
+          width: 260px;
+          transition: width 0.3s;
 
           @media (min-width: $tablet-breakpoint) {
             width: 260px;
@@ -33,11 +34,12 @@
           display: none;
         }
       }
+    }
+    #nav-button-container {
+      display: none;
 
-      #nav-button-container #register-button {
-        @media (min-width: $desktop-breakpoint) {
-          padding: 1.125rem 2rem;
-        }
+      @media (min-width: 580px) {
+        display: flex;
       }
     }
   }
@@ -114,14 +116,6 @@
       @media (min-width: $tablet-breakpoint) {
         display: block;
       }
-    }
-  }
-
-  #nav-home-button-container {
-    display: none;
-
-    @media (min-width: 580px) {
-      display: flex;
     }
   }
 }
