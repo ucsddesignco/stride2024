@@ -21,7 +21,7 @@ export default function FormStep1({
         register={register}
         name="name"
         label="Name"
-        placeholder="e.g. Detective Croc"
+        placeholder="e.g. Detective Duck"
         error={errors.name}
       />
       <FormText

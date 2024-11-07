@@ -27,8 +27,13 @@ const parseFormData = (formData: TFormData): ParsedFormData => {
   const name = formData.name || DEFAULT_VALUES.name;
   const pronouns = formData.pronouns || DEFAULT_VALUES.pronouns;
   const [firstName, lastName] = name.split(' ');
-  const [firstPronoun, secondPronoun] = pronouns.split('/');
-
+  let [firstPronoun, secondPronoun] = pronouns.split(' ');
+  if (pronouns.includes('/')) {
+    [firstPronoun, secondPronoun] = pronouns
+      .trim()
+      .replace(/\s*\/\s*/, '/')
+      .split('/');
+  }
   return {
     firstName,
     lastName,
@@ -64,8 +69,9 @@ export default function MascotBadge({
     if (!shouldScale) return;
     if (badgeContainerRef.current && badgeRef.current && !hasMeasured.current) {
       hasMeasured.current = true;
-      const badgeContainerHeight =
-        badgeContainerRef.current?.getBoundingClientRect().height;
+      const badgeContainerHeight = badgeContainerRef.current
+        ? badgeContainerRef.current.getBoundingClientRect().height - 10
+        : 0;
       const badgeWidth = badgeRef.current?.getBoundingClientRect().width;
       // For Safari bug
       const badgeHeight = (badgeWidth * 378) / 252;

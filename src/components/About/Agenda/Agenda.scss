@@ -1,4 +1,10 @@
 #agenda-section {
+  h2 {
+    @media (min-width: $desktop-breakpoint) {
+      max-width: 780px;
+      margin-inline: auto;
+    }
+  }
   #mobile-agenda-svg-container {
     @media (min-width: 580px) {
       max-width: 450px;

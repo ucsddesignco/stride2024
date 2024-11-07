@@ -3,19 +3,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  margin-bottom: 8rem;
   max-width: 780px;
 
   #register-button-link {
     display: grid;
     place-items: center;
+    width: 100%;
+    rotate: -7.33deg;
 
     #about-register-button {
       margin-inline: auto;
       border: none;
       background-color: transparent;
       cursor: pointer;
-      width: 90%;
+      width: 100%;
 
       @media (min-width: 400px) {
         max-width: 350px;
@@ -31,15 +33,25 @@
         overflow: visible;
         color: white;
         text-transform: uppercase;
-        rotate: -7.33deg;
+        display: grid;
+        place-items: center;
+        height: 100%;
+        width: 100%;
 
-        h2 {
-          font-size: 1.8rem;
+        p {
+          font-size: 5rem;
+          font-weight: 600;
+          font-style: italic;
         }
       }
 
       svg {
         fill: none;
+
+        #about-register-button-border,
+        p {
+          transition: stroke 0.3s;
+        }
 
         &:is(:hover, :focus) {
           #about-register-button-border {
@@ -47,7 +59,7 @@
           }
 
           #register-button-container {
-            h2 {
+            p {
               color: #6ee7b7;
             }
           }
@@ -61,7 +73,7 @@
           }
 
           #register-button-container {
-            h2 {
+            p {
               color: black;
             }
           }

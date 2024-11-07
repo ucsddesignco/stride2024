@@ -155,8 +155,7 @@
     }
 
     p {
-      font-size: 0.875rem;
-      max-width: 38ch;
+      max-width: var(--max-width);
       text-align: center;
 
       @media (min-width: $tablet-breakpoint) {

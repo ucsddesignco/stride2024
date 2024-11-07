@@ -31,7 +31,7 @@
       color: $dark-gray;
     }
 
-    &:focus {
+    &:focus-visible {
       border-bottom: 1px solid $light-green;
     }
   }
