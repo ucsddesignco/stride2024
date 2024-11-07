@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+  #flashlight-controls {
+    display: none !important;
+  }
+}
+
 #flashlight-controls {
   background-color: white;
   display: flex;
