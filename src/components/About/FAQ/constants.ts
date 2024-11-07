@@ -2,7 +2,7 @@ export const FAQData = [
   {
     title: 'When Is Stride?',
     content:
-      'Stride takes place on Wednesday, November 13th, 2024. It will be from 10am-2pm at the Price Center Ballroom East.'
+      'Stride takes place on Wednesday, November 13th, 2024. It will be from 10am-2pm at the Design & Innovation Building Room 208.'
   },
   {
     title: 'Where is Stride?',
