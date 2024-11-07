@@ -2,7 +2,7 @@ export const FAQData = [
   {
     title: 'When Is Stride?',
     content:
-      'Stride takes place on Wednesday, November 13th, 2024. It will be from 10am-2pm at the Price Center Ballroom East.'
+      'Stride takes place on Wednesday, November 13th, 2024. It will be from 10am-2pm at the Design & Innovation Building Room 208.'
   },
   {
     title: 'Where is Stride?',
@@ -18,6 +18,11 @@ export const FAQData = [
     title: 'How Should I Dress For Stride?',
     content:
       'While there is no dress code for Stride, we do recommend making sure you look “presentable”! What “presentable” looks like is up to you - some people dress in business attire, while others dress as they normally do.'
+  },
+  {
+    title: 'Do I Need A Portfolio?',
+    content:
+      'No! A portfolio is not needed to attend Stride. If you have one however, feel free to link it in your resume.'
   },
   {
     title: 'Is There A Registration Fee?',

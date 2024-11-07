@@ -1,39 +1,103 @@
-.agenda-section {
-  display: flex;
-  flex-direction: column;
+#agenda-section {
+  #mobile-agenda-svg-container {
+    rotate: -4deg;
 
-  .agenda-text {
-    font-size: 30px;
-    font-weight: bold;
+    @media (min-width: 580px) {
+      max-width: 450px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+      display: none;
+    }
+    #mobile-agenda-content {
+      padding: 2rem 1rem;
+
+      h3 {
+        font-size: 1.5rem;
+        font-style: italic;
+        max-width: 80%;
+        margin-bottom: 1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        td {
+          border: 2px solid #ffffff;
+          text-align: center;
+          font-size: 25px;
+          color: #ffffff;
+          padding-block: 1rem;
+
+          p {
+            text-align: left;
+            padding-left: 1rem;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      > p {
+        margin-top: 1rem;
+      }
+    }
   }
-}
 
-@media only screen and (max-width: 468px) {
-  .mobile-agenda-card {
-    display: block;
-  }
-
-  .mobile-title {
-    font-size: 15px;
-  }
-
-  .agenda-card {
+  #desktop-agenda-svg-container {
+    rotate: -4deg;
     display: none;
-  }
 
-  .mobile-agenda-text {
-    margin-right: 25%;
-    font-size: 1px;
-  }
-}
+    @media (min-width: $tablet-breakpoint) {
+      display: block;
+      max-width: 885px;
+      margin-inline: auto;
 
-/* Laptop and Tablet Breakpoints */
-@media (min-width: 768px) {
-  .mobile-agenda-card {
-    display: none;
-  }
+      #desktop-agenda-content {
+        padding: 5rem 1rem;
 
-  .agenda-card {
-    transform: translateY(40px) rotate(-5deg);
+        h3 {
+          font-size: 2rem;
+          font-style: italic;
+          max-width: 80%;
+          margin-bottom: 2rem;
+          margin-inline: auto;
+          text-align: center;
+        }
+
+        table {
+          width: 80%;
+          margin-inline: auto;
+          border-collapse: collapse;
+
+          td {
+            border: 2px solid #ffffff;
+            font-size: 25px;
+            color: #ffffff;
+            padding-block: 1rem;
+
+            &:first-child {
+              p {
+                text-align: center;
+                padding-left: 0;
+              }
+            }
+
+            p {
+              text-align: left;
+              padding-left: 5rem;
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        > p {
+          text-align: center;
+          font-size: 1.2rem;
+          margin-top: 1rem;
+        }
+      }
+    }
   }
 }

@@ -1,11 +1,11 @@
 import './FormStep3.scss';
 import { useState } from 'react';
-import BlockIcon from '@/components/Icons/BlockIcon';
 import MascotCircles from '@/components/MascotCircles/MascotCircles';
+import Image from 'next/image';
 import { COLOR_THEMES } from '../../constants';
 import { MascotBreeds, MascotHats } from '../../types';
 import FolderTabs from '../../FolderTabs/FolderTabs';
-import TestHat from '../../Mascot/Hats/TestHat';
+import { mascotHats } from '../../MascotHats/constants';
 
 export default function FormStep3() {
   const onColorChange = (breed: MascotBreeds) => {
@@ -33,15 +33,17 @@ export default function FormStep3() {
               {Object.entries(COLOR_THEMES).map(([breed, colors]) => (
                 <li key={`duck-type-${breed}`}>
                   <button
+                    type="button"
                     className="color-grouping"
                     onClick={() => onColorChange(breed as MascotBreeds)}
                     aria-label={`${breed} color scheme`}
                   >
-                    <ul>
-                      <li style={{ backgroundColor: colors.head }} />
-                      <li style={{ backgroundColor: colors.arm }} />
-                      <li style={{ backgroundColor: colors.body }} />
-                    </ul>
+                    <div
+                      style={{
+                        border: `4px solid ${colors.shadow}`,
+                        backgroundColor: colors.color
+                      }}
+                    />
                   </button>
                 </li>
               ))}
@@ -49,18 +51,25 @@ export default function FormStep3() {
           )}
 
           {activeTab === 'Hat' && (
-            <div className="hat-container">
-              <BlockIcon
-                onClick={() => {
-                  onHatChange('');
-                }}
-              />
-              <TestHat
-                onClick={() => {
-                  onHatChange('test');
-                }}
-              />
-            </div>
+            <ul className="hat-container">
+              {Object.entries(mascotHats).map(([hatName, hatData]) => (
+                <li key={hatName}>
+                  <button
+                    type="button"
+                    onClick={() => onHatChange(hatName as MascotHats)}
+                    aria-label={`${hatName} hat`}
+                  >
+                    {/* {component} */}
+                    <Image
+                      src={hatData.iconSrc}
+                      alt={`${hatName} icon`}
+                      width={100}
+                      height={100}
+                    />
+                  </button>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       </div>

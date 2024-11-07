@@ -25,6 +25,7 @@ summary {
 :root {
   --folder-width: 80vw;
   --folder-height: 50vh;
+  --svg-scale: 3;
 }
 
 #page-container {
@@ -39,10 +40,16 @@ summary {
   position: relative;
 }
 
+#click-to-open-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 #folder {
   position: relative;
   width: calc(var(--folder-height) * 1.411);
-  //   outline: 2px solid red;
   perspective: 800px;
 
   > img {
@@ -152,7 +159,7 @@ summary {
   right: 30%;
 }
 #folder-main-content {
-  bottom: 10%;
+  top: 50%;
   right: 27%;
 }
 #folder-polaroid {
@@ -160,16 +167,16 @@ summary {
   right: 41%;
 }
 #folder-orgs {
-  top: 15%;
-  right: 11%;
+  top: 28%;
+  left: 55%;
 }
 #folder-companies {
-  bottom: 2%;
+  top: 50%;
   right: 7%;
 }
 #folder-magnifying-glass {
-  left: 5%;
-  bottom: 5%;
+  top: 9%;
+  left: 2%;
 }
 #folder-cards {
   top: 27%;
@@ -182,33 +189,26 @@ summary {
   text-align: center;
 }
 
-#paper-border-top-left,
-#paper-border-bottom-right,
-#paper-border-top-edge,
-#paper-border-bottom-edge {
+.paper-border {
   position: absolute;
   z-index: 4;
   height: auto;
 }
 
 #paper-border-top-left {
-  width: calc(var(--folder-height) * 0.5);
-  top: -1%;
-  left: -1%;
+  top: -5px;
+  left: 0;
 }
 #paper-border-bottom-right {
-  width: calc(var(--folder-height) * 0.4);
   bottom: 0;
   right: 0;
 }
 #paper-border-top-edge {
-  width: calc(var(--folder-height) * 0.8);
   top: 0;
-  right: 0;
+  right: 2%;
 }
 #paper-border-bottom-edge {
-  width: calc(var(--folder-height) * 0.7);
-  bottom: 0;
+  bottom: -10px;
   left: 30%;
 }
 
@@ -252,60 +252,76 @@ summary {
   #cards,
   #page-folder-bottom {
     height: auto;
+    scale: calc(1 / var(--svg-scale));
+  }
+
+  .folder-asset {
+    scale: calc(1 / var(--svg-scale));
+  }
+
+  #page-folder-bottom {
+    scale: none;
   }
 
   #badge,
   #folder-badge {
-    width: calc(var(--folder-width) * 0.311);
+    width: calc(var(--folder-width) * 0.311 * var(--svg-scale));
+    transform-origin: top right;
   }
   #feather,
   #folder-feather {
-    width: calc(var(--folder-width) * 0.269);
+    width: calc(var(--folder-width) * 0.269 * var(--svg-scale));
+    transform-origin: top right;
   }
   #main-content,
   #folder-main-content {
-    width: calc(var(--folder-width) * 0.572);
+    width: calc(var(--folder-width) * 0.572 * var(--svg-scale));
+    transform-origin: top right;
   }
   #polaroid,
   #folder-polaroid {
-    width: calc(var(--folder-width) * 0.234);
+    width: calc(var(--folder-width) * 0.234 * var(--svg-scale));
+    transform-origin: top right;
   }
   #orgs,
   #folder-orgs {
-    width: calc(var(--folder-width) * 0.326);
+    width: calc(var(--folder-width) * 0.326 * var(--svg-scale));
+    transform-origin: top left;
   }
   #companies,
   #folder-companies {
-    width: calc(var(--folder-width) * 0.352);
+    width: calc(var(--folder-width) * 0.352 * var(--svg-scale));
+    transform-origin: top right;
   }
   #magnifying-glass,
   #folder-magnifying-glass {
-    width: calc(var(--folder-width) * 0.297);
+    width: calc(var(--folder-width) * 0.297 * var(--svg-scale));
+    transform-origin: top left;
   }
   #cards,
   #folder-cards {
-    width: calc(var(--folder-width) * 0.36);
+    width: calc(var(--folder-width) * 0.36 * var(--svg-scale));
+    transform-origin: top left;
   }
 
   #paper-border-top-left {
-    width: calc(var(--folder-width) * 0.4);
-    top: -3%;
-    left: -2%;
+    top: 0;
+    left: auto;
+    right: -20px;
+    transform: scaleX(-1);
   }
   #paper-border-bottom-right {
-    width: calc(var(--folder-width) * 0.4);
-    bottom: 0;
-    left: 0;
+    bottom: -5px;
+    left: -7px;
     transform: scaleX(-1);
   }
   #paper-border-top-edge {
-    width: calc(var(--folder-width) * 0.8);
     top: 0;
-    right: 0;
+    right: 40%;
   }
   #paper-border-bottom-edge {
-    width: calc(var(--folder-width) * 0.7);
-    bottom: 0;
+    scale: 0.7;
+    bottom: -10px;
     right: 0;
   }
 }

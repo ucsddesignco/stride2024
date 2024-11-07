@@ -24,11 +24,12 @@ export default function RegisterPage() {
           {({ close }) => (
             <div id="luma-iframe-container">
               <iframe
-                src="https://lu.ma/embed/event/evt-tY8EjR5s2pogihW/simple"
+                src="https://lu.ma/embed/event/evt-v7qQzON54Hs1IMN/simple"
                 allowFullScreen
                 title="Luma Registration"
                 aria-hidden="false"
               />
+
               {/* <button
                 type="button"
                 onClick={() => {
@@ -61,8 +62,10 @@ export default function RegisterPage() {
             <StrideLogo />
           </span>
         </h1>
-        <p>Lorem Ipsum Dolor Sit Amet</p>
-        <p>Include something about the $5 fee?</p>
+        <p>
+          Registration is $5 if you register in advance and $7 if you register
+          day-of.
+        </p>
       </div>
       <div id="register-bottom">
         <div id="luma-button-container">
@@ -86,7 +89,7 @@ export default function RegisterPage() {
           <FeeTag id="register-fee-tag" />
         </div>
 
-        <Link href="/badge" id="create-badge-button">
+        {/* <Link href="/badge" id="create-badge-button">
           Create Your Badge{' '}
           <span>
             <Image
@@ -97,10 +100,10 @@ export default function RegisterPage() {
               aria-hidden
             />
           </span>
-        </Link>
+        </Link> */}
         <p>
-          contact designatucsd@gmail.com for inquiries about financial
-          assistance
+          Contact designatucsd@gmail.com for inquiries about financial
+          assistance.
         </p>
       </div>
     </main>

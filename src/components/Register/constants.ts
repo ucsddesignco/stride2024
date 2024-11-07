@@ -2,13 +2,27 @@ import { ColorTheme } from './types';
 
 export const COLOR_THEMES: ColorTheme = {
   default: {
-    head: '#F3D31A',
-    arm: '#DAB528',
-    body: '#F3D31A'
+    color: '#4EA664',
+    shadow: '#329856'
   },
-  mallard: {
-    head: '#2F8969',
-    arm: '#553618',
-    body: '#7D5344'
+  yellow: {
+    color: '#FAE270',
+    shadow: '#F6DA4E'
+  },
+  lilac: {
+    color: '#AEA6C4',
+    shadow: '#9A8FB5'
+  },
+  blue: {
+    color: '#9FBBCB',
+    shadow: '#86A9BE'
+  },
+  brown: {
+    color: '#A4774D',
+    shadow: '#8C643F'
+  },
+  pink: {
+    color: '#A64E76',
+    shadow: '#9A3B66'
   }
 };
