@@ -6,6 +6,23 @@
     font-size: 30px;
     font-weight: bold;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-inline: 4rem;
+    margin-block: 15%;
+    max-width: 35vw;
+    transform: rotate(-0.5deg);
+
+    td {
+      border: 2px solid #ffffff;
+      text-align: center;
+      font-size: 25px;
+      color: #ffffff;
+      padding-block: 1.5rem;
+    }
+  }
 }
 
 @media only screen and (max-width: 468px) {
