@@ -38,7 +38,7 @@
   }
 
   #mascot-badge-container {
-    padding-top: 1rem;
+    padding-block: 1rem;
     @media (min-width: $tablet-breakpoint) {
       display: none;
     }

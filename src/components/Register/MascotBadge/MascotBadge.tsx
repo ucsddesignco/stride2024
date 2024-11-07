@@ -64,8 +64,9 @@ export default function MascotBadge({
     if (!shouldScale) return;
     if (badgeContainerRef.current && badgeRef.current && !hasMeasured.current) {
       hasMeasured.current = true;
-      const badgeContainerHeight =
-        badgeContainerRef.current?.getBoundingClientRect().height;
+      const badgeContainerHeight = badgeContainerRef.current
+        ? badgeContainerRef.current.getBoundingClientRect().height - 10
+        : 0;
       const badgeWidth = badgeRef.current?.getBoundingClientRect().width;
       // For Safari bug
       const badgeHeight = (badgeWidth * 378) / 252;

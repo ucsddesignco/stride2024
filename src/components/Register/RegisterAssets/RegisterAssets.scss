@@ -16,7 +16,7 @@
     }
 
     &-stacked-papers {
-      top: 10%;
+      top: 15%;
       left: 0;
     }
 
@@ -65,19 +65,11 @@
         display: none;
       }
 
-      &-magnify-glass {
-        display: none;
-      }
-
       &-polaroid {
         display: none;
       }
 
       &-bottom-left-paper {
-        display: none;
-      }
-
-      &-feather {
         display: none;
       }
     }
