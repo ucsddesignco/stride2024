@@ -1,11 +1,15 @@
 .opportunities-section {
   .card-text {
+    margin-inline: 10%;
+    margin-block: 50%;
+    text-align: center;
+
     p {
       font-size: 25px;
     }
   }
 
-  @media only screen and (min-width: 468px) and (max-width: 768px) {
+  @media only screen and (max-width: 468px) {
     .opportunities-features {
       display: flex;
       flex-direction: column;
@@ -17,7 +21,7 @@
     }
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 768px) {
     .opportunities-features {
       display: flex;
       gap: 5rem;
@@ -28,7 +32,7 @@
       figure {
         position: relative;
         width: 300px;
-        height: 300px; /* Adjust the height as needed */
+        height: 300px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         animation: sway 3s infinite alternate ease-in-out;
       }
