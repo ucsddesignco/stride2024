@@ -129,7 +129,7 @@ export default function Page() {
     const tl = gsap.timeline();
     const pageElementSpreadDuration = 1;
     const pageElementSpreadEase = Power2.easeIn;
-    const assetScale = 2.5;
+    const assetScale = 2.5 / 3;
     /* folder openning animation and swaping folder elements for page elements */
     tl.to('#folder-flap', {
       rotateX: 160,
@@ -174,8 +174,8 @@ export default function Page() {
       '#main-content',
       {
         top: '50vw',
-        right: '20%',
-        scale: 2,
+        right: '0',
+        scale: 1,
         duration: pageElementSpreadDuration,
         ease: pageElementSpreadEase
       },
@@ -184,8 +184,8 @@ export default function Page() {
     tl.to(
       '#magnifying-glass',
       {
-        top: '115vw',
-        left: '5%',
+        top: '105vw',
+        left: '55%',
         rotate: 54,
         scale: assetScale,
         duration: pageElementSpreadDuration,
@@ -196,8 +196,8 @@ export default function Page() {
     tl.to(
       '#cards',
       {
-        top: '110vw',
-        left: '30%',
+        top: '120vw',
+        left: '10%',
         scale: assetScale,
         duration: pageElementSpreadDuration,
         ease: pageElementSpreadEase
@@ -207,10 +207,10 @@ export default function Page() {
     tl.to(
       '#companies',
       {
-        top: '175vw',
+        top: '160vw',
         right: '20%',
         rotate: -30,
-        scale: 2.6,
+        scale: 2.6 / 3,
         duration: pageElementSpreadDuration,
         ease: pageElementSpreadEase
       },
@@ -220,9 +220,9 @@ export default function Page() {
       '#feather',
       {
         top: '240vw',
-        left: '40%',
+        left: '30%',
         rotate: 10,
-        scale: 2.6,
+        scale: 2.6 / 3,
         duration: pageElementSpreadDuration,
         ease: pageElementSpreadEase
       },
@@ -232,8 +232,8 @@ export default function Page() {
       '#polaroid',
       {
         top: '240vw',
-        left: '5%',
-        scale: 2.7,
+        left: '-10%',
+        scale: 2.7 / 3,
         duration: pageElementSpreadDuration,
         ease: pageElementSpreadEase
       },
@@ -242,10 +242,10 @@ export default function Page() {
     tl.to(
       '#badge',
       {
-        top: '280vw',
-        right: '5%',
+        top: '260vw',
+        right: '-20%',
         rotate: -11,
-        scale: 2.8,
+        scale: 1,
         duration: pageElementSpreadDuration,
         ease: pageElementSpreadEase
       },
@@ -254,8 +254,8 @@ export default function Page() {
     tl.to(
       '#orgs',
       {
-        top: '340vw',
-        left: '10%',
+        top: '320vw',
+        left: '20%',
         rotate: 42,
         scale: assetScale,
         duration: pageElementSpreadDuration,
@@ -428,7 +428,8 @@ export default function Page() {
       style={{
         minHeight: '100vh',
         overflowX: 'hidden',
-        scrollbarWidth: 'none'
+        scrollbarWidth: 'none',
+        scrollbarGutter: 'stable'
       }}
     >
       <Flashlight />
