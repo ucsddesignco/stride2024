@@ -6,23 +6,6 @@
     font-size: 30px;
     font-weight: bold;
   }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-inline: 4rem;
-    margin-block: 15%;
-    max-width: 35vw;
-    transform: rotate(-0.5deg);
-
-    td {
-      border: 2px solid #ffffff;
-      text-align: center;
-      font-size: 25px;
-      color: #ffffff;
-      padding-block: 1.5rem;
-    }
-  }
 }
 
 @media only screen and (max-width: 468px) {
@@ -42,6 +25,22 @@
     margin-right: 25%;
     font-size: 1px;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-inline: 1.5rem;
+    margin-block: 22.5%;
+    max-width: 85%;
+
+    td {
+      border: 2px solid #ffffff;
+      text-align: center;
+      font-size: 20px;
+      color: #ffffff;
+      padding-block: 1.25rem;
+    }
+  }
 }
 
 /* Laptop and Tablet Breakpoints */
@@ -52,5 +51,22 @@
 
   .agenda-card {
     transform: translateY(40px) rotate(-5deg);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-inline: 4rem;
+    margin-block: 15%;
+    max-width: 85%;
+    transform: rotate(-0.5deg);
+
+    td {
+      border: 2px solid #ffffff;
+      text-align: center;
+      font-size: 25px;
+      color: #ffffff;
+      padding-block: 1.5rem;
+    }
   }
 }

@@ -104,14 +104,18 @@ export default function Agenda() {
             <h3 className="mobile-title">Wednesday, Nov 13 | 12-5pm PST</h3>
           </div>
         </foreignObject>
-        <foreignObject x="25" y="75" width="300" height="500">
+        <foreignObject width="100%" height="500">
           <table>
             <thead />
             <tbody>
               {times.map((time, index) => (
                 <tr key={time}>
-                  <td>{time}</td>
-                  <td>{events[index]}</td>
+                  <td>
+                    <p>{time}</p>
+                  </td>
+                  <td>
+                    <p>{events[index]}</p>
+                  </td>
                 </tr>
               ))}
             </tbody>
