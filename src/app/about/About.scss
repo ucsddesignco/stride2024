@@ -88,7 +88,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            transform: translate(-30%, 80%) rotate(-15deg);
+            transform: translate(calc(-148% + 32vw), 85%) rotate(-15deg);
           }
         }
         &-2 {
@@ -107,7 +107,7 @@
           }
 
           @media (min-width: $desktop-breakpoint) {
-            transform: translate(calc(30%), 120%);
+            transform: translate(calc(148% - 35vw), 85%);
           }
         }
         &-3 {
@@ -122,10 +122,10 @@
           }
           @media (min-width: $tablet-breakpoint) {
             rotate: 3deg;
-            transform: translateX(calc(70% - 10vw)) translateY(-20%);
+            transform: translateX(calc(70% - 11vw)) translateY(-20%);
           }
           @media (min-width: $desktop-breakpoint) {
-            transform: translate(calc(50%), 65%);
+            transform: translate(calc(153% - 32vw), 25%);
           }
         }
       }

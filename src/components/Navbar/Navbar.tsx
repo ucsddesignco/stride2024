@@ -4,9 +4,10 @@ import Image from 'next/image';
 import './Navbar.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import StrideLogo from '../Register/StrideLogo';
 import DCOLogo from './Logos/DCOLogo';
+import InfoIcon from '../Icons/InfoIcon';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -50,13 +51,7 @@ export default function Navbar() {
         {pathname !== '/about' && (
           <Link id="about-button" href="/about">
             <span>
-              <Image
-                src="images/icons/info-icon.svg"
-                width={24}
-                height={24}
-                alt="Info Icon"
-                aria-hidden="true"
-              />
+              <InfoIcon />
             </span>
             About <span className="longer-about-text">Stride</span>
           </Link>

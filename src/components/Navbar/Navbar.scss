@@ -9,6 +9,7 @@
   width: 100%;
   background-color: transparent;
   top: 0;
+  pointer-events: none;
 
   #dco-logo {
     display: none;
@@ -16,6 +17,7 @@
 
   &.home {
     #nav-logo-container {
+      pointer-events: auto;
       #dco-logo {
         display: block;
       }
@@ -40,6 +42,7 @@
       }
     }
     #nav-button-container {
+      pointer-events: auto;
       display: none;
 
       @media (min-width: 580px) {
@@ -49,6 +52,7 @@
   }
 
   #nav-logo-container {
+    pointer-events: auto;
     display: grid;
     gap: 10px;
     text-decoration: none;
@@ -74,6 +78,7 @@
   }
 
   #nav-button-container {
+    pointer-events: auto;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -93,6 +98,14 @@
       padding: 6px;
       padding-left: 10px;
       padding-right: 12px;
+      transition:
+        color 0.2s,
+        background-color 0.2s;
+
+      &:hover {
+        color: black;
+        background-color: $white;
+      }
 
       @media (min-width: $desktop-breakpoint) {
         gap: 10px;
@@ -108,6 +121,14 @@
       text-transform: uppercase;
       padding: 6px;
       padding-inline: 1rem;
+      transition:
+        color 0.2s,
+        background-color 0.2s;
+
+      &:hover {
+        background-color: black;
+        color: $white;
+      }
     }
 
     a {

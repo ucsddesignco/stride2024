@@ -137,10 +137,15 @@
       #register-fee-tag {
         pointer-events: none;
         position: absolute;
-        transform: translateY(-95%);
+        transform: translateY(-105%);
         rotate: 24deg;
         top: 0;
-        right: 15%;
+        right: 0;
+        scale: 0.65;
+
+        @media (min-width: 400px) {
+          scale: 0.75;
+        }
 
         @media (min-width: $tablet-breakpoint) {
           transform: translateY(-55%);

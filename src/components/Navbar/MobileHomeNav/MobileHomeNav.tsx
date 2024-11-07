@@ -1,19 +1,13 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import './MobileHomeNav.scss';
+import InfoIcon from '@/components/Icons/InfoIcon';
 
 export default function MobileHomeNav({ visible }: { visible: boolean }) {
   return (
     <div id="mobile-nav-button-container" className={visible ? '' : 'hide'}>
       <Link id="about-button" href="/about">
         <span>
-          <Image
-            src="images/icons/info-icon.svg"
-            width={24}
-            height={24}
-            alt="Info Icon"
-            aria-hidden="true"
-          />
+          <InfoIcon />
         </span>
         About
       </Link>
