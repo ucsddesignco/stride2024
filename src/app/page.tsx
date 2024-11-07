@@ -453,6 +453,7 @@ export default function Page() {
       >
         <Image
           id="paper-border-top-left"
+          className="paper-border"
           src="/images/page-borders/top-left-corner.svg"
           alt=""
           width={160}
@@ -460,6 +461,7 @@ export default function Page() {
         />
         <Image
           id="paper-border-bottom-right"
+          className="paper-border"
           src="/images/page-borders/bottom-right-corner.svg"
           alt=""
           width={277}
@@ -467,6 +469,7 @@ export default function Page() {
         />
         <Image
           id="paper-border-top-edge"
+          className="paper-border"
           src="/images/page-borders/top-edge.svg"
           alt=""
           width={331}
@@ -474,6 +477,7 @@ export default function Page() {
         />
         <Image
           id="paper-border-bottom-edge"
+          className="paper-border"
           src="/images/page-borders/bottom-edge.svg"
           alt=""
           width={602}
