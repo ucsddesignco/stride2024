@@ -98,6 +98,14 @@
       padding: 6px;
       padding-left: 10px;
       padding-right: 12px;
+      transition:
+        color 0.2s,
+        background-color 0.2s;
+
+      &:hover {
+        color: black;
+        background-color: $white;
+      }
 
       @media (min-width: $desktop-breakpoint) {
         gap: 10px;
@@ -113,6 +121,14 @@
       text-transform: uppercase;
       padding: 6px;
       padding-inline: 1rem;
+      transition:
+        color 0.2s,
+        background-color 0.2s;
+
+      &:hover {
+        background-color: black;
+        color: $white;
+      }
     }
 
     a {
