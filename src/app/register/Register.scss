@@ -1,4 +1,5 @@
 #register-page-container {
+  --max-width: 52ch;
   margin-top: var(--nav-height);
   padding: 2.5rem 1.5rem;
   height: calc(100dvh - var(--nav-height));
@@ -16,6 +17,10 @@
   #register-top {
     @media (min-width: 400px) {
       margin-inline: auto;
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+      max-width: var(--max-width);
     }
 
     #smaller-register-header {
@@ -72,8 +77,13 @@
       }
 
       @media (min-width: $tablet-breakpoint) {
+        font-style: italic;
         font-size: 1.5rem;
-        max-width: 48ch;
+        max-width: 35ch;
+      }
+
+      @media (min-width: $tablet-breakpoint) {
+        max-width: var(--max-width);
       }
     }
   }
@@ -89,7 +99,11 @@
 
     @media (min-width: $tablet-breakpoint) {
       margin-top: 2.5rem;
-      max-width: 24rem;
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+      width: 100%;
+      max-width: var(--max-width);
     }
 
     a,
@@ -119,11 +133,19 @@
     #luma-button-container {
       width: 100%;
       position: relative;
-      svg {
+
+      #register-fee-tag {
         pointer-events: none;
         position: absolute;
-        top: -30%;
-        right: -8%;
+        transform: translateY(-95%);
+        rotate: 24deg;
+        top: 0;
+        right: 15%;
+
+        @media (min-width: $tablet-breakpoint) {
+          transform: translateY(-55%);
+          right: -8%;
+        }
       }
     }
 
@@ -134,7 +156,13 @@
 
     p {
       font-size: 0.875rem;
+      max-width: 38ch;
       text-align: center;
+
+      @media (min-width: $tablet-breakpoint) {
+        max-width: none;
+        text-align: left;
+      }
     }
   }
 }

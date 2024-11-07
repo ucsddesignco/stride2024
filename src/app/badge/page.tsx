@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import './Badge.scss';
 import FormStep1 from '@/components/Register/FormSteps/FormStep1/FormStep1';
 import {
+  MascotBreeds,
   RegistrationSchema,
   TFormData,
   ValidFieldNames
@@ -17,6 +18,8 @@ import FormStep4 from '@/components/Register/FormSteps/FormStep4/FormStep4';
 import Link from 'next/link';
 import RegisterAssets from '@/components/Register/RegisterAssets/RegisterAssets';
 import MascotBadge from '@/components/Register/MascotBadge/MascotBadge';
+import { COLOR_THEMES } from '@/components/Register/constants';
+import { addUser } from './adduser';
 
 export default function Register() {
   const [nextButtonText, setNextButtonText] = useState('Next');
@@ -33,6 +36,7 @@ export default function Register() {
   });
 
   useEffect(() => {
+    console.log(getValues());
     if (currentFormStep === 4) {
       setNextButtonText('Home');
     } else if (currentFormStep === 3) {
@@ -42,9 +46,24 @@ export default function Register() {
     }
   }, [currentFormStep]);
 
-  const onSubmit = async (data: TFormData) => {
+  const onSubmit = async (formData: TFormData) => {
     try {
-      console.log(data);
+      const storedBreed = localStorage.getItem('mascot-color') as MascotBreeds;
+      const storedHat = localStorage.getItem('mascot-hat') || '';
+      const storedAccessory = localStorage.getItem('mascot-hat') || '';
+
+      const badgeData = {
+        color: {
+          color: COLOR_THEMES[storedBreed].color,
+          shadow: COLOR_THEMES[storedBreed].shadow
+        },
+        hat: storedHat,
+        accesstory: storedAccessory
+      };
+
+      const userData = { ...formData, badge: badgeData };
+
+      addUser(userData);
     } catch (e) {
       console.error(e);
     }
@@ -67,6 +86,7 @@ export default function Register() {
     }
 
     if (currentFormStep === 3) {
+      console.log('what the heck');
       handleSubmit(onSubmit)();
     }
 
@@ -113,7 +133,7 @@ export default function Register() {
               )}
               {currentFormStep === 3 && <FormStep3 />}
               {currentFormStep === 4 && <FormStep4 formData={getValues()} />}
-              {/* <FormStep4 formData={getValues()}/> */}
+              {/* <FormStep3 formData={getValues()}/> */}
             </div>
           </form>
         </div>

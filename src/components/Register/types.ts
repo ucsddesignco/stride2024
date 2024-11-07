@@ -1,12 +1,17 @@
 import { Control, FieldError, UseFormRegister } from 'react-hook-form';
 import { z, ZodType } from 'zod';
 
-export type MascotBreeds = 'default' | 'mallard';
+export type MascotBreeds =
+  | 'default'
+  | 'yellow'
+  | 'lilac'
+  | 'blue'
+  | 'brown'
+  | 'pink';
 
 type ColorParts = {
-  head: string;
-  arm: string;
-  body: string;
+  color: string;
+  shadow: string;
 };
 
 export type ColorTheme = Record<MascotBreeds, ColorParts>;
@@ -51,15 +56,15 @@ export type FormSelectProps = {
 export const RegistrationSchema: ZodType<TFormData> = z.object({
   name: z
     .string()
-    .min(2, { message: 'Name is too short' })
-    .max(50, { message: 'Name needs to be under 70 characters' }),
+    .min(1, { message: 'Please enter your name.' })
+    .max(50, { message: 'Your name needs to be under 50 characters' }),
   pronouns: z
     .string()
-    .min(2, { message: 'Pronouns is too short' })
-    .max(50, { message: 'Pronouns needs to be under 50 characters.' }),
+    .min(2, { message: 'Please enter your preferred pronouns.' })
+    .max(50, { message: 'Your pronouns needs to be under 50 characters.' }),
   year: z
     .string()
-    .length(4, { message: 'Year must be valid' })
+    .length(4, { message: 'Please enter your Graduation year' })
     .refine(
       year => {
         const yearNumber = parseInt(year, 10);
@@ -75,9 +80,12 @@ export const RegistrationSchema: ZodType<TFormData> = z.object({
   //   .optional(),
   link: z
     .string()
-    .includes('linkedin.com', { message: 'Invalid LinkedIn URL' }),
+    .min(1, { message: 'Please enter a valid link.' })
+    .max(50, { message: 'Please enter a valid link under 50 characters.' }),
   email: z
     .string()
-    .email({ message: 'Invalid UCSD email' })
-    .includes('ucsd.edu', { message: 'Invalid UCSD email' })
+    .email({ message: 'Please enter a valid UCSD email address.' })
+    .includes('ucsd.edu', {
+      message: 'Please enter a valid UCSD email address.'
+    })
 });
