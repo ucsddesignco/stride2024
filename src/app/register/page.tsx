@@ -24,11 +24,12 @@ export default function RegisterPage() {
           {({ close }) => (
             <div id="luma-iframe-container">
               <iframe
-                src="https://lu.ma/embed/event/evt-tY8EjR5s2pogihW/simple"
+                src="https://lu.ma/embed/event/evt-v7qQzON54Hs1IMN/simple"
                 allowFullScreen
                 title="Luma Registration"
                 aria-hidden="false"
               />
+
               {/* <button
                 type="button"
                 onClick={() => {
