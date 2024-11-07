@@ -1,9 +1,11 @@
 .opportunities-section {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
 
   .card-text {
-    margin-inline: auto;
-    margin-block: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     text-align: center;
 
     p {
