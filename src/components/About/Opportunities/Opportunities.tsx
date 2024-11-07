@@ -7,8 +7,7 @@ export default function Opportunities() {
       <div className="opportunities-features">
         <figure className="figure">
           <svg
-            width="360"
-            height="386"
+            width="100%"
             viewBox="0 0 360 386"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -42,9 +41,8 @@ export default function Opportunities() {
               strokeLinecap="round"
             />
             <foreignObject
-              x="25%"
-              y="45%"
               width="100%"
+              height="300"
               fill="white"
               className="card-text"
             >
@@ -55,7 +53,7 @@ export default function Opportunities() {
           </svg>
         </figure>
         <figure className="figure">
-          <svg width="360" height="379" viewBox="0 0 360 379" fill="none">
+          <svg width="100%" viewBox="0 0 360 379" fill="none">
             <path
               d="M359.001 289.387V20.0008H1.001V378.001H139.29"
               stroke="white"
@@ -85,9 +83,8 @@ export default function Opportunities() {
               strokeLinecap="round"
             />
             <foreignObject
-              x="50px"
-              y="45%"
-              width="100%"
+              width="400"
+              height="300"
               fill="white"
               className="card-text"
             >
@@ -99,8 +96,7 @@ export default function Opportunities() {
         </figure>
         <figure className="figure">
           <svg
-            width="360"
-            height="391"
+            width="100%"
             viewBox="0 0 360 391"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -133,13 +129,7 @@ export default function Opportunities() {
               strokeWidth="2"
               strokeLinecap="round"
             />
-            <foreignObject
-              x="25%"
-              y="45%"
-              width="100%"
-              fill="white"
-              className="card-text"
-            >
+            <foreignObject width="100%" fill="white" className="card-text">
               <div>
                 <p>Resume Reviews</p>
               </div>
