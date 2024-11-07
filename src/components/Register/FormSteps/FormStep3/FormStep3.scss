@@ -64,7 +64,8 @@
   }
 
   .color-palette-container,
-  .hat-container {
+  .hat-container,
+  .accessories-container {
     padding-left: 0;
     padding: 1rem;
     list-style-type: none;
@@ -105,7 +106,8 @@
     }
   }
 
-  .hat-container {
+  .hat-container,
+  .accessories-container {
     li {
       display: flex;
       align-items: center;
@@ -127,19 +129,4 @@
       }
     }
   }
-
-  // .hat-container {
-  //   padding-left: 0;
-  //   padding: 1rem;
-  //   list-style-type: none;
-  //   display: grid;
-  //   max-width: 500px;
-  //   // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  //   grid-template-columns: repeat(auto-fit, 6.5rem);
-  //   align-items: center;
-
-  //   > svg {
-  //     cursor: pointer;
-  //   }
-  // }
 }

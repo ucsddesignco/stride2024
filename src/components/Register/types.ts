@@ -9,14 +9,28 @@ export type MascotBreeds =
   | 'brown'
   | 'pink';
 
+export type MascotHats =
+  | 'bowler'
+  | 'beret'
+  | 'hawk'
+  | 'ivan'
+  | 'nerve'
+  | 'tophat';
+
+export type MascotAccessories =
+  | 'glasses'
+  | 'bowtie'
+  | 'monocle'
+  | 'mustache'
+  | 'suit'
+  | 'default';
+
 type ColorParts = {
   color: string;
   shadow: string;
 };
 
 export type ColorTheme = Record<MascotBreeds, ColorParts>;
-
-export type MascotHats = '' | 'test';
 
 export type TFormData = {
   name: string;

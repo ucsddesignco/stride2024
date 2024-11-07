@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import './Mascot.scss';
+import Image from 'next/image';
 import { COLOR_THEMES } from '../constants';
-import { MascotBreeds, MascotHats } from '../types';
-import TestHat from './Hats/TestHat';
-import { mascotHats } from '../MascotHats/constants';
+import { MascotAccessories, MascotBreeds, MascotHats } from '../types';
+import { MASCOT_HATS } from '../MascotHats/constants';
+import { MASCOT_ACCESSORIES } from './MascotAccessories/constants';
 
 type MascotColors = {
   type?: string;
@@ -15,6 +16,19 @@ type MascotColors = {
 
 const loadColorFromStorage = () => {
   const storedBreed = localStorage.getItem('mascot-color');
+  const availableColors = [
+    'default',
+    'yellow',
+    'lilac',
+    'blue',
+    'brown',
+    'pink'
+  ];
+
+  if (storedBreed && !availableColors.includes(storedBreed)) {
+    localStorage.removeItem('mascot-color');
+    return COLOR_THEMES.default;
+  }
 
   return storedBreed
     ? COLOR_THEMES[storedBreed as MascotBreeds]
@@ -23,12 +37,43 @@ const loadColorFromStorage = () => {
 
 const loadHatFromStorage = () => {
   const storedHat = localStorage.getItem('mascot-hat') as MascotHats;
-  return storedHat || '';
+
+  const availableHats = ['bowler', 'beret', 'hawk', 'ivan', 'nerve', 'tophat'];
+
+  if (storedHat && !availableHats.includes(storedHat)) {
+    localStorage.removeItem('mascot-hat');
+    return 'bowler';
+  }
+  return storedHat || 'bowler';
+};
+
+const loadAccessoryFromStorage = () => {
+  const storedAccessory = localStorage.getItem(
+    'mascot-accessory'
+  ) as MascotAccessories;
+
+  const availableAccessories = [
+    'glasses',
+    'bowtie',
+    'monocle',
+    'mustache',
+    'suit',
+    'default'
+  ];
+
+  if (storedAccessory && !availableAccessories.includes(storedAccessory)) {
+    localStorage.removeItem('mascot-accessory');
+    return 'default';
+  }
+  return storedAccessory || 'default';
 };
 
 export default function Mascot() {
   const [colors, setColors] = useState<MascotColors>(COLOR_THEMES.default);
-  const [hat, setHat] = useState<MascotHats>('');
+  const [hat, setHat] = useState<MascotHats>(
+    MASCOT_HATS.bowler.name as MascotHats
+  );
+  const [accessory, setAccessory] = useState<MascotAccessories>('default');
   const [isMounted, setIsMounted] = useState(false);
 
   const loadAllColors = () => {
@@ -39,6 +84,10 @@ export default function Mascot() {
     setHat(loadHatFromStorage());
   };
 
+  const loadAccessory = () => {
+    setAccessory(loadAccessoryFromStorage());
+  };
+
   useEffect(() => {
     loadAllColors();
     loadHat();
@@ -46,18 +95,23 @@ export default function Mascot() {
 
     window.addEventListener('mascot-color', loadAllColors);
     window.addEventListener('mascot-hat', loadHat);
+    window.addEventListener('mascot-accessory', loadAccessory);
 
     return () => {
       window.removeEventListener('mascot-color', loadAllColors);
       window.removeEventListener('mascot-hat', loadHat);
+      window.removeEventListener('mascot-accessory', loadAccessory);
     };
   }, []);
 
   return (
     <div className="mascot-container">
       {/* {hat === 'test' && <TestHat id="mascot-hat" />} */}
+      <div id={`mascot-accessory-${accessory}`} className="mascot-accessory">
+        {MASCOT_ACCESSORIES[accessory]?.component}
+      </div>
       <div id={`mascot-hat-${hat}`} className="mascot-hat">
-        {mascotHats[hat]?.component}
+        {MASCOT_HATS[hat]?.component}
       </div>
 
       <svg

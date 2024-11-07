@@ -6,7 +6,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import './Badge.scss';
 import FormStep1 from '@/components/Register/FormSteps/FormStep1/FormStep1';
 import {
+  MascotAccessories,
   MascotBreeds,
+  MascotHats,
   RegistrationSchema,
   TFormData,
   ValidFieldNames
@@ -36,7 +38,6 @@ export default function Register() {
   });
 
   useEffect(() => {
-    console.log(getValues());
     if (currentFormStep === 4) {
       setNextButtonText('Home');
     } else if (currentFormStep === 3) {
@@ -49,8 +50,10 @@ export default function Register() {
   const onSubmit = async (formData: TFormData) => {
     try {
       const storedBreed = localStorage.getItem('mascot-color') as MascotBreeds;
-      const storedHat = localStorage.getItem('mascot-hat') || '';
-      const storedAccessory = localStorage.getItem('mascot-hat') || '';
+      const storedHat = localStorage.getItem('mascot-hat') as MascotHats;
+      const storedAccessory = localStorage.getItem(
+        'mascot-accessory'
+      ) as MascotAccessories;
 
       const badgeData = {
         color: {
@@ -63,7 +66,7 @@ export default function Register() {
 
       const userData = { ...formData, badge: badgeData };
 
-      // addUser(userData);
+      addUser(userData);
     } catch (e) {
       console.error(e);
     }
@@ -86,7 +89,6 @@ export default function Register() {
     }
 
     if (currentFormStep === 3) {
-      console.log('what the heck');
       handleSubmit(onSubmit)();
     }
 
@@ -102,99 +104,95 @@ export default function Register() {
     setCurrentFormStep(currentFormStep - 1);
   };
 
-  return null;
-
-  // return (
-
-  //   <main id="badge-page-container">
-  //     <div id="badge-page-left-content">
-  //       <RegisterAssets simplified />
-  //       <div id="badge-page-main-content">
-  //         <h1>
-  //           {currentFormStep === 4 ? 'Badge Complete!' : 'Create Your Badge'}
-  //         </h1>
-  //         <form
-  //           onSubmit={handleSubmit(onSubmit, validationError => {
-  //             console.error('Validation errors:', validationError);
-  //           })}
-  //           className="modal-form"
-  //         >
-  //           <div id="badge-form-body">
-  //             {/* {currentFormStep === 1 && (
-  //               <FormStep1
-  //                 register={register}
-  //                 control={control}
-  //                 errors={errors}
-  //               />
-  //             )}
-  //             {currentFormStep === 2 && (
-  //               <FormStep2
-  //                 register={register}
-  //                 control={control}
-  //                 errors={errors}
-  //               />
-  //             )}
-  //             {currentFormStep === 3 && <FormStep3 />}
-  //             {currentFormStep === 4 && <FormStep4 formData={getValues()} />} */}
-  //             <FormStep3 formData={getValues()}/>
-  //           </div>
-  //         </form>
-  //       </div>
-  //       <div id="badge-footer">
-  //         {currentFormStep === 1 && (
-  //           <Link href="/register" style={{ textDecoration: 'none' }}>
-  //             <button
-  //               type="button"
-  //               className="back-button"
-  //               onClick={handleFormPrev}
-  //             >
-  //               <span className="right-arrow">
-  //                 <RightArrow fill="white" />
-  //               </span>{' '}
-  //               Back
-  //             </button>
-  //           </Link>
-  //         )}
-  //         {currentFormStep > 1 && (
-  //           <button
-  //             type="button"
-  //             className="back-button"
-  //             onClick={handleFormPrev}
-  //           >
-  //             <span className="right-arrow">
-  //               <RightArrow fill="white" />
-  //             </span>{' '}
-  //             Back
-  //           </button>
-  //         )}
-  //         <p id="current-step-large">Step {currentFormStep} of 4</p>
-  //         <p id="current-step-small">{currentFormStep}/4</p>
-  //         {currentFormStep < 4 && (
-  //           <button
-  //             type="button"
-  //             className="next-button"
-  //             onClick={handleFormNext}
-  //           >
-  //             {nextButtonText}{' '}
-  //             {currentFormStep < 4 && (
-  //               <span>
-  //                 <RightArrow />
-  //               </span>
-  //             )}
-  //           </button>
-  //         )}
-  //         {currentFormStep === 4 && (
-  //           <Link href="/" style={{ textDecoration: 'none' }}>
-  //             <button type="button" className="next-button">
-  //               Home
-  //             </button>
-  //           </Link>
-  //         )}
-  //       </div>
-  //     </div>
-  //     <div id="badge-page-right-content">
-  //       <MascotBadge formData={getValues()} />
-  //     </div>
-  //   </main>
-  // );
+  return (
+    <main id="badge-page-container">
+      <div id="badge-page-left-content">
+        <RegisterAssets simplified />
+        <div id="badge-page-main-content">
+          <h1>
+            {currentFormStep === 4 ? 'Badge Complete!' : 'Create Your Badge'}
+          </h1>
+          <form
+            onSubmit={handleSubmit(onSubmit, validationError => {
+              console.error('Validation errors:', validationError);
+            })}
+            className="modal-form"
+          >
+            <div id="badge-form-body">
+              {currentFormStep === 1 && (
+                <FormStep1
+                  register={register}
+                  control={control}
+                  errors={errors}
+                />
+              )}
+              {currentFormStep === 2 && (
+                <FormStep2
+                  register={register}
+                  control={control}
+                  errors={errors}
+                />
+              )}
+              {currentFormStep === 3 && <FormStep3 />}
+              {currentFormStep === 4 && <FormStep4 formData={getValues()} />}
+            </div>
+          </form>
+        </div>
+        <div id="badge-footer">
+          {currentFormStep === 1 && (
+            <Link href="/register" style={{ textDecoration: 'none' }}>
+              <button
+                type="button"
+                className="back-button"
+                onClick={handleFormPrev}
+              >
+                <span className="right-arrow">
+                  <RightArrow fill="white" />
+                </span>{' '}
+                Back
+              </button>
+            </Link>
+          )}
+          {currentFormStep > 1 && (
+            <button
+              type="button"
+              className="back-button"
+              onClick={handleFormPrev}
+            >
+              <span className="right-arrow">
+                <RightArrow fill="white" />
+              </span>{' '}
+              Back
+            </button>
+          )}
+          <p id="current-step-large">Step {currentFormStep} of 4</p>
+          <p id="current-step-small">{currentFormStep}/4</p>
+          {currentFormStep < 4 && (
+            <button
+              type="button"
+              className="next-button"
+              onClick={handleFormNext}
+            >
+              {nextButtonText}{' '}
+              {currentFormStep < 4 && (
+                <span>
+                  <RightArrow />
+                </span>
+              )}
+            </button>
+          )}
+          {currentFormStep === 4 && (
+            <Link href="/" style={{ textDecoration: 'none' }}>
+              <button type="button" className="next-button">
+                Home
+              </button>
+            </Link>
+          )}
+        </div>
+      </div>
+      <div id="badge-page-right-content">
+        <MascotBadge formData={getValues()} />
+      </div>
+    </main>
+  );
 }

@@ -8,16 +8,8 @@
     overflow: visible;
   }
 
-  #mascot-hat {
-    position: absolute;
-    top: 0;
-    transform: translateY(-110%);
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-  }
-
-  .mascot-hat {
+  .mascot-hat,
+  .mascot-accessory {
     position: absolute;
     right: 0;
     top: 0;
@@ -66,6 +58,34 @@
       top: -48%;
       left: 0;
       right: 0;
+    }
+  }
+
+  #mascot-accessory- {
+    &glasses {
+      width: 69%;
+      top: 8%;
+    }
+
+    &bowtie {
+      width: 48%;
+      top: 42%;
+    }
+
+    &monocle {
+      width: 28%;
+      top: 8%;
+      right: -47%;
+    }
+
+    &mustache {
+      width: 35%;
+      top: 23%;
+    }
+
+    &suit {
+      width: 78%;
+      top: 44%;
     }
   }
 }

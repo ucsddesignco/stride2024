@@ -12,7 +12,7 @@ type MascotHat = {
   iconSrc: string;
 };
 
-export const mascotHats: Record<string, MascotHat> = {
+export const MASCOT_HATS: Record<string, MascotHat> = {
   bowler: {
     name: 'Bowler',
     component: <Bowler />,
