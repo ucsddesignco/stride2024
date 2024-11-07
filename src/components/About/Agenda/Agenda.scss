@@ -1,7 +1,5 @@
 #agenda-section {
   #mobile-agenda-svg-container {
-    rotate: -4deg;
-
     @media (min-width: 580px) {
       max-width: 450px;
       margin-inline: auto;
@@ -11,7 +9,8 @@
       display: none;
     }
     #mobile-agenda-content {
-      padding: 2rem 1rem;
+      rotate: -4deg;
+      padding: 2rem 2rem;
 
       h3 {
         font-size: 1.5rem;
@@ -46,15 +45,14 @@
   }
 
   #desktop-agenda-svg-container {
-    rotate: -4deg;
     display: none;
-
     @media (min-width: $tablet-breakpoint) {
       display: block;
-      max-width: 885px;
+      max-width: 1200px;
       margin-inline: auto;
 
       #desktop-agenda-content {
+        rotate: -4deg;
         padding: 5rem 1rem;
 
         h3 {
