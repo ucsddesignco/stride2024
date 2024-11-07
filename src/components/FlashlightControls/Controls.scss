@@ -55,7 +55,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: url('../Icons/Cursor-hover.svg'), auto;
+    cursor:
+      url('../Icons/Cursor-hover.svg') 16 4,
+      auto;
   }
 
   .slider-output {
@@ -66,7 +68,9 @@
     width: 30%;
     align-content: center;
     height: 50%;
-    cursor: url('../Icons/Cursor-hover.svg'), auto;
+    cursor:
+      url('../Icons/Cursor-hover.svg') 16 4,
+      auto;
   }
 
   /* =============== Switch =============== */
