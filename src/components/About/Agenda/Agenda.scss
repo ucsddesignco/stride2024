@@ -1,4 +1,8 @@
 #agenda-section {
+  @media (min-width: $tablet-breakpoint) {
+    margin-top: 5rem;
+  }
+
   h2 {
     @media (min-width: $desktop-breakpoint) {
       max-width: 780px;
@@ -6,9 +10,21 @@
     }
   }
   #mobile-agenda-svg-container {
+    margin-top: -2rem;
+    margin-inline: auto;
+    scale: 1.25;
+
+    @media (min-width: 400px) {
+      margin-top: -4.5rem;
+      scale: 1;
+    }
+
     @media (min-width: 580px) {
-      max-width: 450px;
-      margin-inline: auto;
+      max-width: 80%;
+    }
+
+    @media (min-width: 680px) {
+      max-width: 530px;
     }
 
     @media (min-width: $tablet-breakpoint) {
@@ -16,7 +32,8 @@
     }
     #mobile-agenda-content {
       rotate: -4deg;
-      padding: 2rem 2rem;
+      padding-inline: 2rem;
+      padding-top: 1rem;
 
       h3 {
         font-size: 1.5rem;
@@ -39,7 +56,7 @@
           p {
             text-align: left;
             padding-left: 1rem;
-            font-size: 0.8rem;
+            font-size: 1rem;
           }
         }
       }
@@ -52,26 +69,27 @@
 
   #desktop-agenda-svg-container {
     display: none;
+    rotate: -4deg;
+
     @media (min-width: $tablet-breakpoint) {
       display: block;
-      max-width: 1200px;
+
+      max-width: 1350px;
       margin-inline: auto;
 
       #desktop-agenda-content {
-        rotate: -4deg;
-        padding: 5rem 1rem;
+        padding-top: 8rem;
 
         h3 {
-          font-size: 2rem;
+          font-size: 2.5rem;
           font-style: italic;
-          max-width: 80%;
-          margin-bottom: 2rem;
+          margin-bottom: 2.5rem;
           margin-inline: auto;
           text-align: center;
         }
 
         table {
-          width: 80%;
+          width: 82%;
           margin-inline: auto;
           border-collapse: collapse;
 
@@ -82,6 +100,8 @@
             padding-block: 1rem;
 
             &:first-child {
+              width: 40%;
+
               p {
                 text-align: center;
                 padding-left: 0;
@@ -90,16 +110,16 @@
 
             p {
               text-align: left;
-              padding-left: 5rem;
-              font-size: 1.2rem;
+              padding-left: 5.5rem;
+              font-size: 1.75rem;
             }
           }
         }
 
         > p {
           text-align: center;
-          font-size: 1.2rem;
-          margin-top: 1rem;
+          font-size: 1.75rem;
+          margin-top: 3.5rem;
         }
       }
     }

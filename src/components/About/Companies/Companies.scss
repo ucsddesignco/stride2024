@@ -1,14 +1,18 @@
 .companies-section {
-  @media (min-width: $desktop-breakpoint) {
-    max-width: 780px;
-    margin-inline: auto;
-  }
-
   h2 {
     max-width: 22ch;
 
-    @media (min-width: $desktop-breakpoint) {
+    @media (min-width: 580px) {
       max-width: none;
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+      max-width: 22ch;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+      max-width: 780px;
+      margin-inline: auto;
     }
   }
 
