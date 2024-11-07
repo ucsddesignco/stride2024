@@ -1,72 +1,103 @@
-.agenda-section {
-  display: flex;
-  flex-direction: column;
+#agenda-section {
+  #mobile-agenda-svg-container {
+    rotate: -4deg;
 
-  .agenda-text {
-    font-size: 30px;
-    font-weight: bold;
-  }
-}
+    @media (min-width: 580px) {
+      max-width: 450px;
+      margin-inline: auto;
+    }
 
-@media only screen and (max-width: 468px) {
-  .mobile-agenda-card {
-    display: block;
-  }
+    @media (min-width: $tablet-breakpoint) {
+      display: none;
+    }
+    #mobile-agenda-content {
+      padding: 2rem 1rem;
 
-  .mobile-title {
-    font-size: 15px;
-  }
+      h3 {
+        font-size: 1.5rem;
+        font-style: italic;
+        max-width: 80%;
+        margin-bottom: 1rem;
+      }
 
-  .agenda-card {
-    display: none;
-  }
+      table {
+        width: 100%;
+        border-collapse: collapse;
 
-  .mobile-agenda-text {
-    margin-right: 25%;
-    font-size: 1px;
-  }
+        td {
+          border: 2px solid #ffffff;
+          text-align: center;
+          font-size: 25px;
+          color: #ffffff;
+          padding-block: 1rem;
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-inline: auto;
-    margin-block: 22.5%;
-    max-width: 85%;
+          p {
+            text-align: left;
+            padding-left: 1rem;
+            font-size: 0.8rem;
+          }
+        }
+      }
 
-    td {
-      border: 2px solid #ffffff;
-      text-align: center;
-      font-size: 20px;
-      color: #ffffff;
-      padding-block: 1.25rem;
+      > p {
+        margin-top: 1rem;
+      }
     }
   }
-}
 
-/* Laptop and Tablet Breakpoints */
-@media (min-width: 768px) {
-  .mobile-agenda-card {
+  #desktop-agenda-svg-container {
+    rotate: -4deg;
     display: none;
-  }
 
-  .agenda-card {
-    transform: translateY(40px) rotate(-5deg);
-  }
+    @media (min-width: $tablet-breakpoint) {
+      display: block;
+      max-width: 885px;
+      margin-inline: auto;
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-inline: auto;
-    margin-block: 15%;
-    max-width: 85%;
-    transform: rotate(-0.5deg);
+      #desktop-agenda-content {
+        padding: 5rem 1rem;
 
-    td {
-      border: 2px solid #ffffff;
-      text-align: center;
-      font-size: 25px;
-      color: #ffffff;
-      padding-block: 1.5rem;
+        h3 {
+          font-size: 2rem;
+          font-style: italic;
+          max-width: 80%;
+          margin-bottom: 2rem;
+          margin-inline: auto;
+          text-align: center;
+        }
+
+        table {
+          width: 80%;
+          margin-inline: auto;
+          border-collapse: collapse;
+
+          td {
+            border: 2px solid #ffffff;
+            font-size: 25px;
+            color: #ffffff;
+            padding-block: 1rem;
+
+            &:first-child {
+              p {
+                text-align: center;
+                padding-left: 0;
+              }
+            }
+
+            p {
+              text-align: left;
+              padding-left: 5rem;
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        > p {
+          text-align: center;
+          font-size: 1.2rem;
+          margin-top: 1rem;
+        }
+      }
     }
   }
 }
