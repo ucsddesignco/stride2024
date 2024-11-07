@@ -22,7 +22,11 @@
 
       #nav-logo-current-page {
         svg {
-          width: 260px;
+          width: 130px;
+
+          @media (min-width: $tablet-breakpoint) {
+            width: 260px;
+          }
         }
 
         p {
@@ -34,10 +38,6 @@
         @media (min-width: $desktop-breakpoint) {
           padding: 1.125rem 2rem;
         }
-      }
-
-      @media (min-width: $tablet-breakpoint) {
-        padding: 4rem;
       }
     }
   }

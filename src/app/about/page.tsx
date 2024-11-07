@@ -14,32 +14,37 @@ import Stride3 from '@/../public/images/past-photos/stride-3.webp';
 
 export default function About() {
   return (
-    <main className="about-container">
+    <main id="about-container">
       <section className="about-section info">
-        <h2 className="section-title">About</h2>
-        <p>Learn, Connect, and Grow at Stride!</p>
-        <p>
-          Stride is a uniquely design-forward career fair connecting designers
-          with company representatives. Students get the opportunity to showcase
-          their work and experience, so we recommend that you bring a physical
-          copy of your resume!
-        </p>
-        <p>Note: There will be a $7 registration fee</p>
-        <div className="about-images">
+        <h1 className="section-title">About</h1>
+        <div id="about-description">
+          <h3>Learn, Connect, and Grow at Stride!</h3>
+          <p>
+            Stride is a uniquely design-forward career fair connecting designers
+            with company representatives. Students get the opportunity to
+            showcase their work and experience, so we recommend that you bring a
+            physical copy of your resume!
+          </p>
+          <p id="about-description-note">
+            Note: There will be a $5 registration fee. Late registration will be
+            a $7 fee.
+          </p>
+        </div>
+        <div id="about-images">
           <Image
             src={Stride1}
-            className="image1"
+            id="about-image-1"
             alt="Students at career fair speaking with Apple employee who worked on Apple Vision Pro"
           />
           <Image
-            src={Stride2}
-            className="image2"
-            alt="Two students sitting at table showing career fair postcard while smiling"
+            src={Stride3}
+            id="about-image-3"
+            alt="Multiple Google employees sitting on stage giving a talk"
           />
           <Image
-            src={Stride3}
-            className="image3"
-            alt="Multiple Google employees sitting on stage giving a talk"
+            src={Stride2}
+            id="about-image-2"
+            alt="Two students sitting at table showing career fair postcard while smiling"
           />
         </div>
       </section>
