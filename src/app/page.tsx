@@ -709,7 +709,15 @@ export default function Page() {
               <div />
             </div>
           </div>
-          <h1 id="click-to-open-text">Click/Tap To Open</h1>
+          <div id="click-to-open-text">
+            <h1>Crack the Case</h1>
+            <Image
+              src="/images/icons/click-to-crack-the-case-icon.svg"
+              alt=""
+              width={46}
+              height={48}
+            />
+          </div>
         </div>
       </div>
     </div>
