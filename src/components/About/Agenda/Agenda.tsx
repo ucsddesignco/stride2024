@@ -60,58 +60,29 @@ export default function Agenda() {
             fill="white"
           />
         </g>
-        {times.map((time, index) => (
-          <g key={time}>
-            {/* Left cell for time */}
-            <rect
-              x="100"
-              y={130 + index * 50}
-              width="300"
-              height="50"
-              stroke="#FFFFFF"
-              strokeWidth="2"
-            />
-            <text
-              x="250"
-              y={155 + index * 50}
-              fontSize="14px"
-              fill="#FFFFFF"
-              fontFamily="Arial"
-              textAnchor="middle"
-              dominantBaseline="middle"
-            >
-              {time}
-            </text>
-
-            {/* Right cell for event */}
-            <rect
-              x="400"
-              y={130 + index * 50}
-              width="300"
-              height="50"
-              stroke="#FFFFFF"
-              strokeWidth="2"
-            />
-            <text
-              x="550"
-              y={155 + index * 50}
-              fontSize="14px"
-              fill="#FFFFFF"
-              fontFamily="Arial"
-              textAnchor="middle"
-              dominantBaseline="middle"
-            >
-              {events[index]}
-            </text>
-          </g>
-        ))}
+        <foreignObject width="100%" height="500">
+          <table>
+            <thead />
+            <tbody>
+              {times.map((time, index) => (
+                <tr key={time}>
+                  <td>
+                    <p>{time}</p>
+                  </td>
+                  <td>
+                    <p>{events[index]}</p>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </foreignObject>
       </svg>
       <svg
         width="323"
         height="436"
         viewBox="0 0 323 436"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
         className="mobile-agenda-card"
       >
         <path
@@ -133,51 +104,23 @@ export default function Agenda() {
             <h3 className="mobile-title">Wednesday, Nov 13 | 12-5pm PST</h3>
           </div>
         </foreignObject>
-        {times.map((time, index) => (
-          <g key={time}>
-            {/* Left cell for time */}
-            <rect
-              x="25"
-              y={75 + index * 50}
-              width="125"
-              height="50"
-              stroke="#FFFFFF"
-              strokeWidth="2"
-            />
-            <text
-              x="85"
-              y={100 + index * 50}
-              fontSize="12px"
-              fill="#FFFFFF"
-              fontFamily="Arial"
-              textAnchor="middle"
-              dominantBaseline="middle"
-            >
-              {time}
-            </text>
-
-            {/* Right cell for event */}
-            <rect
-              x="150"
-              y={75 + index * 50}
-              width="150"
-              height="50"
-              stroke="#FFFFFF"
-              strokeWidth="2"
-            />
-            <text
-              x="225"
-              y={100 + index * 50}
-              fontSize="12px"
-              fill="#FFFFFF"
-              fontFamily="Arial"
-              textAnchor="middle"
-              dominantBaseline="middle"
-            >
-              {events[index]}
-            </text>
-          </g>
-        ))}
+        <foreignObject width="100%" height="500">
+          <table>
+            <thead />
+            <tbody>
+              {times.map((time, index) => (
+                <tr key={time}>
+                  <td>
+                    <p>{time}</p>
+                  </td>
+                  <td>
+                    <p>{events[index]}</p>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </foreignObject>
       </svg>
     </div>
   );

@@ -7,8 +7,7 @@ export default function Opportunities() {
       <div className="opportunities-features">
         <figure className="figure">
           <svg
-            width="360"
-            height="386"
+            width="100%"
             viewBox="0 0 360 386"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -41,28 +40,15 @@ export default function Opportunities() {
               strokeWidth="2"
               strokeLinecap="round"
             />
-            <foreignObject
-              x="30%"
-              y="47.5%"
-              width="400"
-              height="300"
-              fill="white"
-              className="card-text"
-            >
-              <div>
+            <foreignObject width="100%" height="100%" fill="white">
+              <div className="card-text">
                 <p>1:1 Networking</p>
               </div>
             </foreignObject>
           </svg>
         </figure>
         <figure className="figure">
-          <svg
-            width="360"
-            height="379"
-            viewBox="0 0 360 379"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg width="100%" viewBox="0 0 360 379" fill="none">
             <path
               d="M359.001 289.387V20.0008H1.001V378.001H139.29"
               stroke="white"
@@ -91,15 +77,8 @@ export default function Opportunities() {
               strokeWidth="2"
               strokeLinecap="round"
             />
-            <foreignObject
-              x="20%"
-              y="47.5%"
-              width="400"
-              height="300"
-              fill="white"
-              className="card-text"
-            >
-              <div>
+            <foreignObject width="100%" height="100%" fill="white">
+              <div className="card-text">
                 <p>Company Info Sessions</p>
               </div>
             </foreignObject>
@@ -107,8 +86,7 @@ export default function Opportunities() {
         </figure>
         <figure className="figure">
           <svg
-            width="360"
-            height="391"
+            width="100%"
             viewBox="0 0 360 391"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -141,15 +119,8 @@ export default function Opportunities() {
               strokeWidth="2"
               strokeLinecap="round"
             />
-            <foreignObject
-              x="27.5%"
-              y="47.5%"
-              width="400"
-              height="300"
-              fill="white"
-              className="card-text"
-            >
-              <div>
+            <foreignObject width="100%" height="100%" fill="white">
+              <div className="card-text">
                 <p>Resume Reviews</p>
               </div>
             </foreignObject>

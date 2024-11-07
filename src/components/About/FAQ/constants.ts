@@ -20,6 +20,11 @@ export const FAQData = [
       'While there is no dress code for Stride, we do recommend making sure you look “presentable”! What “presentable” looks like is up to you - some people dress in business attire, while others dress as they normally do.'
   },
   {
+    title: 'Do I Need A Portfolio?',
+    content:
+      'No! A portfolio is not needed to attend Stride. If you have one however, feel free to link it in your resume.'
+  },
+  {
     title: 'Is There A Registration Fee?',
     content:
       'Yes! There will be a $5 fee registration fee and $7 late fee. We highly encourage students to make their experience worthwhile by attending company info sessions and speaking to company representatives!'
