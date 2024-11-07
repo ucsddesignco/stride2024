@@ -89,7 +89,7 @@ export default function RegisterPage() {
           <FeeTag id="register-fee-tag" />
         </div>
 
-        <Link href="/badge" id="create-badge-button">
+        {/* <Link href="/badge" id="create-badge-button">
           Create Your Badge{' '}
           <span>
             <Image
@@ -100,7 +100,7 @@ export default function RegisterPage() {
               aria-hidden
             />
           </span>
-        </Link>
+        </Link> */}
         <p>
           Contact designatucsd@gmail.com for inquiries about financial
           assistance.

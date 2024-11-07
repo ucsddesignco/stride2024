@@ -16,4 +16,56 @@
     right: 0;
     margin-inline: auto;
   }
+
+  .mascot-hat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin-inline: auto;
+  }
+
+  #mascot-hat- {
+    &bowler {
+      width: 30%;
+      position: absolute;
+      right: 0;
+      top: -15%;
+      left: 0;
+      margin-inline: auto;
+    }
+
+    &beret {
+      width: 50%;
+      top: -7%;
+      left: 12%;
+      margin-inline: 0;
+    }
+
+    &hawk {
+      width: 30%;
+      top: -32%;
+    }
+
+    &ivan {
+      width: 30%;
+      top: -12%;
+      left: 0;
+      right: 0;
+    }
+
+    &nerve {
+      width: 15%;
+      top: -14%;
+      left: 0;
+      right: 0;
+    }
+
+    &tophat {
+      width: 60%;
+      top: -48%;
+      left: 0;
+      right: 0;
+    }
+  }
 }
