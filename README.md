@@ -1,5 +1,9 @@
 # Stride 2024
 
+https://stride24.ucsddesign.co/
+
+Stride is a uniquely design-forward career fair aiming to connect aspiring designers with company representatives.
+
 ## Getting Started
 
 Install packages:
