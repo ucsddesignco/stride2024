@@ -55,11 +55,13 @@ export type FormTextProps = {
   className?: string;
 };
 
+type SelectOptions = Array<{ label: string; value: string }>;
+
 export type FormSelectProps = {
   label: string;
   name: keyof TFormData;
   control: Control<TFormData, any>;
-  options: Array<string>;
+  options: SelectOptions;
   defaultValue?: string;
   defaultLabel?: string;
   hasOtherOption?: boolean;
@@ -76,16 +78,7 @@ export const RegistrationSchema: ZodType<TFormData> = z.object({
     .string()
     .min(2, { message: 'Please enter your preferred pronouns.' })
     .max(50, { message: 'Your pronouns needs to be under 50 characters.' }),
-  year: z
-    .string()
-    .length(4, { message: 'Please enter your Graduation year' })
-    .refine(
-      year => {
-        const yearNumber = parseInt(year, 10);
-        return yearNumber >= 2022 && yearNumber <= 2029;
-      },
-      { message: 'Year must be between 2022 and 2029' }
-    ),
+  year: z.string().min(2, { message: 'Please enter your Graduation year' }),
   // interest: z.string().min(2, { message: 'Interest is too short' }),
   // interest_other: z
   //   .string()

@@ -36,8 +36,14 @@ export default function FormStep1({
         name="year"
         width="14rem"
         defaultLabel="Grad Year"
-        // defaultValue="2025"
-        options={['2025', '2026', '2027', '2028', '2029']}
+        options={[
+          { label: 'Class of 2025', value: '2025' },
+          { label: 'Class of 2026', value: '2026' },
+          { label: 'Class of 2027', value: '2027' },
+          { label: 'Class of 2028', value: '2028' },
+          { label: 'Class of 2029', value: '2029' },
+          { label: 'NA', value: 'NA' }
+        ]}
         label="Graduation Year"
         error={errors.year}
       />

@@ -15,7 +15,7 @@ export default function InfoIcon(props: SVGProps<SVGSVGElement>) {
           id="Vector"
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           id="Vector (Stroke)"
@@ -28,7 +28,7 @@ export default function InfoIcon(props: SVGProps<SVGSVGElement>) {
           id="Vector_2"
           d="M9.8252 10.8171H12.1902V13.7734V16.7297M12.1902 16.7297H9.8252M12.1902 16.7297H14.5552"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
           stroke-linecap="round"
           stroke-linejoin="round"
         />

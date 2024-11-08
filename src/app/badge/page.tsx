@@ -106,92 +106,95 @@ export default function Register() {
 
   return (
     <main id="badge-page-container">
-      <div id="badge-page-left-content">
-        <RegisterAssets simplified />
-        <div id="badge-page-main-content">
-          <h1>
-            {currentFormStep === 4 ? 'Badge Complete!' : 'Create Your Badge'}
-          </h1>
-          <form
-            onSubmit={handleSubmit(onSubmit, validationError => {
-              console.error('Validation errors:', validationError);
-            })}
-            className="modal-form"
-          >
-            <div id="badge-form-body">
-              {currentFormStep === 1 && (
-                <FormStep1
-                  register={register}
-                  control={control}
-                  errors={errors}
-                />
-              )}
-              {currentFormStep === 2 && (
-                <FormStep2
-                  register={register}
-                  control={control}
-                  errors={errors}
-                />
-              )}
-              {currentFormStep === 3 && <FormStep3 />}
-              {currentFormStep === 4 && <FormStep4 formData={getValues()} />}
-            </div>
-          </form>
-        </div>
-        <div id="badge-footer">
-          {currentFormStep === 1 && (
-            <Link href="/register" style={{ textDecoration: 'none' }}>
+      {/* Used to position assets relatively */}
+      <div id="badge-page-all-content">
+        <div id="badge-page-left-content">
+          <RegisterAssets simplified />
+          <div id="badge-page-main-content">
+            <h1>
+              {currentFormStep === 4 ? 'Badge Complete!' : 'Create Your Badge'}
+            </h1>
+            <form
+              onSubmit={handleSubmit(onSubmit, validationError => {
+                console.error('Validation errors:', validationError);
+              })}
+              className="modal-form"
+            >
+              <div id="badge-form-body">
+                {currentFormStep === 1 && (
+                  <FormStep1
+                    register={register}
+                    control={control}
+                    errors={errors}
+                  />
+                )}
+                {currentFormStep === 2 && (
+                  <FormStep2
+                    register={register}
+                    control={control}
+                    errors={errors}
+                  />
+                )}
+                {currentFormStep === 3 && <FormStep3 />}
+                {currentFormStep === 4 && <FormStep4 formData={getValues()} />}
+              </div>
+            </form>
+          </div>
+          <div id="badge-footer">
+            {currentFormStep === 1 && (
+              <Link href="/register" style={{ textDecoration: 'none' }}>
+                <button
+                  type="button"
+                  className="back-button"
+                  onClick={handleFormPrev}
+                >
+                  <span className="right-arrow">
+                    <RightArrow />
+                  </span>{' '}
+                  Back
+                </button>
+              </Link>
+            )}
+            {currentFormStep > 1 && (
               <button
                 type="button"
                 className="back-button"
                 onClick={handleFormPrev}
               >
                 <span className="right-arrow">
-                  <RightArrow fill="white" />
+                  <RightArrow />
                 </span>{' '}
                 Back
               </button>
-            </Link>
-          )}
-          {currentFormStep > 1 && (
-            <button
-              type="button"
-              className="back-button"
-              onClick={handleFormPrev}
-            >
-              <span className="right-arrow">
-                <RightArrow fill="white" />
-              </span>{' '}
-              Back
-            </button>
-          )}
-          <p id="current-step-large">Step {currentFormStep} of 4</p>
-          <p id="current-step-small">{currentFormStep}/4</p>
-          {currentFormStep < 4 && (
-            <button
-              type="button"
-              className="next-button"
-              onClick={handleFormNext}
-            >
-              {nextButtonText}{' '}
-              {currentFormStep < 4 && (
-                <span>
-                  <RightArrow />
-                </span>
-              )}
-            </button>
-          )}
-          {currentFormStep === 4 && (
-            <Link href="/" style={{ textDecoration: 'none' }}>
-              <button type="button" className="next-button">
-                Home
+            )}
+            <p id="current-step-large">Step {currentFormStep} of 4</p>
+            <p id="current-step-small">{currentFormStep}/4</p>
+            {currentFormStep < 4 && (
+              <button
+                type="button"
+                className="next-button"
+                onClick={handleFormNext}
+              >
+                {nextButtonText}{' '}
+                {currentFormStep < 4 && (
+                  <span>
+                    <RightArrow />
+                  </span>
+                )}
               </button>
-            </Link>
-          )}
+            )}
+            {currentFormStep === 4 && (
+              <Link href="/" style={{ textDecoration: 'none' }}>
+                <button type="button" className="next-button">
+                  Home
+                </button>
+              </Link>
+            )}
+          </div>
         </div>
-      </div>
-      <div id="badge-page-right-content">
-        <MascotBadge formData={getValues()} />
+        <div id="badge-page-right-content">
+          <MascotBadge formData={getValues()} />
+        </div>
       </div>
     </main>
   );

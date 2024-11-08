@@ -1,15 +1,8 @@
 import { useId, useState } from 'react';
-import './FormSelect.scss';
-import {
-  Button,
-  Key,
-  ListBox,
-  ListBoxItem,
-  Popover,
-  Select,
-  SelectValue
-} from 'react-aria-components';
+import * as Select from '@radix-ui/react-select';
+import * as ScrollArea from '@radix-ui/react-scroll-area';
 import { Controller } from 'react-hook-form';
+import './FormSelect.scss';
 import SelectArrow from '@/components/Icons/SelectArrow';
 import Checkmark from '@/components/Icons/Checkmark';
 import { FormSelectProps, TFormData } from '../../types';
@@ -26,11 +19,10 @@ export default function FormSelect({
   error
 }: FormSelectProps) {
   const inputId = useId();
-
   const [showOtherInput, setShowOtherInput] = useState(false);
 
-  const handleSelectChange = (key: Key) => {
-    if (key === 'Other') {
+  const handleSelectChange = (value: string) => {
+    if (value === 'Other') {
       setShowOtherInput(true);
     } else {
       setShowOtherInput(false);
@@ -40,76 +32,71 @@ export default function FormSelect({
   return (
     <div className="registration-textfield-container registration-select-container">
       <label htmlFor={inputId}>{label}</label>
+
       <Controller
         name={name}
         control={control}
         defaultValue={defaultValue}
         render={({ field: { onChange, value } }) => (
-          <Select
-            aria-label={label}
-            id={inputId}
-            onSelectionChange={selectedValue => {
-              onChange(selectedValue);
-              handleSelectChange(selectedValue);
+          <Select.Root
+            value={value}
+            onValueChange={newValue => {
+              onChange(newValue);
+              handleSelectChange(newValue);
             }}
-            selectedKey={value}
-            className="register-select"
           >
-            <Button style={{ width }}>
-              <SelectValue>
-                {({ defaultChildren, isPlaceholder }) => {
-                  return isPlaceholder ? defaultLabel : defaultChildren;
-                }}
-              </SelectValue>
-              <span aria-hidden="true">
+            <Select.Trigger
+              id={inputId}
+              className="register-select"
+              style={{ width }}
+            >
+              <Select.Value placeholder={defaultLabel} />
+              <Select.Icon>
                 <SelectArrow />
-              </span>
-            </Button>
-            <Popover style={{ width }} placement="bottom" shouldFlip={false}>
-              <ListBox>
-                {options.map(option => (
-                  <ListBoxItem
-                    className="register-list-box-item"
-                    key={option}
-                    id={option}
-                    textValue={option}
-                  >
-                    {({ isSelected }) => (
-                      <div>
-                        {option}
-                        {isSelected && (
-                          <span aria-hidden="true">
-                            <Checkmark />
-                          </span>
-                        )}
-                      </div>
+              </Select.Icon>
+            </Select.Trigger>
+
+            <Select.Portal>
+              <Select.Content
+                className="select-content"
+                style={{ width }}
+                position="popper"
+                side="bottom"
+              >
+                <ScrollArea.Root className="ScrollAreaRoot">
+                  <Select.Viewport className="select-viewport">
+                    {options.map(option => (
+                      <Select.Item
+                        key={option.label}
+                        value={option.value}
+                        className="register-list-box-item"
+                      >
+                        <Select.ItemText>{option.label}</Select.ItemText>
+                        <Select.ItemIndicator>
+                          <Checkmark />
+                        </Select.ItemIndicator>
+                      </Select.Item>
+                    ))}
+
+                    {hasOtherOption && (
+                      <Select.Item
+                        value="Other"
+                        className="register-list-box-item"
+                      >
+                        <Select.ItemText>Other</Select.ItemText>
+                        <Select.ItemIndicator>
+                          <Checkmark aria-hidden />
+                        </Select.ItemIndicator>
+                      </Select.Item>
                     )}
-                  </ListBoxItem>
-                ))}
-                {hasOtherOption && (
-                  <ListBoxItem
-                    className="register-list-box-item"
-                    key="Other"
-                    id="Other"
-                    textValue="Other"
-                  >
-                    {({ isSelected }) => (
-                      <div>
-                        Other
-                        {isSelected && (
-                          <span aria-hidden="true">
-                            <Checkmark />
-                          </span>
-                        )}
-                      </div>
-                    )}
-                  </ListBoxItem>
-                )}
-              </ListBox>
-            </Popover>
-          </Select>
+                  </Select.Viewport>
+                </ScrollArea.Root>
+              </Select.Content>
+            </Select.Portal>
+          </Select.Root>
         )}
       />
+
       {showOtherInput && (
         <Controller
           name={`${name}_other` as keyof TFormData}
