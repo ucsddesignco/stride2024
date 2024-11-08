@@ -35,16 +35,22 @@ export default function About() {
             src={Stride1}
             id="about-image-1"
             alt="Students at career fair speaking with Apple employee who worked on Apple Vision Pro"
+            quality={80}
+            priority
           />
           <Image
             src={Stride3}
             id="about-image-3"
             alt="Multiple Google employees sitting on stage giving a talk"
+            quality={80}
+            priority
           />
           <Image
             src={Stride2}
             id="about-image-2"
             alt="Two students sitting at table showing career fair postcard while smiling"
+            quality={80}
+            priority
           />
         </div>
       </section>

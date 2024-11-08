@@ -91,6 +91,7 @@ export default function Mascot() {
   useEffect(() => {
     loadAllColors();
     loadHat();
+    loadAccessory();
     setIsMounted(true);
 
     window.addEventListener('mascot-color', loadAllColors);

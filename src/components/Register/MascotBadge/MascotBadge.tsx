@@ -117,7 +117,7 @@ export default function MascotBadge({
                 <QRCode value={formData?.link || ''} />
               )}
             </div>
-            <p>
+            <p style={{ opacity: year === 'NA' ? '0' : '1' }}>
               Class of <span style={defaultStyle('year')}>{year}</span>
             </p>
           </div>

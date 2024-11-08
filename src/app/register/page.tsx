@@ -21,31 +21,14 @@ export default function RegisterPage() {
         className="register-modal"
       >
         <Dialog>
-          {({ close }) => (
-            <div id="luma-iframe-container">
-              <iframe
-                src="https://lu.ma/embed/event/evt-v7qQzON54Hs1IMN/simple"
-                allowFullScreen
-                title="Luma Registration"
-                aria-hidden="false"
-              />
-
-              {/* <button
-                type="button"
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-                className="close-icon"
-              >
-                <Image
-                  src="/images/icons/close-icon.svg"
-                  width="35"
-                  height="35"
-                  alt="Close Registration Modal"
-                />
-              </button> */}
-            </div>
-          )}
+          <div id="luma-iframe-container">
+            <iframe
+              src="https://lu.ma/embed/event/evt-v7qQzON54Hs1IMN/simple"
+              allowFullScreen
+              title="Luma Registration"
+              aria-hidden="false"
+            />
+          </div>
         </Dialog>
       </Modal>
 
@@ -76,13 +59,25 @@ export default function RegisterPage() {
             }}
           >
             <span>
-              <Image
-                src="/images/Icons/newtab-icon.svg"
-                width={24}
-                height={24}
-                alt="New Tab"
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
                 aria-hidden
-              />
+              >
+                <path
+                  d="M12.9 3L21 3M21 3L21 11.1M21 3L11 13"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M21 15.6V21H3V3H8.4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
             </span>
             Register on Luma
           </button>
@@ -92,13 +87,20 @@ export default function RegisterPage() {
         <Link href="/badge" id="create-badge-button">
           Create Your Badge{' '}
           <span>
-            <Image
-              src="/images/Icons/right-arrow-icon.svg"
-              width={23}
-              height={18}
-              alt="New Tab"
+            <svg
+              width="23"
+              height="18"
+              viewBox="0 0 23 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
               aria-hidden
-            />
+            >
+              <path
+                d="M13.6642 1.19017L21.4718 8.99788M21.4718 8.99788L13.6642 16.8055M21.4718 8.99788L0 8.99823"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
           </span>
         </Link>
         <p>

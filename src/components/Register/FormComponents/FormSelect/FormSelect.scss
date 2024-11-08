@@ -1,5 +1,3 @@
-@use '@/app/styles/_var' as *;
-
 .registration-textfield-container {
   &.registration-select-container {
     gap: 1rem;
@@ -10,64 +8,99 @@
 }
 
 .register-select {
-  button {
-    font-family: $p-font;
-    font-size: 1.25rem;
-    display: flex;
-    align-items: center;
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 22px;
-    color: white;
-    padding: 0.5rem 1rem;
-    justify-content: space-between;
-    gap: 2rem;
-    cursor: pointer;
+  font-family: $p-font;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 2px solid $white;
+  border-radius: 22px;
+  color: white;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  gap: 2rem;
+  cursor: pointer;
+  width: 100%;
+  outline-color: $light-green;
+
+  svg {
+    transition: rotate 0.3s;
+  }
+
+  &[data-state='open'] {
+    border-radius: 22px 22px 0 0;
+
+    svg {
+      rotate: 180deg;
+    }
   }
 }
 
-.react-aria-Popover {
-  height: 13rem;
-  overflow: hidden;
-  border: 2px solid #68dea3;
-  border-radius: 22px;
+.select-content {
+  height: 10rem;
+  border: 2px solid $white;
+  border-top: 0;
   font-family: $p-font;
   font-size: 1.25rem;
-  overflow-y: auto;
   background-color: black;
-  padding: 0 1rem;
+  border-radius: 0 0 22px 22px;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
   outline: none;
+  margin-top: -0.7rem;
+  padding-top: 1rem;
 
-  &::-webkit-scrollbar-track {
-    background-color: #24242400;
-    border-radius: 1rem;
-    margin-block: 0.5rem;
-  }
-
-  &::-webkit-scrollbar {
-    width: 16px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #fbfefc;
-    border-radius: 1rem;
-    border: 6px solid rgba(0, 0, 0, 0);
-    background-clip: padding-box;
-  }
-
-  .register-list-box-item {
-    padding: 1rem 0;
-    cursor: pointer;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid white;
+  .ScrollAreaRoot {
+    overflow-y: auto;
+    &::-webkit-scrollbar-track {
+      background-color: #1f1f1f;
+      border-radius: 1rem;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid black;
+      border-right: 3px solid black;
     }
 
-    > div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
+    &::-webkit-scrollbar {
+      width: 14px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #fbfefc;
+      border-radius: 1rem;
+      border: 5px solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
     }
   }
+}
+
+.register-list-box-item {
+  outline-color: $light-green;
+  padding-block: 0.5rem;
+  padding-left: 0.2rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $white;
+  }
+}
+
+.select-arrow {
+  color: $white;
+  width: 20px;
+  height: 20px;
+}
+
+.checkmark {
+  color: $white;
+  width: 20px;
+  height: 20px;
 }

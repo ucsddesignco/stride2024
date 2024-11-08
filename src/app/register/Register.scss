@@ -114,7 +114,7 @@
       line-height: 100%;
       text-decoration: none;
       border-radius: 30px;
-      background: $white;
+      background-color: $white;
       color: black;
       border: 2px solid $white;
       text-align: center;
@@ -133,6 +133,20 @@
     #luma-button-container {
       width: 100%;
       position: relative;
+
+      button {
+        transition:
+          background-color 0.2s,
+          color 0.2s;
+        &:hover {
+          background-color: black;
+          color: $white;
+
+          svg {
+            color: $white;
+          }
+        }
+      }
 
       #register-fee-tag {
         pointer-events: none;
@@ -155,15 +169,29 @@
     }
 
     #create-badge-button {
-      background-color: transparent;
-      color: white;
+      background-color: black;
+      color: $white;
+      transition:
+        background-color 0.2s,
+        color 0.2s;
+
+      &:hover {
+        background-color: $white;
+        color: black;
+
+        svg {
+          color: black;
+        }
+      }
     }
 
     p {
+      font-size: 14px;
       max-width: var(--max-width);
       text-align: center;
 
       @media (min-width: $tablet-breakpoint) {
+        font-size: 1rem;
         max-width: none;
         text-align: left;
       }

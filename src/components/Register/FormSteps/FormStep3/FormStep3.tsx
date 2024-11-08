@@ -20,7 +20,6 @@ export default function FormStep3() {
   };
 
   const onAccessoryChange = (accessory: MascotAccessories) => {
-    console.log(accessory);
     localStorage.setItem('mascot-accessory', accessory);
     window.dispatchEvent(new CustomEvent('mascot-accessory'));
   };

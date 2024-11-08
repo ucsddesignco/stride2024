@@ -91,7 +91,9 @@
           border: 2px solid $white;
           background-color: transparent;
           color: $white;
-          padding: 0.25rem 0.5rem;
+          padding-inline: 0.5rem;
+          padding-top: 0.25rem;
+          padding-bottom: 0.2rem;
           transition:
             color 0.15s,
             background-color 0.15s,
