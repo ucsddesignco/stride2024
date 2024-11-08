@@ -5,6 +5,25 @@
   box-sizing: border-box;
 }
 
+body {
+  cursor: url('/images/cursors/Cursor.svg'), auto;
+}
+
+a,
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='range'],
+input[type='file'],
+input[type='checkbox'],
+input[type='date'],
+label,
+select,
+summary {
+  cursor: $hover-cursor;
+}
+
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;

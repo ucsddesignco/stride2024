@@ -85,7 +85,7 @@
         }
 
         .about-company-pill {
-          cursor: pointer;
+          cursor: $hover-cursor;
           font-size: 1rem;
           border-radius: 30px;
           border: 2px solid $white;

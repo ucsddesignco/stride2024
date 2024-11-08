@@ -15,7 +15,7 @@
       margin-inline: auto;
       border: none;
       background-color: transparent;
-      cursor: pointer;
+      cursor: $hover-cursor;
       width: 100%;
 
       @media (min-width: 400px) {

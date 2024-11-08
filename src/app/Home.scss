@@ -2,26 +2,6 @@
 //   outline: 2px solid lime;
 // }
 
-//not sure if this is bad practice
-body {
-  cursor: url('../../public/images/cursors/Cursor.svg'), auto;
-}
-
-a,
-button,
-input[type='button'],
-input[type='submit'],
-input[type='reset'],
-input[type='range'],
-input[type='file'],
-input[type='checkbox'],
-input[type='date'],
-label,
-select,
-summary {
-  cursor: url('../../public/images/cursors/Cursor-hover.svg'), auto;
-}
-
 :root {
   --folder-width: 80vw;
   --folder-height: 50vh;
