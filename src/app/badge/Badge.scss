@@ -92,7 +92,7 @@
           border: none;
           align-items: center;
           border: 2px solid $white;
-          cursor: pointer;
+          cursor: $hover-cursor;
 
           .right-arrow {
             transform: rotate(180deg);

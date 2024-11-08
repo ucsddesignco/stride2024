@@ -46,6 +46,7 @@ const IosevkaCurly = localFont({
       style: 'italic'
     }
   ],
+  preload: true,
   variable: '--font-iosevka'
 });
 

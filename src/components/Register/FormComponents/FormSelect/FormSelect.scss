@@ -19,9 +19,13 @@
   padding: 0.5rem 1rem;
   justify-content: space-between;
   gap: 2rem;
-  cursor: pointer;
+  cursor: $hover-cursor;
   width: 100%;
   outline-color: $light-green;
+
+  &:hover {
+    cursor: url('/images/cursors/Cursor-hover.svg'), auto;
+  }
 
   svg {
     transition: rotate 0.3s;
@@ -49,6 +53,7 @@
   outline: none;
   margin-top: -0.7rem;
   padding-top: 1rem;
+  cursor: url('/images/cursors/Cursor-hover.svg'), auto;
 
   .ScrollAreaRoot {
     overflow-y: auto;
@@ -78,11 +83,11 @@
   padding-block: 0.5rem;
   padding-left: 0.2rem;
   margin-right: 0.75rem;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  cursor: url('/images/cursors/Cursor-hover.svg'), auto;
 
   &:first-child {
     padding-top: 0;
