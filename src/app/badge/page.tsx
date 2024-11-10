@@ -61,7 +61,7 @@ export default function Register() {
           shadow: COLOR_THEMES[storedBreed].shadow
         },
         hat: storedHat,
-        accesstory: storedAccessory
+        accessory: storedAccessory
       };
 
       const userData = { ...formData, badge: badgeData };

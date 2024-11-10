@@ -11,7 +11,7 @@ export interface UserDocument {
   badge: {
     color: string;
     hat: string;
-    accesstory: string;
+    accessory: string;
   };
   createdAt: Date;
 }
@@ -51,7 +51,7 @@ const UserSchema = new Schema<UserDocument>(
       hat: {
         type: String
       },
-      accesstory: {
+      accessory: {
         type: String
       }
     },

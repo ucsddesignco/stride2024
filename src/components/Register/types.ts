@@ -57,6 +57,15 @@ export type FormTextProps = {
 
 type SelectOptions = Array<{ label: string; value: string }>;
 
+export type MascotUserData = {
+  color: {
+    color: string;
+    shadow: string;
+  };
+  hat: MascotHats;
+  accessory: MascotAccessories;
+};
+
 export type FormSelectProps = {
   label: string;
   name: keyof TFormData;

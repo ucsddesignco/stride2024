@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import './Navbar.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -9,14 +8,22 @@ import StrideLogo from '../Register/StrideLogo';
 import DCOLogo from './Logos/DCOLogo';
 import InfoIcon from '../Icons/InfoIcon';
 
+const AVAILABLE_PAGES = ['about', 'register', 'badge'];
+
 export default function Navbar() {
   const pathname = usePathname();
 
   const parsePathname = (currentPath: string) => {
-    if (currentPath === '/') return 'Home';
+    if (currentPath === '/') return '/ Home';
 
-    const page = currentPath.replace('/', '');
-    return page.charAt(0).toUpperCase() + page.slice(1) || '';
+    if (AVAILABLE_PAGES.includes(currentPath.replace('/', ''))) {
+      const parsedString =
+        currentPath.replace('/', '').charAt(0).toUpperCase() +
+        currentPath.replace('/', '').slice(1);
+      return `/ ${parsedString}`;
+    }
+
+    return null;
   };
 
   useEffect(() => {
@@ -43,7 +50,7 @@ export default function Navbar() {
         <DCOLogo />
         <div id="nav-logo-current-page">
           <StrideLogo id="nav-stride-logo" />
-          <p>/ {parsePathname(pathname)}</p>
+          {parsePathname(pathname) && <p>{parsePathname(pathname)}</p>}
         </div>
       </Link>
 
