@@ -41,7 +41,6 @@ export default function FormStep1({
           { label: 'Class of 2026', value: '2026' },
           { label: 'Class of 2027', value: '2027' },
           { label: 'Class of 2028', value: '2028' },
-          { label: 'Class of 2029', value: '2029' },
           { label: 'NA', value: 'NA' }
         ]}
         label="Graduation Year"
