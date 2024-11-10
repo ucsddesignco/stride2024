@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import './Mascot.scss';
-import Image from 'next/image';
 import { COLOR_THEMES } from '../constants';
-import { MascotAccessories, MascotBreeds, MascotHats } from '../types';
+import {
+  MascotAccessories,
+  MascotBreeds,
+  MascotHats,
+  MascotUserData
+} from '../types';
 import { MASCOT_HATS } from '../MascotHats/constants';
 import { MASCOT_ACCESSORIES } from './MascotAccessories/constants';
 
@@ -68,7 +72,11 @@ const loadAccessoryFromStorage = () => {
   return storedAccessory || 'default';
 };
 
-export default function Mascot() {
+export default function Mascot({
+  mascotData
+}: {
+  mascotData?: MascotUserData;
+}) {
   const [colors, setColors] = useState<MascotColors>(COLOR_THEMES.default);
   const [hat, setHat] = useState<MascotHats>(
     MASCOT_HATS.bowler.name as MascotHats
@@ -107,12 +115,14 @@ export default function Mascot() {
 
   return (
     <div className="mascot-container">
-      {/* {hat === 'test' && <TestHat id="mascot-hat" />} */}
-      <div id={`mascot-accessory-${accessory}`} className="mascot-accessory">
-        {MASCOT_ACCESSORIES[accessory]?.component}
+      <div
+        id={`mascot-accessory-${mascotData?.accessory || accessory}`}
+        className="mascot-accessory"
+      >
+        {MASCOT_ACCESSORIES[mascotData?.accessory || accessory]?.component}
       </div>
-      <div id={`mascot-hat-${hat}`} className="mascot-hat">
-        {MASCOT_HATS[hat]?.component}
+      <div id={`mascot-hat-${mascotData?.hat || hat}`} className="mascot-hat">
+        {MASCOT_HATS[mascotData?.hat || hat]?.component}
       </div>
 
       <svg
@@ -120,9 +130,8 @@ export default function Mascot() {
         viewBox="0 0 152 261"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        aria-label="Detective Ducky"
-        style={{ opacity: isMounted ? 1 : 0 }}
-        aria-hidden={!isMounted}
+        aria-label={`Detective Ducky wearing a ${mascotData?.hat || hat} hat and a ${mascotData?.accessory || accessory} accessory`}
+        style={{ opacity: isMounted || mascotData ? 1 : 0 }}
       >
         <path
           d="M142.432 257.303C142.432 257.303 111.944 254.633 111.944 241.765V200.594H95.4856V212.617L93.1683 211.89L76.196 221.954C93.3344 221.954 95.3116 225.358 95.4935 226.504V244.427C95.28 248.867 93.8722 257.358 86.1295 257.303C85.2912 257.303 84.6189 257.982 84.6189 258.812C84.6189 259.641 85.2991 260.321 86.1295 260.321H142.44C143.279 260.321 143.951 259.641 143.951 258.812C143.951 257.982 143.271 257.303 142.44 257.303H142.432Z"
@@ -176,13 +185,13 @@ export default function Mascot() {
         />
         <path
           d="M75.9723 80.9953C103.16 80.9953 125.2 63.0812 125.2 40.983C125.2 18.8848 103.16 0.970703 75.9723 0.970703C48.7845 0.970703 26.7444 18.8848 26.7444 40.983C26.7444 63.0812 48.7845 80.9953 75.9723 80.9953Z"
-          fill={colors.color}
+          fill={mascotData?.color?.color || colors.color}
         />
         <path
           fillRule="evenodd"
           clipRule="evenodd"
           d="M125.2 40.983C125.2 63.0812 103.16 80.9953 75.9723 80.9953C48.7845 80.9953 26.7444 63.0812 26.7444 40.983C26.7444 18.8848 48.7845 0.970703 75.9723 0.970703C103.16 0.970703 125.2 18.8848 125.2 40.983ZM114.67 39.1402C114.67 57.695 95.8676 72.7365 72.6742 72.7365C49.4808 72.7365 30.6788 57.695 30.6788 39.1402C30.6788 20.5855 49.4808 5.5439 72.6742 5.5439C95.8676 5.5439 114.67 20.5855 114.67 39.1402Z"
-          fill={colors.shadow}
+          fill={mascotData?.color?.shadow || colors.shadow}
         />
         <path
           d="M47.2192 41.7447C48.2921 39.086 47.5395 36.2758 45.5381 35.4679C43.5368 34.66 41.0446 36.1603 39.9717 38.8189C38.8988 41.4776 39.6515 44.2878 41.6528 45.0957C43.6542 45.9036 46.1463 44.4033 47.2192 41.7447Z"
@@ -218,12 +227,6 @@ export default function Mascot() {
         <circle cx="75.9416" cy="177.96" r="5.83269" fill="#030303" />
         <circle cx="75.9416" cy="158.829" r="5.83269" fill="#030303" />
         <circle cx="75.9416" cy="139.698" r="5.83269" fill="#030303" />
-        {/* <g transform="translate(118, -70)" className="mascot-hat">
-          {hat === 'test' && <TestHat mask />}
-        </g> */}
-        {/* <g transform="translate(32, -50)" width="50" className="mascot-hat">
-          {hat === 'test' && <TestHat />}
-        </g> */}
       </svg>
     </div>
   );

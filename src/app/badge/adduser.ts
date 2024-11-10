@@ -12,7 +12,7 @@ type UserData = {
       shadow: string;
     };
     hat: string;
-    accesstory: string;
+    accessory: string;
   };
   year: string;
   pronouns: string;

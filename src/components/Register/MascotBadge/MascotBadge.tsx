@@ -1,9 +1,11 @@
+'use client';
+
 import MascotCircles from '@/components/MascotCircles/MascotCircles';
 import QRCode from 'react-qr-code';
 import { useEffect, useRef } from 'react';
 import VerticalBar from './VerticalBar';
 import HorizontalBar from './HorizontalBar';
-import { TFormData } from '../types';
+import { MascotUserData, TFormData } from '../types';
 import './MascotBadge.scss';
 import StrideLogo from '../StrideLogo';
 
@@ -19,8 +21,7 @@ const DEFAULT_VALUES = {
   name: 'Detective Duck',
   pronouns: 'They/Them',
   year: '???',
-  link: '',
-  email: ''
+  link: ''
 };
 
 const parseFormData = (formData: TFormData): ParsedFormData => {
@@ -43,13 +44,17 @@ const parseFormData = (formData: TFormData): ParsedFormData => {
   };
 };
 
-export default function MascotBadge({
-  formData,
-  shouldScale = false
-}: {
+type MascotBadgeProps = {
   formData: TFormData;
   shouldScale?: boolean;
-}) {
+  mascotData?: MascotUserData;
+};
+
+export default function MascotBadge({
+  formData,
+  shouldScale = false,
+  mascotData
+}: MascotBadgeProps) {
   const { firstName, lastName, firstPronoun, secondPronoun, year } =
     parseFormData(formData);
 
@@ -67,30 +72,30 @@ export default function MascotBadge({
 
   useEffect(() => {
     if (!shouldScale) return;
-    if (badgeContainerRef.current && badgeRef.current && !hasMeasured.current) {
+    const badgeContainer = badgeContainerRef.current;
+    const badge = badgeRef.current;
+    if (badgeContainer && badge && !hasMeasured.current) {
       hasMeasured.current = true;
-      const badgeContainerHeight = badgeContainerRef.current
-        ? badgeContainerRef.current.getBoundingClientRect().height - 10
+      const badgeContainerHeight = badgeContainer
+        ? badgeContainer.getBoundingClientRect().height - 10
         : 0;
-      const badgeWidth = badgeRef.current?.getBoundingClientRect().width;
+      const badgeWidth = badge?.getBoundingClientRect().width;
       // For Safari bug
       const badgeHeight = (badgeWidth * 378) / 252;
 
       if (badgeContainerHeight > 0 && badgeHeight > 0) {
         const badgeScale = badgeContainerHeight / badgeHeight;
-        badgeRef.current.style.height = `${badgeHeight}px`;
-        badgeRef.current.style.setProperty(
-          '--badge-scale',
-          badgeScale.toString()
-        );
-        badgeRef.current.style.animation = 'SlideUpAndScale 1.5s forwards';
+        badge.style.transform = 'translateY(100%)';
+        badge.style.height = `${badgeHeight}px`;
+        badge.style.setProperty('--badge-scale', badgeScale.toString());
+        badge.style.animation = 'SlideUpAndScale 1.5s forwards';
       }
     }
   }, [shouldScale]);
 
   return (
     <div id="mascot-badge-container" ref={badgeContainerRef}>
-      <div className="mascot-badge" ref={badgeRef}>
+      <div id="mascot-badge" ref={badgeRef}>
         <div className="badge-top">
           <div className="long-hole" />
           <StrideLogo />
@@ -123,7 +128,7 @@ export default function MascotBadge({
           </div>
         </div>
         <div className="badge-bottom">
-          <MascotCircles />
+          <MascotCircles mascotData={mascotData} />
         </div>
       </div>
     </div>

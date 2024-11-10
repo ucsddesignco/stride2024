@@ -1,0 +1,7 @@
+#view-badge-page {
+  margin-top: var(--nav-height);
+  height: calc(100dvh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5rem;
+}

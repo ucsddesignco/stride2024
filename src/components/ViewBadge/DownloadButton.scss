@@ -1,0 +1,24 @@
+.download-button {
+  background-color: $white;
+  color: black;
+  text-transform: uppercase;
+  padding: 6px;
+  padding-inline: 1rem;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+  margin-inline: auto;
+  border-radius: 48px;
+  border: 2px solid $white;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+
+  &:hover {
+    background-color: black;
+    color: $white;
+  }
+}

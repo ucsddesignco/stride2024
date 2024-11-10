@@ -45,6 +45,7 @@ export default function About() {
             height={933}
             id="about-image-3"
             alt="Multiple Google employees sitting on stage giving a talk"
+            priority
           />
           <Image
             src={Stride2}
@@ -52,6 +53,7 @@ export default function About() {
             height={933}
             id="about-image-2"
             alt="Two students sitting at table showing career fair postcard while smiling"
+            priority
           />
         </div>
       </section>
