@@ -17,13 +17,13 @@ export const companies: CompaniesMap = {
     description:
       'Art of Problem Solving is an education technology company inspiring and training the next generation of great problem solvers. They help students develop problem-solving skills by offering resources in a variety of different formats, building a community where students can connect and collaborate with their peers.'
   },
-  CoNote: {
-    name: 'CoNote',
-    org_type: 'Recruiting',
-    companyImage: 'images/company-images/conote.svg',
-    description:
-      'CoNote.ai is a start-up technology that helps researchers transcribe, analyze, and organize their data while collaborating with their team.'
-  },
+  // CoNote: {
+  //   name: 'CoNote',
+  //   org_type: 'Recruiting',
+  //   companyImage: 'images/company-images/conote.svg',
+  //   description:
+  //     'CoNote.ai is a start-up technology that helps researchers transcribe, analyze, and organize their data while collaborating with their team.'
+  // },
   'UCSD Design Lab': {
     name: 'UCSD Design Lab',
     org_type: 'Recruiting',
@@ -52,13 +52,13 @@ export const companies: CompaniesMap = {
     description:
       "Google is a global technology leader known for its search engine, online advertising, and diverse range of products. Beginning as an online search firm, it has expanded to include services such as Google Cloud, YouTube, and Android. Committed to innovation, Google's mission is to organize the world's information and make it universally accessible and useful."
   },
-  Deloitte: {
-    name: 'Deloitte',
-    org_type: 'Networking Only',
-    companyImage: 'images/company-images/deloitte.svg',
-    description:
-      'With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies.'
-  },
+  // Deloitte: {
+  //   name: 'Deloitte',
+  //   org_type: 'Networking Only',
+  //   companyImage: 'images/company-images/deloitte.svg',
+  //   description:
+  //     'With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies.'
+  // },
   Illumina: {
     name: 'Illumina',
     org_type: 'Networking Only',

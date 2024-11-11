@@ -149,7 +149,7 @@ export default function Agenda() {
         </g>
         <foreignObject x="15" y="100" width="330" height="413">
           <div id="mobile-agenda-content">
-            <h3>Wednesday, Nov. 13th 12-5pm PST</h3>
+            <h3>Wednesday, Nov. 13th 10am-2pm PST</h3>
             <table>
               <thead />
               <tbody>
@@ -243,7 +243,7 @@ export default function Agenda() {
         </g>
         <foreignObject x="200" y="48" width="1050" height="700">
           <div id="desktop-agenda-content">
-            <h3>Wednesday, Nov. 13th 12-5pm PST</h3>
+            <h3>Wednesday, Nov. 13th 10am-2pm PST</h3>
             <table>
               <thead />
               <tbody>

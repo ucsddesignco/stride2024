@@ -7,6 +7,13 @@
   font-weight: 500;
   font-size: 1.25rem;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  margin-inline: auto;
+  z-index: 1;
 
   @media (min-width: 480px) {
     gap: 1rem;
