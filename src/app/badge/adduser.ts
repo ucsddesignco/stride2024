@@ -44,19 +44,23 @@ export async function addUser(userData: UserData) {
     const uniqueUrl = await generateUniqueUrl(baseUrl);
 
     const { email } = userData;
+    console.log({ userData });
 
     await User.findOneAndUpdate(
       { email },
       {
-        $set: userData,
-        url: uniqueUrl
+        $set: { ...userData, url: uniqueUrl }
       },
       {
         new: true,
-        upsert: true
+        upsert: true,
+        runValidators: true
       }
     );
+
+    return { status: 200, message: 'User created successfully' };
   } catch (error) {
     // console.error('Error creating or updating user', error);
+    return { status: 500, message: 'Error creating or updating user' };
   }
 }

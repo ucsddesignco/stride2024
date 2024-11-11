@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   z-index: 10;
-  padding: 2.5rem var(--nav-padding);
+  padding: var(--nav-padding) 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: transparent;
+  background-color: black;
   top: 0;
   pointer-events: none;
 
@@ -16,6 +16,7 @@
   }
 
   &.home {
+    background-color: transparent;
     #nav-logo-container {
       pointer-events: auto;
       #dco-logo {
@@ -51,6 +52,17 @@
     }
   }
 
+  &.view-badge {
+    #nav-button-container {
+      pointer-events: auto;
+      display: none;
+
+      @media (min-width: 430px) {
+        display: flex;
+      }
+    }
+  }
+
   #nav-logo-container {
     pointer-events: auto;
     display: grid;
@@ -79,12 +91,15 @@
 
   #nav-button-container {
     pointer-events: auto;
-    display: flex;
     align-items: center;
     gap: 1rem;
     font-family: $p-font;
     font-weight: 500;
     font-size: 1.25rem;
+    display: flex;
+
+    @media (min-width: 430px) {
+    }
 
     a {
       border-radius: 48px;

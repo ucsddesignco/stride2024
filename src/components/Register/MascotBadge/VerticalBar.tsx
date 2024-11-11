@@ -4,18 +4,17 @@ export default function VerticalBar(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="2"
       height="100%"
-      preserveAspectRatio="none"
-      viewBox="0 0 2 38"
+      width={3}
+      viewBox="0 0 3 80"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M1.46387 0.882812V37.8668"
+        d="M1.5 0L1.5 80"
         stroke="#FBFEFC"
-        strokeWidth="1.072"
-        strokeDasharray="2.14 2.14"
+        strokeWidth="2"
+        strokeDasharray="8 8"
       />
     </svg>
   );

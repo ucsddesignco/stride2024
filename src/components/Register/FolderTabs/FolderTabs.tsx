@@ -28,6 +28,7 @@ function FolderTab({
   return (
     <button
       className="folder-tab"
+      type="button"
       onClick={() => handleTabChange(label)}
       style={{
         zIndex: activeTab ? 2 : zIndex

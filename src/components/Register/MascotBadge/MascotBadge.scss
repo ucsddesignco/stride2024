@@ -1,6 +1,7 @@
 #mascot-badge-container {
   position: relative;
   height: 100%;
+  width: 100%;
 
   #mascot-badge {
     position: absolute;
@@ -23,6 +24,10 @@
       max-width: 23rem;
       height: auto;
       max-height: 90%;
+      animation: none;
+      transform: translateY(0);
+    }
+    @media (min-width: $tablet-breakpoint) {
       animation: none;
       transform: translateY(0);
     }
@@ -50,7 +55,7 @@
       bottom: 0;
       background-color: transparent;
       margin-inline: auto;
-      border: 0.5rem solid rgb(0, 0, 0);
+      border: 8px solid rgb(0, 0, 0);
       border-radius: 0 0 23px 23px;
       border-top: none;
       position: absolute;
@@ -81,10 +86,7 @@
       }
 
       svg {
-        width: 6rem;
-        @media (min-width: $tablet-breakpoint) {
-          width: 8rem;
-        }
+        width: 35%;
       }
     }
 
@@ -94,48 +96,54 @@
       &-top {
         display: flex;
         justify-content: space-between;
-        padding-bottom: 1rem;
         position: relative;
+        align-items: center;
+        width: 100%;
 
         h2 {
-          display: grid;
-          // font-size: 1.5rem;
-          // font-size: 50%;
+          display: flex;
+          flex-direction: column;
           font-style: italic;
           font-weight: 600;
+          font-size: clamp(1rem, calc(1rem + 3vw), 2.2rem);
+          // font-size: 130%;
+          // padding-right: 10%;
 
           @media (min-width: $tablet-breakpoint) {
             font-size: 2.2rem;
           }
         }
 
-        #vertical-dotted-bar {
-          position: absolute;
-          left: 0;
-        }
-
-        #horizontal-dotted-bar {
-          position: absolute;
-          bottom: 0;
+        #badge-pronouns-container {
+          display: flex;
         }
 
         p {
           position: relative;
-          display: grid;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           padding-left: 1.5rem;
           padding-right: 0;
+          font-size: clamp(0.7rem, 0.65rem + 2.3vw, 1.4rem);
 
           @media (min-width: $tablet-breakpoint) {
-            font-size: 1.5rem;
+            padding-left: 1.5rem;
+            // font-size: 1.5rem;
             padding-left: 2.5rem;
           }
         }
       }
 
+      #horizontal-dotted-bar {
+        margin-block: 1rem;
+      }
+
       &-center {
         display: flex;
         justify-content: space-between;
-        padding-block: 1rem;
+        padding-bottom: 1rem;
+        gap: 1rem;
 
         #empty-qr-code {
           width: 55%;
@@ -157,13 +165,13 @@
 
         p {
           flex: 1;
-          font-size: 1rem;
           font-weight: 400;
           text-align: right;
+          font-size: clamp(0.65rem, calc(0.6rem + 2.1vw), 1.2rem);
 
-          @media (min-width: $tablet-breakpoint) {
-            font-size: 1.25rem;
-          }
+          // @media (min-width: $tablet-breakpoint) {
+          //   font-size: 1.25rem;
+          // }
         }
       }
     }

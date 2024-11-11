@@ -25,7 +25,7 @@ export default async function ViewBadge({
       <MascotBadge formData={userData} mascotData={userData.badge} />
       <DownloadButton
         downloadElementId="mascot-badge"
-        downloadFilename="Stide-Badge.png"
+        downloadFilename="Stride-Badge.png"
       />
     </main>
   );

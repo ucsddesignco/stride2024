@@ -2,7 +2,7 @@
 
 import MascotCircles from '@/components/MascotCircles/MascotCircles';
 import QRCode from 'react-qr-code';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import VerticalBar from './VerticalBar';
 import HorizontalBar from './HorizontalBar';
 import { MascotUserData, TFormData } from '../types';
@@ -81,7 +81,7 @@ export default function MascotBadge({
         : 0;
       const badgeWidth = badge?.getBoundingClientRect().width;
       // For Safari bug
-      const badgeHeight = (badgeWidth * 378) / 252;
+      const badgeHeight = (badgeWidth * 3.2) / 2;
 
       if (badgeContainerHeight > 0 && badgeHeight > 0) {
         const badgeScale = badgeContainerHeight / badgeHeight;
@@ -107,13 +107,16 @@ export default function MascotBadge({
               <span style={defaultStyle('name')}>{firstName}</span>
               <span style={defaultStyle('name')}>{lastName}</span>
             </h2>
-            <p>
-              <VerticalBar id="vertical-dotted-bar" />
-              <span style={defaultStyle('pronouns')}>{firstPronoun}/</span>
-              <span style={defaultStyle('pronouns')}>{secondPronoun}</span>
-            </p>
-            <HorizontalBar id="horizontal-dotted-bar" />
+            <div id="badge-pronouns-container">
+              <VerticalBar id="vertical-dotted-bar" aria-hidden />
+              <p>
+                <span style={defaultStyle('pronouns')}>{firstPronoun}/</span>
+                <span style={defaultStyle('pronouns')}>{secondPronoun}</span>
+              </p>
+            </div>
           </div>
+          <HorizontalBar id="horizontal-dotted-bar" aria-hidden />
+          {/* <div id="horizontal-dotted-bar" /> */}
           <div className="badge-center-center">
             <div className="badge-code">
               {formData?.link === undefined || formData?.link === '' ? (
