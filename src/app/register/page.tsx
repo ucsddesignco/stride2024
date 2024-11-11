@@ -70,12 +70,12 @@ export default function RegisterPage() {
                 <path
                   d="M12.9 3L21 3M21 3L21 11.1M21 3L11 13"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                 />
                 <path
                   d="M21 15.6V21H3V3H8.4"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                 />
               </svg>
             </span>
@@ -98,7 +98,7 @@ export default function RegisterPage() {
               <path
                 d="M13.6642 1.19017L21.4718 8.99788M21.4718 8.99788L13.6642 16.8055M21.4718 8.99788L0 8.99823"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
               />
             </svg>
           </span>

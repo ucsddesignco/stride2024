@@ -1,7 +1,25 @@
 #view-badge-page {
   margin-top: var(--nav-height);
-  height: calc(100dvh - var(--nav-height));
+  height: calc(100vh - var(--nav-height));
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
+  gap: 1rem;
+  padding-inline: var(--main-padding);
+  position: relative;
+
+  #mascot-badge-container {
+    aspect-ratio: 252/378;
+    width: 100%;
+    max-width: 21.5rem;
+    margin-inline: auto;
+    height: auto;
+
+    #mascot-badge {
+      max-width: none;
+      aspect-ratio: auto;
+      height: 100%;
+      max-height: none;
+    }
+  }
 }

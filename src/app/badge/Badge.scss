@@ -31,6 +31,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
 
         @media (min-width: 580px) {
           width: 30rem;
@@ -139,17 +140,26 @@
 
     #badge-page-right-content {
       display: none;
+      position: relative;
 
       @media (min-width: $tablet-breakpoint) {
         display: block;
         height: 100%;
         width: 100%;
-        margin-bottom: calc(var(--nav-height) / 2);
-        width: 50vw;
+        max-height: 720px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 1.5rem;
 
         #mascot-badge-container {
-          display: grid;
-          place-items: center;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 50%;
+          left: 0;
+          transform: translateX(5%);
+          margin-inline: auto;
+          z-index: 9999;
         }
 
         .mascot-badge {

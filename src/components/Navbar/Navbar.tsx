@@ -44,8 +44,14 @@ export default function Navbar() {
     };
   }, []);
 
+  const parseNavbarStyle = () => {
+    if (pathname === '/') return 'home';
+    if (pathname.includes('/badge/')) return 'view-badge';
+    return '';
+  };
+
   return (
-    <nav id="navbar" className={pathname === '/' ? 'home' : ''}>
+    <nav id="navbar" className={parseNavbarStyle()}>
       <Link id="nav-logo-container" href="/">
         <DCOLogo />
         <div id="nav-logo-current-page">

@@ -1,7 +1,7 @@
 'use client';
 
 // Credit: https://dev.to/saranshk/how-to-convert-a-react-component-to-an-image-2jon
-import html2canvas from 'html2canvas';
+import { toPng } from 'html-to-image';
 import './DownloadButton.scss';
 
 type DownloadButtonProps = {
@@ -16,18 +16,23 @@ export default function DownloadButton({
   const handleImageDownload = async () => {
     const downloadElement = document.getElementById(downloadElementId);
     if (!downloadElement) return;
-    const canvas = await html2canvas(downloadElement, {
-      backgroundColor: 'null'
-    });
-    const data = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
 
-    link.href = data;
-    link.download = downloadFilename;
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    toPng(downloadElement, {
+      cacheBust: true,
+      includeQueryParams: true,
+      style: {
+        transform: 'none'
+      }
+    })
+      .then(dataUrl => {
+        const link = document.createElement('a');
+        link.download = downloadFilename;
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   return (
@@ -49,12 +54,12 @@ export default function DownloadButton({
           <path
             d="M17.7276 10.3435L12 16.0711M12 16.0711L6.27244 10.3435M12 16.0711V1.92896"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
           />
           <path
             d="M3 15.6001V21.0001H21V15.6001"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
           />
         </svg>
       </span>
