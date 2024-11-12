@@ -159,7 +159,6 @@ export default function Agenda() {
                 ))}
               </tbody>
             </table>
-            <p id="">*schedule subject to change</p>
           </div>
         </foreignObject>
       </svg>
@@ -253,7 +252,6 @@ export default function Agenda() {
                 ))}
               </tbody>
             </table>
-            <p id="">*schedule subject to change</p>
           </div>
         </foreignObject>
         <path
