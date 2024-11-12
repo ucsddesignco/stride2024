@@ -1,13 +1,7 @@
 import './Agenda.scss';
 
-const times = ['10:00 AM', '10:30 AM', '11:30 AM', '1:00 PM', '2:00 PM'];
-const events = [
-  'Doors Open',
-  'Deloitte Talk',
-  'Illumina Talk',
-  'CoNote Talk',
-  'Doors Close'
-];
+const times = ['10:00 AM', '11:30 AM', '1:00 PM', '2:00 PM'];
+const events = ['Doors Open', 'Illumina Talk', 'AoPS Talk', 'Doors Close'];
 
 export default function Agenda() {
   return (
