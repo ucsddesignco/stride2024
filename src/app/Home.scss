@@ -294,6 +294,7 @@
     bottom: -5px;
     left: -7px;
     transform: scaleX(-1);
+    pointer-events: none;
   }
   #paper-border-top-edge {
     top: 0;
