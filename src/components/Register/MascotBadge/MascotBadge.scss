@@ -100,6 +100,27 @@
         align-items: center;
         width: 100%;
 
+        &.long-name {
+          flex-direction: column;
+          align-items: flex-start;
+
+          #badge-pronouns-container {
+            #vertical-dotted-bar {
+              display: none;
+            }
+
+            p {
+              padding-left: 0;
+              flex-direction: row;
+              padding-top: 1rem;
+            }
+          }
+
+          h2 {
+            font-size: clamp(0.9rem, calc(0.9rem + 3vw), 2rem);
+          }
+        }
+
         h2 {
           display: flex;
           flex-direction: column;

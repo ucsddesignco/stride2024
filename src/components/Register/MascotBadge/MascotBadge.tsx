@@ -58,6 +58,8 @@ export default function MascotBadge({
   const { firstName, lastName, firstPronoun, secondPronoun, year } =
     parseFormData(formData);
 
+  const longNameDesign = firstName.length > 11 || lastName.length > 11;
+
   const defaultStyle = (field: keyof TFormData) => {
     const isDefault =
       !Object.keys(formData).includes(field) ||
@@ -102,7 +104,9 @@ export default function MascotBadge({
           <div className="long-hole" />
         </div>
         <div className="badge-center">
-          <div className="badge-center-top ">
+          <div
+            className={`badge-center-top ${longNameDesign ? 'long-name' : ''}`}
+          >
             <h2>
               <span style={defaultStyle('name')}>{firstName}</span>
               <span style={defaultStyle('name')}>{lastName}</span>
@@ -116,7 +120,6 @@ export default function MascotBadge({
             </div>
           </div>
           <HorizontalBar id="horizontal-dotted-bar" aria-hidden />
-          {/* <div id="horizontal-dotted-bar" /> */}
           <div className="badge-center-center">
             <div className="badge-code">
               {formData?.link === undefined || formData?.link === '' ? (
