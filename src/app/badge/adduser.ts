@@ -44,7 +44,6 @@ export async function addUser(userData: UserData) {
     const uniqueUrl = await generateUniqueUrl(baseUrl);
 
     const { email } = userData;
-    console.log({ userData });
 
     await User.findOneAndUpdate(
       { email },
