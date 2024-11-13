@@ -10,12 +10,11 @@ export async function getUser(url: string) {
     const userInfo = await User.findOne({ url }, { email: 0 }).lean();
 
     if (!userInfo) {
-      return { error: 'User not found' };
+      return { error: 'User Not Found' };
     }
 
     return userInfo;
   } catch (error) {
-    console.error(error);
     throw new Error('Failed to find user');
   }
 }
