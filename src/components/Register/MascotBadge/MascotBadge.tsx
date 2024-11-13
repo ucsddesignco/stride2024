@@ -27,7 +27,10 @@ const DEFAULT_VALUES = {
 const parseFormData = (formData: TFormData): ParsedFormData => {
   const name = formData.name || DEFAULT_VALUES.name;
   const pronouns = formData.pronouns || DEFAULT_VALUES.pronouns;
-  const [firstName, lastName] = name.split(' ');
+  const lastNameIndex = name.indexOf(' ');
+  const firstName = name.substring(0, lastNameIndex);
+  const lastName = name.substring(lastNameIndex + 1);
+
   let [firstPronoun, secondPronoun] = pronouns.split(' ');
   if (pronouns.includes('/')) {
     [firstPronoun, secondPronoun] = pronouns

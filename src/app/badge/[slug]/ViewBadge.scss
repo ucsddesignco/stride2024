@@ -8,6 +8,11 @@
   padding-inline: var(--main-padding);
   position: relative;
 
+  h1,
+  p {
+    margin-inline: auto;
+  }
+
   #mascot-badge-container {
     aspect-ratio: 252/378;
     width: 100%;

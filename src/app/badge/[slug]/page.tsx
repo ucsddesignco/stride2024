@@ -15,6 +15,7 @@ export default async function ViewBadge({
     return (
       <main id="view-badge-page">
         <h1>{data.error}</h1>
+        <p>Please contact designatucsd@gmail.com for assistance.</p>
       </main>
     );
   }
