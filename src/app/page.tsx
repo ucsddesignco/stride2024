@@ -510,7 +510,7 @@ export default function Page() {
           id="companies"
           ref={companies}
           className="page-asset"
-          src="/images/page-assets/companies.svg"
+          src="/images/page-assets/all-companies.svg"
           alt=""
           width={265}
           height={256}
@@ -647,7 +647,7 @@ export default function Page() {
               id="folder-companies"
               ref={folderCompanies}
               className="folder-asset"
-              src="/images/page-assets/companies.svg"
+              src="/images/page-assets/all-companies.svg"
               alt=""
               width={265}
               height={256}
